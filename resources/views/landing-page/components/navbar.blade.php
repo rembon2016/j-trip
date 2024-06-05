@@ -140,7 +140,7 @@
                         <div class="link-text">Home</div>
                         <div class="link-cover"></div>
                     </a>
-                    <a href="about.html" class="nav-link w-inline-block">
+                    <a href="{{ route('landing-page.about') }}" class="nav-link w-inline-block">
                         <div class="link-text">About</div>
                         <div class="link-cover"></div>
                     </a>
