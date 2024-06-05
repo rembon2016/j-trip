@@ -17,7 +17,8 @@ class UserSeeder extends Seeder
         User::create([
             'email' => 'admin@j-trip.id',
             'password' => Hash::make('password'),
-            'name' => 'Super Admin J-Trip'
+            'name' => 'Super Admin J-Trip',
+            'email_verified_at' => now()
         ]);
     }
 }
