@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LandingPage\BlogController;
 use App\Http\Controllers\LandingPage\PageController;
 
 /*
@@ -20,4 +21,12 @@ Route::group([
     Route::get('/', [PageController::class, 'home'])->name('home');
     Route::get('/about', [PageController::class, 'about'])->name('about');
     Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+
+    Route::group([
+        'prefix' => 'blog',
+        'as' => 'blog.'
+    ], function () {
+        Route::get('/', [BlogController::class, 'index'])->name('index');
+        Route::get('/detail/{id}', [BlogController::class, 'detail'])->name('detail');
+    });
 });

@@ -152,7 +152,7 @@
                         <div class="link-text">Tours</div>
                         <div class="link-cover"></div>
                     </a>
-                    <a href="blog.html" class="nav-link w-inline-block">
+                    <a href="{{ route('landing-page.blog.index') }}" class="nav-link w-inline-block">
                         <div class="link-text">Blog</div>
                         <div class="link-cover"></div>
                     </a>
