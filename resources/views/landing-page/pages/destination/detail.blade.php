@@ -2,22 +2,6 @@
 @section('title', 'Detail Destination')
 
 @section('content')
-
-<div bind="9b3d0861-357f-c367-a479-19a8e9fb326d" class="scroll-indicator">
-    <div id="w-node-_9b3d0861-357f-c367-a479-19a8e9fb326e-e9fb326d" class="indicator-wrapper">
-        <div data-w-id="9b3d0861-357f-c367-a479-19a8e9fb326f" class="indicator-fill">
-            <div class="indicator"></div>
-        </div>
-    </div>
-    <div id="w-node-c731b8b6-3cab-0aea-30b7-7d5eb055e15c-e9fb326d" class="social-sidebar-icons">
-        <a href="https://webflow.com" target="_blank" class="sidebar-icon w-inline-block"><img
-                src="{{ asset('assets/landing-page/images/covilla-instagram.svg') }}" loading="lazy" alt=""></a>
-        <a href="https://webflow.com" target="_blank" class="sidebar-icon w-inline-block"><img
-                src="{{ asset('assets/landing-page/images/covilla-facebook-f.svg') }}" loading="lazy" alt=""></a>
-        <a href="https://webflow.com" target="_blank" class="sidebar-icon w-inline-block"><img
-                src="{{ asset('assets/landing-page/images/icons8-whatsapp-2.svg') }}" loading="lazy" alt=""></a>
-    </div>
-</div>
 <div class="vacations-section">
     <div class="grid-wrapper">
         <div id="w-node-_2eba15a8-4071-27a1-1a68-7a1e83c7046a-1fc93e2a" class="vacations-dual-grid">
@@ -33,7 +17,7 @@
                                 <h1 bind="76f4b8c8-b383-01e0-8c5a-b7d3465c79dc"></h1>
                             </div>
                             <a bind="4a8b5a0d-1a67-05ea-1df9-edc44a8554fc"
-                                id="w-node-_4a8b5a0d-1a67-05ea-1df9-edc44a8554fc-1fc93e2a" href="#"
+                                id="w-node-_4a8b5a0d-1a67-05ea-1df9-edc44a8554fc-1fc93e2a" href="{{ route('landing-page.tour.detail', 'tes') }}"
                                 class="button white w-inline-block">
                                 <div>View Tour</div>
                             </a>
@@ -131,7 +115,7 @@
                                             <div bind="fe51a2d6-e097-ff27-8b12-0270e26fb2a4"></div>
                                         </div>
                                         <a bind="fe51a2d6-e097-ff27-8b12-0270e26fb2a6"
-                                            id="w-node-fe51a2d6-e097-ff27-8b12-0270e26fb2a6-1fc93e2a" href="#"
+                                            id="w-node-fe51a2d6-e097-ff27-8b12-0270e26fb2a6-1fc93e2a" href="{{ route('landing-page.tour.detail', 'tes') }}"
                                             class="outline-button small w-inline-block">
                                             <div>Details</div>
                                         </a>
@@ -152,7 +136,7 @@
                         <div bind="f66bb280-a82c-37ec-d2bd-18018f952dcb" role="list"
                             class="locations-wrapper w-dyn-items">
                             <div bind="f66bb280-a82c-37ec-d2bd-18018f952dcc" role="listitem" class="w-dyn-item">
-                                <a bind="316c2703-518a-5fa6-a7d6-86e4d7f24e5e" href="#"
+                                <a bind="316c2703-518a-5fa6-a7d6-86e4d7f24e5e" href="{{ route('landing-page.tour.detail', 'tes') }}"
                                     class="location-card w-inline-block">
                                     <div class="location-name">
                                         <h4 bind="316c2703-518a-5fa6-a7d6-86e4d7f24e60"></h4>

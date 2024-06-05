@@ -30,8 +30,13 @@
         {{-- Preloader --}}
         @include('landing-page.components.loader-top')
 
+        {{-- Scroll Indicator --}}
+        @include('landing-page.components.scroll-indicator')
+
+        {{-- Navbar --}}
         @include('landing-page.components.navbar')
 
+        {{-- Content --}}
         @yield('content')
 
         {{-- Preloader Bottom --}}
