@@ -2,6 +2,22 @@
 @section('title', 'Home')
 
 @section('content')
+<div bind="9b3d0861-357f-c367-a479-19a8e9fb326d" class="scroll-indicator">
+    <div id="w-node-_9b3d0861-357f-c367-a479-19a8e9fb326e-e9fb326d" class="indicator-wrapper">
+        <div data-w-id="9b3d0861-357f-c367-a479-19a8e9fb326f" class="indicator-fill">
+            <div class="indicator"></div>
+        </div>
+    </div>
+    <div id="w-node-c731b8b6-3cab-0aea-30b7-7d5eb055e15c-e9fb326d" class="social-sidebar-icons">
+        <a href="https://webflow.com" target="_blank" class="sidebar-icon w-inline-block"><img
+                src="{{ asset('assets/landing-page/images/covilla-instagram.svg') }}" loading="lazy" alt=""></a>
+        <a href="https://webflow.com" target="_blank" class="sidebar-icon w-inline-block"><img
+                src="{{ asset('assets/landing-page/images/covilla-facebook-f.svg') }}" loading="lazy" alt=""></a>
+        <a href="https://webflow.com" target="_blank" class="sidebar-icon w-inline-block"><img
+                src="{{ asset('assets/landing-page/images/icons8-whatsapp-2.svg') }}" loading="lazy" alt=""></a>
+    </div>
+</div>
+
 <div style="display:none" class="hero-video-popup">
     <div data-w-id="2e863ef6-e482-6b96-bc88-10737fc02bf5" style="background-color:rgba(15,19,38,0)" class="flyout-overlay"></div>
     <div style="-webkit-transform:translate3d(0, 80px, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 3deg);-moz-transform:translate3d(0, 80px, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 3deg);-ms-transform:translate3d(0, 80px, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 3deg);transform:translate3d(0, 80px, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 3deg);opacity:0" class="hero-video-wrapper">
@@ -373,7 +389,7 @@
                         <div bind="a1d57eeb-26af-5680-c657-f8f3b5deaab6" class="w-dyn-list">
                             <div bind="a1d57eeb-26af-5680-c657-f8f3b5deaab7" role="list" class="w-dyn-items">
                                 <div bind="a1d57eeb-26af-5680-c657-f8f3b5deaab8" role="listitem" class="w-dyn-item">
-                                    <a bind="95ff51c3-76bc-6d43-84ac-ac2021202aad" href="#" class="location-card-wrapper w-inline-block">
+                                    <a bind="95ff51c3-76bc-6d43-84ac-ac2021202aad" href="{{ route('landing-page.destination.detail', 'tes') }}" class="location-card-wrapper w-inline-block">
                                         <div class="location-image-wrapper">
                                             <div bind="95ff51c3-76bc-6d43-84ac-ac2021202aae" class="location-image">
                                                 <div class="background-load-top grey"></div>
@@ -402,7 +418,7 @@
                         <div bind="b1d50b6f-bddf-013e-c1d5-9a060c9ad026" class="w-dyn-list">
                             <div bind="b1d50b6f-bddf-013e-c1d5-9a060c9ad027" role="list" class="w-dyn-items">
                                 <div bind="b1d50b6f-bddf-013e-c1d5-9a060c9ad028" role="listitem" class="w-dyn-item">
-                                    <a bind="b1d50b6f-bddf-013e-c1d5-9a060c9ad029" href="#" class="location-card-wrapper w-inline-block">
+                                    <a bind="b1d50b6f-bddf-013e-c1d5-9a060c9ad029" href="{{ route('landing-page.destination.detail', 'tes') }}" class="location-card-wrapper w-inline-block">
                                         <div class="location-image-wrapper">
                                             <div bind="b1d50b6f-bddf-013e-c1d5-9a060c9ad02b" class="location-image">
                                                 <div class="background-load-bottom grey"></div>
@@ -431,7 +447,7 @@
                         <div bind="8eb9e19c-cf84-cb15-4640-2a43498e05f7" class="w-dyn-list">
                             <div bind="8eb9e19c-cf84-cb15-4640-2a43498e05f8" role="list" class="w-dyn-items">
                                 <div bind="8eb9e19c-cf84-cb15-4640-2a43498e05f9" role="listitem" class="w-dyn-item">
-                                    <a bind="8eb9e19c-cf84-cb15-4640-2a43498e05fa" href="#" class="location-card-wrapper w-inline-block">
+                                    <a bind="8eb9e19c-cf84-cb15-4640-2a43498e05fa" href="{{ route('landing-page.destination.detail', 'tes') }}" class="location-card-wrapper w-inline-block">
                                         <div class="location-image-wrapper">
                                             <div class="background-load-top grey"></div>
                                             <div class="background-load-bottom grey"></div>
@@ -460,7 +476,7 @@
                         <div bind="27196b6a-53dd-d360-4c77-4e88f6891243" class="w-dyn-list">
                             <div bind="27196b6a-53dd-d360-4c77-4e88f6891244" role="list" class="w-dyn-items">
                                 <div bind="27196b6a-53dd-d360-4c77-4e88f6891245" role="listitem" class="w-dyn-item">
-                                    <a bind="27196b6a-53dd-d360-4c77-4e88f6891246" href="#" class="location-card-wrapper w-inline-block">
+                                    <a bind="27196b6a-53dd-d360-4c77-4e88f6891246" href="{{ route('landing-page.destination.detail', 'tes') }}" class="location-card-wrapper w-inline-block">
                                         <div class="location-image-wrapper">
                                             <div class="background-load-bottom grey"></div>
                                             <div class="background-load-top grey"></div>

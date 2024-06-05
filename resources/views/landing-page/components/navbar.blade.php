@@ -144,7 +144,7 @@
                         <div class="link-text">About</div>
                         <div class="link-cover"></div>
                     </a>
-                    <a href="{{ route('landing-page.contact') }}" class="nav-link w-inline-block">
+                    <a href="{{ route('landing-page.destination.index') }}" class="nav-link w-inline-block">
                         <div class="link-text">Destination</div>
                         <div class="link-cover"></div>
                     </a>

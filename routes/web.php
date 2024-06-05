@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingPage\BlogController;
 use App\Http\Controllers\LandingPage\PageController;
+use App\Http\Controllers\LandingPage\DestinationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +29,13 @@ Route::group([
     ], function () {
         Route::get('/', [BlogController::class, 'index'])->name('index');
         Route::get('/detail/{id}', [BlogController::class, 'detail'])->name('detail');
+    });
+
+    Route::group([
+        'prefix' => 'destination',
+        'as' => 'destination.'
+    ], function () {
+        Route::get('/', [DestinationController::class, 'index'])->name('index');
+        Route::get('/detail/{id}', [DestinationController::class, 'detail'])->name('detail');
     });
 });
