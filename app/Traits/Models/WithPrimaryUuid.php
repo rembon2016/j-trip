@@ -10,8 +10,9 @@ trait WithPrimaryUuid
     public function __construct()
     {
         $this->keyType = 'string';
+        $this->incrementing = false;
     }
-    
+
     /**
      * Override Boot Method from Model Class.
      * 
@@ -33,5 +34,10 @@ trait WithPrimaryUuid
     public function getKeyType()
     {
         return 'string';
+    }
+
+    public function getIncerementing()
+    {
+        return false;
     }
 }
