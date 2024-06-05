@@ -5,7 +5,7 @@ namespace App\Traits\Models;
 use Illuminate\Support\Str;
 
 
-trait WithUuid
+trait WithPrimaryUuid
 {
     /**
      * Override Boot Method from Model Class.
@@ -18,10 +18,15 @@ trait WithUuid
 
         static::creating(function ($model) {
             try {
-                $model->uuid = Str::uuid();
+                $model->id = Str::uuid();
             } catch (\Throwable $e) {
                 abort(500, $e->getMessage());
             }
         });
+    }
+
+    public function getKeyType()
+    {
+        return 'string';
     }
 }
