@@ -58,7 +58,7 @@
                                 bisa menjadi inspirasi bagi kita semua.<br>‍</div>
                         </div>
                     </div>
-                    <a id="w-node-ac3990dc-2eec-4ade-30bc-298d8b8dae4c-1fc93e20" href="contact.html"
+                    <a id="w-node-ac3990dc-2eec-4ade-30bc-298d8b8dae4c-1fc93e20" href="{{ route('landing-page.contact') }}"
                         class="button w-inline-block">
                         <div>Contact us</div>
                     </a>
@@ -111,124 +111,7 @@
         </div>
     </div>
 </div>
-<figure id="contact" class="section no-top-padding contact">
-    <div class="grid-wrapper">
-        <div id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518a75-1fc93e20" class="about-us-intro">
-            <div id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518a76-1fc93e20" class="subtitle contact">Fill out the
-                form below</div>
-            <div class="contact-form-wrapper">
-                <div bind="1cb00ea4-a580-dc93-59dd-7be3df518a79" class="form-block w-form">
-                    <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form"
-                        data-wf-page-id="65af9bd818d9ae9f1fc93e20"
-                        data-wf-element-id="1cb00ea4-a580-dc93-59dd-7be3df518a7a">
-                        <div class="contact-fields">
-                            <div class="contact-field-wrapper"><label for="name"
-                                    id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518a7d-1fc93e20"
-                                    class="field-label">Name</label><input class="text-field w-input"
-                                    maxlength="256" name="name" data-name="Name" placeholder="First name"
-                                    type="text" id="name"><input class="text-field w-input" maxlength="256"
-                                    name="name-2" data-name="Name 2" placeholder="Last name" type="text"
-                                    id="name-2"></div>
-                            <div class="contact-field-wrapper"><label for="name"
-                                    id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518a82-1fc93e20"
-                                    class="field-label">Email</label><input
-                                    class="text-field w-node-_1cb00ea4-a580-dc93-59dd-7be3df518a84-1fc93e20 w-input"
-                                    maxlength="256" name="name-3" data-name="Name 3" placeholder="Your email"
-                                    type="text" id="name-3"></div>
-                            <div class="contact-field-wrapper"><label for="Phone-number"
-                                    id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518a86-1fc93e20"
-                                    class="field-label">Phone</label><input
-                                    class="text-field w-node-_1cb00ea4-a580-dc93-59dd-7be3df518a88-1fc93e20 w-input"
-                                    maxlength="256" name="Phone-number" data-name="Phone Number"
-                                    placeholder="08xx-xxxx-xxxx" type="tel" id="Phone-number"></div>
-                            <div class="contact-field-wrapper"><label for="field"
-                                    id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518a8a-1fc93e20"
-                                    class="field-label">Jumlah Peserta</label><select id="field" name="field"
-                                    data-name="Field"
-                                    class="text-field w-node-_1cb00ea4-a580-dc93-59dd-7be3df518a8c-1fc93e20 w-select">
-                                    <option value="kurang dari 5">Dibawah 5 Orang</option>
-                                    <option value="lebih dari 5 orang">Diatas 5 orang</option>
-                                    <option value="diatas 10 orang">Diatas 10 Orang</option>
-                                </select></div>
-                            <div class="contact-field-wrapper"><label for="field"
-                                    id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518a8e-1fc93e20"
-                                    class="field-label">Pilih Produk</label><select id="field-2" name="field-2"
-                                    data-name="Field 2"
-                                    class="text-field w-node-_1cb00ea4-a580-dc93-59dd-7be3df518a90-1fc93e20 w-select">
-                                    <option value="Private tour">Private Tour</option>
-                                    <option value="lebih dari 5 orang">One Day Private Tour</option>
-                                </select></div>
-                            <div class="contact-field-wrapper"><label for="field"
-                                    id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518a92-1fc93e20"
-                                    class="field-label">Bulan Keberangkatan</label><select id="field-2"
-                                    name="field-2" data-name="Field 2"
-                                    class="text-field w-node-_1cb00ea4-a580-dc93-59dd-7be3df518a94-1fc93e20 w-select">
-                                    <option value="April">April</option>
-                                    <option value="Mei">Mei</option>
-                                    <option value="Juni">Juni</option>
-                                    <option value="Juli">Juli</option>
-                                    <option value="Agustus">Agustus</option>
-                                    <option value="September">September</option>
-                                    <option value="Oktober">Oktober</option>
-                                    <option value="November">November</option>
-                                    <option value="Desember">Desember</option>
-                                    <option value="Januari">Januari</option>
-                                    <option value="Februari">Februari</option>
-                                    <option value="Maret">Maret</option>
-                                </select></div>
-                            <div class="contact-field-wrapper"><label for="Message"
-                                    id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518a96-1fc93e20"
-                                    class="field-label">Message</label><textarea placeholder="Your message"
-                                    maxlength="5000" id="Message" name="Message" data-name="Message"
-                                    class="text-field large w-node-_1cb00ea4-a580-dc93-59dd-7be3df518a98-1fc93e20 w-input"></textarea>
-                            </div>
-                        </div><input type="submit" data-wait="Please wait..."
-                            id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518a99-1fc93e20"
-                            class="submit-button w-button" value="Kirim Permintaan">
-                    </form>
-                    <div class="success-message w-form-done">
-                        <div class="success-message-content">
-                            <h3>Thank you!</h3>
-                            <div>Your message has been received.</div>
-                        </div>
-                    </div>
-                    <div class="error-state w-form-fail">
-                        <div>Oops! Something went wrong while submitting the form.</div>
-                    </div>
-                </div>
-                <div id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518aa3-1fc93e20" class="contact-quick-links">
-                    <div class="quick-links">
-                        <div id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518aa5-1fc93e20"
-                            class="subtitle-intro-wrapper">
-                            <div id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518aa6-1fc93e20" class="subtitle">Quick
-                                links</div>
-                            <div id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518aa8-1fc93e20" class="horizontal-line">
-                            </div>
-                        </div>
-                        <div class="quick-link-list">
-                            <a href="https://wa.me/6285929920505" target="_blank"
-                                class="quick-link-item w-inline-block">
-                                <div id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518aab-1fc93e20">Whatsapp Us</div>
-                                <img src="{{ asset('assets/landing-page/images/icons8-whatsapp.svg') }}" loading="lazy" width="25"
-                                    id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518aad-1fc93e20" alt="">
-                            </a>
-                            <a href="mailto:info@japanect.com" class="quick-link-item w-inline-block">
-                                <div id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518aaf-1fc93e20">info@japanect.com
-                                </div>
-                                <div id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518ab1-1fc93e20"
-                                    class="card-arrow-icon dark"><img src="{{ asset("assets/landing-page/images/arrowhead-right-icon-dark001.svg") }}"
-                                        loading="lazy" alt="" class="vacation-card-arrow"></div>
-                            </a>
-                            <a href="tel:+622129959845" class="quick-link-item w-inline-block">
-                                <div id="w-node-_1cb00ea4-a580-dc93-59dd-7be3df518ab4-1fc93e20">021-2995-9845</div>
-                                <div class="card-arrow-icon dark"><img src="{{ asset("assets/landing-page/images/arrowhead-right-icon-dark001.svg") }}"
-                                        loading="lazy" alt="" class="vacation-card-arrow"></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</figure>
+
+@include('landing-page.components.contact-form')
+
 @endsection

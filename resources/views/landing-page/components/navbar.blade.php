@@ -144,11 +144,11 @@
                         <div class="link-text">About</div>
                         <div class="link-cover"></div>
                     </a>
-                    <a href="contact.html" class="nav-link w-inline-block">
+                    <a href="{{ route('landing-page.contact') }}" class="nav-link w-inline-block">
                         <div class="link-text">Destination</div>
                         <div class="link-cover"></div>
                     </a>
-                    <a href="contact.html" class="nav-link w-inline-block">
+                    <a href="{{ route('landing-page.contact') }}" class="nav-link w-inline-block">
                         <div class="link-text">Tours</div>
                         <div class="link-cover"></div>
                     </a>
@@ -156,7 +156,7 @@
                         <div class="link-text">Blog</div>
                         <div class="link-cover"></div>
                     </a>
-                    <a href="contact.html" class="nav-link w-inline-block">
+                    <a href="{{ route('landing-page.contact') }}" class="nav-link w-inline-block">
                         <div class="link-text">Contact</div>
                         <div class="link-cover"></div>
                     </a>
