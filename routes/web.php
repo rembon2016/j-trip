@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LandingPage\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::group([
     'as' => 'landing-page.'
 ], function () {
-    Route::get('/', function () {
-        return view('welcome');
-    })->name('home');
+    Route::get('/', [PageController::class, 'home'])->name('home');
 });
