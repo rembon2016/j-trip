@@ -2,7 +2,7 @@
 
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="{{ route('home') }}" class="app-brand-link">
+        <a href="{{ route('landing-page.home') }}" class="app-brand-link">
         <span class="app-brand-logo demo">
             <svg
             width="25"
@@ -68,14 +68,14 @@
             <span class="menu-header-text">Dashboard</span>
         </li>
 
-        <li class="menu-item @if(Route::is('dashboard.index')) active @endif">
-            <a href="{{ route('home') }}" class="menu-link">
+        <li class="menu-item @if(Route::is('admin.dashboard.index')) active @endif">
+            <a href="{{ route('admin.dashboard.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-grid-alt"></i>
                 <div data-i18n="Dashboard">Dashboard</div>
             </a>
         </li>
 
-        <li class="menu-header small text-uppercase">
+        {{-- <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Master Data</span>
         </li>
         
@@ -202,7 +202,7 @@
                     <div data-i18n="Layanan Pelanggan">Layanan Pelanggan</div>
                 </a>
             </li>
-        @endrole
+        @endrole --}}
     </ul>
 </aside>
 <!-- / Menu -->
