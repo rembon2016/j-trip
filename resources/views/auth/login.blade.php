@@ -37,11 +37,15 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/admin/img/favicon/favicon.ico') }}" />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    {{-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet" /> --}}
 
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/fonts/boxicons.css') }}" />
 
@@ -83,9 +87,10 @@
                 <div class="card">
                     <div class="card-body">
                         <!-- Logo -->
-                        <div class="app-brand justify-content-center">
+                        <div class="app-brand justify-content-center mt-3 mb-4">
                             <a href="{{ route('landing-page.home') }}" class="app-brand-link gap-2">
-                                <span class="app-brand-logo demo">
+                                <img src="{{ asset('assets/landing-page/images/J-Tripロゴ.svg') }}" width="85" alt="">
+                                {{-- <span class="app-brand-logo demo">
                                     <svg
                                         width="25"
                                         viewBox="0 0 25 42"
@@ -134,7 +139,7 @@
                                         </g>
                                     </svg>
                                 </span>
-                                <span class="app-brand-text demo text-body fw-bold">{{ config('app.name') }}</span>
+                                <span class="app-brand-text demo text-body fw-bold">{{ config('app.name') }}</span> --}}
                             </a>
                         </div>
                         <!-- /Logo -->
