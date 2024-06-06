@@ -37,10 +37,17 @@
             <span class="menu-header-text">Content</span>
         </li>
 
-        <li class="menu-item @if(Route::is('admin.blog.index')) active @endif">
+        <li class="menu-item @if(Route::is('admin.blog.*')) active @endif">
             <a href="{{ route('admin.blog.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bxs-news"></i>
                 <div data-i18n="Blog">Blog</div>
+            </a>
+        </li>
+
+        <li class="menu-item @if(Route::is('admin.gallery.*')) active @endif">
+            <a href="{{ route('admin.gallery.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-images"></i>
+                <div data-i18n="Galeri">Galeri</div>
             </a>
         </li>
         
