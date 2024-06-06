@@ -142,10 +142,7 @@ $(document).ready(function () {
         oLanguage: {
             sEmptyTable: "Tidak ada data yang tersedia pada tabel ini",
         },
-        language: {
-            url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/id.json',
-        },
-        pageLength: 25,
+        pageLength: 10,
         scrollX: true,
     });
 

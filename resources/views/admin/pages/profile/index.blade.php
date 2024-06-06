@@ -2,6 +2,16 @@
 @section('title', 'Profil Saya')
 
 @section('content')
+{{-- Breadcrumb --}}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb ms-3 mb-4">
+        <li class="breadcrumb-item">
+            <a href="{{ route('admin.dashboard.index') }}">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Profil Saya</li>
+    </ol>
+</nav>
+
 <div class="row">
     <div class="col-12">
         <div class="card mb-4">

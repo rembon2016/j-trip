@@ -7,12 +7,6 @@ use Illuminate\Support\Str;
 
 trait WithPrimaryUuid
 {
-    public function __construct()
-    {
-        $this->keyType = 'string';
-        $this->incrementing = false;
-    }
-
     /**
      * Override Boot Method from Model Class.
      * 

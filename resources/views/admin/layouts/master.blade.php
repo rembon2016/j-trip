@@ -34,7 +34,8 @@
     <meta name="twitter:description" content="Jtrip - Mobil, Guide, Tur, dan Segala Keperluan pergi ke Jepang">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/admin/img/favicon/favicon.ico') }}" />
+    <link href="{{ asset('assets/landing-page/images/favicon.jpg') }}" rel="shortcut icon" type="image/x-icon">
+    <link href="{{ asset('assets/landing-page/images/webclip.jpg') }}" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,10 +63,11 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/iziToast/css/iziToast.min.css') }}">
 
     {{-- Datatables CSS --}}
-    <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/datatables/datatables.css') }}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/datatables/datatables.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/datatables/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/datatables/checkbox.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/datatables/button.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/datatables/button.css') }}"> --}}
     
     {{-- Select2 CSS --}}
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/select2/css/select2.min.css') }}">
@@ -139,7 +141,8 @@
     <!-- Vendors JS -->
     <script src="{{ asset('assets/admin/vendor/libs/apex-charts/apexcharts.js') }}"></script>
     <script src="{{ asset('assets/admin/vendor/libs/iziToast/js/iziToast.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/libs/datatables/datatables.js') }}"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    {{-- <script src="{{ asset('assets/admin/vendor/libs/datatables/datatables.js') }}"></script> --}}
     <script src="{{ asset('assets/admin/vendor/libs/chartjs/chartjs.js') }}"></script>
     <script src="{{ asset('assets/admin/vendor/libs/chartjs/charts-chartjs.js') }}"></script>
 
