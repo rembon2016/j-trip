@@ -47,3 +47,7 @@ Route::group([
         Route::get('/detail/{id}', [TourController::class, 'detail'])->name('detail');
     });
 });
+
+// Auth Route
+include_once __DIR__ . '/auth.php';
+include_once __DIR__ . '/admin.php';
