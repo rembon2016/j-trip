@@ -25,5 +25,6 @@ Route::group([
         'as' => 'profile.'
     ], function () {
         Route::get('/', [ProfileController::class, 'index'])->name('index');
+        Route::post('/', [ProfileController::class, 'store'])->name('update');
     });
 });
