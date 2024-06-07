@@ -76,6 +76,13 @@
                 <div data-i18n="Galeri">Galeri</div>
             </a>
         </li>
+
+        <li class="menu-item @if(Route::is('admin.testimonial.*')) active @endif">
+            <a href="{{ route('admin.testimonial.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-message-dots"></i>
+                <div data-i18n="Testimoni">Testimoni</div>
+            </a>
+        </li>
         
         {{-- 
         @role('admin')

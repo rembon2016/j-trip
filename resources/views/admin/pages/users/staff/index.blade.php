@@ -45,7 +45,11 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->phone ?? '-' }}</td>
-                        <td>{{ $item->address ?? '-' }}</td>
+                        <td>
+                            <span title="{{ $item->address }}">
+                                {{ \Illuminate\Support\Str::limit($item->address ?? '-', 50, '...') }}
+                            </span>
+                        </td>
                         <td>{{ $item->created_at?->translatedFormat('d F Y H:i:s') }}</td>
                         <td>
                             <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">

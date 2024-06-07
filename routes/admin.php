@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Content\BlogController;
+use App\Http\Controllers\Admin\Content\BlogController;
 use App\Http\Controllers\Admin\Users\StaffController;
 use App\Http\Controllers\Admin\Content\GalleryController;
 use App\Http\Controllers\Admin\Profile\ProfileController;
 use App\Http\Controllers\Admin\Utilities\CkeditorController;
+use App\Http\Controllers\Admin\Content\TestimonialController;
 use App\Http\Controllers\Admin\Dashboard\DashboardController;
 use App\Http\Controllers\Admin\Users\AdministratorController;
 
@@ -35,30 +36,6 @@ Route::group([
     });
 
     Route::group([
-        'prefix' => 'blog',
-        'as' => 'blog.'
-    ], function () {
-        Route::get('/', [BlogController::class, 'index'])->name('index');
-        Route::get('/create', [BlogController::class, 'create'])->name('create');
-        Route::post('/', [BlogController::class, 'store'])->name('store');
-        Route::get('/edit/{id}', [BlogController::class, 'edit'])->name('edit');
-        Route::put('/update/{id}', [BlogController::class, 'update'])->name('update');
-        Route::delete('/delete/{id}', [BlogController::class, 'delete'])->name('delete');
-    });
-
-    Route::group([
-        'prefix' => 'gallery',
-        'as' => 'gallery.'
-    ], function () {
-        Route::get('/', [GalleryController::class, 'index'])->name('index');
-        Route::get('/create', [GalleryController::class, 'create'])->name('create');
-        Route::post('/', [GalleryController::class, 'store'])->name('store');
-        Route::get('/edit/{id}', [GalleryController::class, 'edit'])->name('edit');
-        Route::put('/update/{id}', [GalleryController::class, 'update'])->name('update');
-        Route::delete('/delete/{id}', [GalleryController::class, 'delete'])->name('delete');
-    });
-
-    Route::group([
         'prefix' => 'users',
         'as' => 'users.'
     ], function () {
@@ -85,5 +62,41 @@ Route::group([
             Route::put('/update/{id}', [StaffController::class, 'update'])->name('update');
             Route::delete('/delete/{id}', [StaffController::class, 'delete'])->name('delete');
         });
+    });
+
+    Route::group([
+        'prefix' => 'blog',
+        'as' => 'blog.'
+    ], function () {
+        Route::get('/', [BlogController::class, 'index'])->name('index');
+        Route::get('/create', [BlogController::class, 'create'])->name('create');
+        Route::post('/', [BlogController::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [BlogController::class, 'edit'])->name('edit');
+        Route::put('/update/{id}', [BlogController::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [BlogController::class, 'delete'])->name('delete');
+    });
+
+    Route::group([
+        'prefix' => 'gallery',
+        'as' => 'gallery.'
+    ], function () {
+        Route::get('/', [GalleryController::class, 'index'])->name('index');
+        Route::get('/create', [GalleryController::class, 'create'])->name('create');
+        Route::post('/', [GalleryController::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [GalleryController::class, 'edit'])->name('edit');
+        Route::put('/update/{id}', [GalleryController::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [GalleryController::class, 'delete'])->name('delete');
+    });
+
+    Route::group([
+        'prefix' => 'testimonial',
+        'as' => 'testimonial.'
+    ], function () {
+        Route::get('/', [TestimonialController::class, 'index'])->name('index');
+        Route::get('/create', [TestimonialController::class, 'create'])->name('create');
+        Route::post('/', [TestimonialController::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [TestimonialController::class, 'edit'])->name('edit');
+        Route::put('/update/{id}', [TestimonialController::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [TestimonialController::class, 'delete'])->name('delete');
     });
 });

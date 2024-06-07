@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Content;
+namespace App\Http\Controllers\Admin\Content;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
