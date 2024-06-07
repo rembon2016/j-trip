@@ -34,6 +34,32 @@
         </li>
 
         <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Master Data</span>
+        </li>
+
+        <!-- Users -->
+        <li class="menu-item @if(Route::is('admin.users.*')) active open @endif">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-group"></i>
+                <div data-i18n="Users">Users</div>
+            </a>
+
+            <ul class="menu-sub">
+                <li class="menu-item @if(Route::is(('admin.users.administrator.*'))) active @endif">
+                    <a href="{{ route('admin.users.administrator.index') }}" class="menu-link">
+                        <div data-i18n="Administrator">Administrator</div>
+                    </a>
+                </li>
+
+                <li class="menu-item @if(Route::is(('admin.users.staff.*'))) active @endif">
+                    <a href="{{ route('admin.users.staff.index') }}" class="menu-link">
+                        <div data-i18n="Staff">Staff</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Content</span>
         </li>
 

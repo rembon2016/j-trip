@@ -119,18 +119,19 @@ $(document).ready(function () {
     // Toggle Password
     $(".see-password").off('click').on('click', function (event) {
         event.preventDefault();
+        const target = $(this).data('target');
         
         $(this).parent().toggleClass('show');
         if ($(this).parent().hasClass('show')) {
             $(this).children('i').removeClass('bx-hide');
             $(this).children('i').addClass('bx-show');
 
-            $(this).parent().children('input[type="password"]').attr('type', 'text');
+            $(this).parent().find(target).attr('type', 'text');
         } else {
             $(this).children('i').removeClass('bx-show');
             $(this).children('i').addClass('bx-hide');
 
-            $(this).parent().children('input[type="text"]').attr('type', 'password');
+            $(this).parent().find(target).attr('type', 'password');
         }
     })
 

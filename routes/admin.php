@@ -2,10 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Content\BlogController;
+use App\Http\Controllers\Admin\Users\StaffController;
 use App\Http\Controllers\Admin\Content\GalleryController;
 use App\Http\Controllers\Admin\Profile\ProfileController;
 use App\Http\Controllers\Admin\Utilities\CkeditorController;
 use App\Http\Controllers\Admin\Dashboard\DashboardController;
+use App\Http\Controllers\Admin\Users\AdministratorController;
 
 Route::group([
     'prefix' => 'admin',
@@ -54,5 +56,34 @@ Route::group([
         Route::get('/edit/{id}', [GalleryController::class, 'edit'])->name('edit');
         Route::put('/update/{id}', [GalleryController::class, 'update'])->name('update');
         Route::delete('/delete/{id}', [GalleryController::class, 'delete'])->name('delete');
+    });
+
+    Route::group([
+        'prefix' => 'users',
+        'as' => 'users.'
+    ], function () {
+        Route::group([
+            'prefix' => 'administrator',
+            'as' => 'administrator.'
+        ], function () {
+            Route::get('/', [AdministratorController::class, 'index'])->name('index');
+            Route::get('/create', [AdministratorController::class, 'create'])->name('create');
+            Route::post('/', [AdministratorController::class, 'store'])->name('store');
+            Route::get('/edit/{id}', [AdministratorController::class, 'edit'])->name('edit');
+            Route::put('/update/{id}', [AdministratorController::class, 'update'])->name('update');
+            Route::delete('/delete/{id}', [AdministratorController::class, 'delete'])->name('delete');
+        });
+
+        Route::group([
+            'prefix' => 'staff',
+            'as' => 'staff.'
+        ], function () {
+            Route::get('/', [StaffController::class, 'index'])->name('index');
+            Route::get('/create', [StaffController::class, 'create'])->name('create');
+            Route::post('/', [StaffController::class, 'store'])->name('store');
+            Route::get('/edit/{id}', [StaffController::class, 'edit'])->name('edit');
+            Route::put('/update/{id}', [StaffController::class, 'update'])->name('update');
+            Route::delete('/delete/{id}', [StaffController::class, 'delete'])->name('delete');
+        });
     });
 });

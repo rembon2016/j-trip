@@ -134,7 +134,7 @@
                                         name="password"
                                         placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                                         aria-describedby="password" required />
-                                    <span class="input-group-text cursor-pointer see-password">
+                                    <span class="input-group-text cursor-pointer see-password" data-target="#password">
                                         <i class="bx bx-hide"></i>
                                     </span>
                                 </div>

@@ -20,7 +20,8 @@ class UserSeeder extends Seeder
             'email' => 'admin@jtrip.id',
             'password' => Hash::make('password'),
             'name' => 'Super Admin J-Trip',
-            'email_verified_at' => now()
+            'email_verified_at' => now(),
+            'role' => User::ADMIN_ROLE
         ]);
     }
 }

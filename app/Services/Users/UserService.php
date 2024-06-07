@@ -15,6 +15,8 @@ class UserService
     {
         return User::when(!empty($filters['is_active']) && $filters['is_active'] == true, function ($query) use ($filters) {
             $query->isActive();
+        })->when(!empty($filters['role']), function ($query) use ($filters) {
+            $query->where('role', $filters['role']);
         })->latest()->get();
     }
 
@@ -34,15 +36,13 @@ class UserService
             }
 
             $userDTO['password'] = Hash::make($userDTO['password']);
-            $userDTO['code'] = (new User)->generateUniqueCode(
-                $userDTO['role'] == User::ADMIN_ROLE ? User::ADMIN_PREFIX_CODE : User::USER_PREFIX_CODE
-            );
             $createdUser = User::create($userDTO);
 
             return ObjectResponse::success(
                 __('crud.created', ['name' => 'User']), 201, $createdUser
             );
         } catch (\Throwable $th) {
+            dd($th);
             return ObjectResponse::error(
                 __('crud.error_create', ['name' => 'User']), 500, $th->getMessage()
             );
