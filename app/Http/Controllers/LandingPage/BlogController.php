@@ -2,18 +2,27 @@
 
 namespace App\Http\Controllers\LandingPage;
 
-use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class BlogController extends Controller
 {
     public function index()
     {
-        return view('landing-page.pages.blog.index');
+        $popularBlogs = Blog::limit(3)->orderBy('total_visitor', 'DESC')->get();
+        $recentBlogs = Blog::latest()->paginate(1);
+
+        return view('landing-page.pages.blog.index', compact('popularBlogs', 'recentBlogs'));
     }
     
-    public function detail(string $id)
+    public function detail(string $slug)
     {
-        return view('landing-page.pages.blog.detail');
+        $data = Blog::where('slug', $slug)->first();
+        abort_if(is_null($data), 404);
+
+        $blogs = Blog::where('slug', '!=', $slug)->limit(5)->orderBy('total_visitor', 'DESC')->get();
+
+        return view('landing-page.pages.blog.detail', compact('data', 'blogs'));
     }
 }

@@ -1,5 +1,7 @@
 @extends('landing-page.layouts.master')
-@section('title', 'Detail Blog')
+@section('title')
+    {{ $data->title }}
+@endsection
 
 @section('content')
 
@@ -11,22 +13,22 @@
     </div>
     <div id="w-node-c731b8b6-3cab-0aea-30b7-7d5eb055e15c-e9fb326d" class="social-sidebar-icons">
         <a href="https://webflow.com" target="_blank" class="sidebar-icon w-inline-block"><img
-                src="images/covilla-instagram.svg" loading="lazy" alt=""></a>
+                src="{{ asset('assets/landing-page/images/covilla-instagram.svg') }}" loading="lazy" alt=""></a>
         <a href="https://webflow.com" target="_blank" class="sidebar-icon w-inline-block"><img
-                src="images/covilla-facebook-f.svg" loading="lazy" alt=""></a>
+                src="{{ asset('assets/landing-page/images/covilla-facebook-f.svg') }}" loading="lazy" alt=""></a>
         <a href="https://webflow.com" target="_blank" class="sidebar-icon w-inline-block"><img
-                src="images/icons8-whatsapp-2.svg" loading="lazy" alt=""></a>
+                src="{{ asset('assets/landing-page/images/icons8-whatsapp-2.svg') }}" loading="lazy" alt=""></a>
     </div>
 </div>
 <div class="inner-page-hero">
     <div class="grid-wrapper">
         <div id="w-node-ba64b070-9c69-4fd2-4515-5ce85630b360-1fc93e29" class="journal-hero"></div>
         <div id="w-node-c9b8eaa7-ab2f-1177-57f0-1744d914798f-1fc93e29" class="journal-intro">
-            <div bind="c9b8eaa7-ab2f-1177-57f0-1744d9147990" class="subtitle large"></div>
-            <h1 bind="c9b8eaa7-ab2f-1177-57f0-1744d9147992" class="xxl-heading"></h1>
+            <div bind="c9b8eaa7-ab2f-1177-57f0-1744d9147990" class="subtitle large">{{ $data->created_at?->translatedFormat('F d, Y') }}</div>
+            <h1 bind="c9b8eaa7-ab2f-1177-57f0-1744d9147992" class="xxl-heading">{{ $data->title  }}</h1>
         </div>
     </div>
-    <div bind="7c1a7a90-edea-ff29-a4ec-ff42b8bfe157" class="hero-background-image">
+    <div bind="7c1a7a90-edea-ff29-a4ec-ff42b8bfe157" class="hero-background-image" style="background-image: url('{{ $data->getImageURL() }}');">
         <div class="overlay dark"></div>
     </div>
 </div>
@@ -46,19 +48,20 @@
                 <div id="w-node-_819d4798-af5e-fef6-c3eb-c49fc5727489-1fc93e29" class="related-vacation-info">
                     <h3 bind="3772b6ce-9893-02f1-e75c-a067f2574def"></h3>
                     <div id="w-node-_30831fb5-55a7-cdc6-ef84-0dd55290f1b3-1fc93e29" class="featured-location-price">
-                        <div bind="ff23b3a2-0c47-4ecd-a034-c1ac803f3a37" class="subtitle">Starts From</div>
+                        <div bind="ff23b3a2-0c47-4ecd-a034-c1ac803f3a37" class="subtitle putih">Starts From</div>
                         <div class="price-grid">
                             <div bind="e7912a84-d31a-323a-6a10-c92422afdcdd" class="dolar-sign">Rp</div>
                             <div bind="2855cd57-cf28-36e7-b960-3c51d39943ab" class="subtitle"></div>
                         </div>
                     </div>
                     <div id="w-node-_782c3184-703d-8f2f-dccf-839b606e92ae-1fc93e29" class="related-vacation-arrow">
-                        <img src="images/arrowhead-right-icon-dark001.svg" loading="lazy" alt=""></div>
+                        <img src="{{ asset('assets/landing-page/images/arrowhead-right-icon-dark001.svg') }}" loading="lazy" alt=""></div>
                 </div>
             </a>
-            <div class="journal-content">
-                <div sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoRichTextToRichTextChildren&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;journal-body&quot;}}}}}"
-                    class="rich-text w-dyn-bind-empty w-richtext"></div>
+            <div class="journal-content blog-content">
+                {!! $data->description !!}
+                {{-- <div sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoRichTextToRichTextChildren&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;journal-body&quot;}}}}}"
+                    class="rich-text w-dyn-bind-empty w-richtext"></div> --}}
             </div>
         </div>
     </div>
@@ -87,7 +90,37 @@
     <div class="grid-wrapper">
         <div id="w-node-c1dcfdcd-e948-be5a-fc1d-5ac11b6fe59a-1fc93e29" class="featured-journal-wrapper full-width">
             <div bind="c1dcfdcd-e948-be5a-fc1d-5ac11b6fe59b" class="w-dyn-list">
-                <div bind="c1dcfdcd-e948-be5a-fc1d-5ac11b6fe59c" role="list" class="large-journal-list w-dyn-items">
+
+                @if ($blogs->count() > 0)
+                    <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bcd" role="list" class="large-journal-list w-dyn-items">
+                        <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bce" role="listitem" class="large-journal-item w-dyn-item">
+                            <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bcf" class="large-journal-post">
+                                <div class="large-journal-image">
+                                    <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd1" class="hero-background-image" style="background-image: url('{{ $blogs->first()->getImageURL() }}');"></div>
+                                </div>
+                                <div class="journal-post-info">
+                                    <div class="large-journal-content">
+                                        <div id="w-node-_2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd4-1fc93e1d" class="journal-category-tag">
+                                            <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd5">{{ $blogs->first()->created_at?->translatedFormat('F d, Y') }}</div>
+                                        </div>
+                                        <h2 bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd6">{{ $blogs->first()->title }}</h2>
+                                        <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd7" class="body-display">
+                                            {{-- {{ $blogs->first()->description }} --}}
+                                        </div>
+                                    </div>
+                                    <a bind="33e6d6c0-7e21-5986-07d7-5931a21eb67a" id="w-node-_33e6d6c0-7e21-5986-07d7-5931a21eb67a-1fc93e1d" href="{{ route('landing-page.blog.detail', $blogs->first()->slug) }}" class="outline-button small w-inline-block">
+                                        <div>Baca Selengkapnya</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd8" class="w-dyn-empty">
+                        <div>No items found.</div>
+                    </div>
+                @endif
+                {{-- <div bind="c1dcfdcd-e948-be5a-fc1d-5ac11b6fe59c" role="list" class="large-journal-list w-dyn-items">
                     <div bind="c1dcfdcd-e948-be5a-fc1d-5ac11b6fe59d" role="listitem"
                         class="large-journal-item w-dyn-item">
                         <div bind="c1dcfdcd-e948-be5a-fc1d-5ac11b6fe59e" class="large-journal-post">
@@ -115,7 +148,7 @@
                 </div>
                 <div bind="c1dcfdcd-e948-be5a-fc1d-5ac11b6fe5aa" class="w-dyn-empty">
                     <div>No items found.</div>
-                </div>
+                </div> --}}
             </div>
             <div class="journal-right-wrapper">
                 <div id="w-node-c1dcfdcd-e948-be5a-fc1d-5ac11b6fe5ae-1fc93e29" class="subtitle-intro-wrapper">
@@ -124,7 +157,34 @@
                     <div id="w-node-c1dcfdcd-e948-be5a-fc1d-5ac11b6fe5b1-1fc93e29" class="horizontal-line"></div>
                 </div>
                 <div bind="c1dcfdcd-e948-be5a-fc1d-5ac11b6fe5b2" class="w-dyn-list">
-                    <div bind="c1dcfdcd-e948-be5a-fc1d-5ac11b6fe5b3" role="list"
+                    @if ($blogs->count() > 1)
+                        @foreach ($blogs as $blog)
+                            @if ($loop->iteration != 1)
+                                <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be1" role="list" class="recent-journal-list w-dyn-items">
+                                    <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be2" role="listitem" class="w-dyn-item">
+                                        <a bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be3" href="{{ route('landing-page.blog.detail', $blog->slug) }}" class="journal-list-item w-inline-block">
+                                            <div class="journal-list-image">
+                                                <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be5" class="hero-background-image" style="background-image: url('{{ $blog->getImageURL() }}');"></div>
+                                            </div>
+                                            <div id="w-node-_2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be6-1fc93e1d" class="journal-list-item-content">
+                                                <div id="w-node-_2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be7-1fc93e1d" class="journal-category-tag">
+                                                    <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be8">{{ $blog->created_at?->translatedFormat('F d, Y') }}</div>
+                                                </div>
+                                                <div id="w-node-_2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be9-1fc93e1d" class="journal-list-info">
+                                                    <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bea">{{ $blog->title }}</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            @endif                            
+                        @endforeach
+                    @else
+                        <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9beb" class="w-dyn-empty">
+                            <div>No items found.</div>
+                        </div>
+                    @endif
+                    {{-- <div bind="c1dcfdcd-e948-be5a-fc1d-5ac11b6fe5b3" role="list"
                         class="recent-journal-list w-dyn-items">
                         <div bind="c1dcfdcd-e948-be5a-fc1d-5ac11b6fe5b4" role="listitem" class="w-dyn-item">
                             <a bind="c1dcfdcd-e948-be5a-fc1d-5ac11b6fe5b5" href="#"
@@ -149,7 +209,7 @@
                     </div>
                     <div bind="c1dcfdcd-e948-be5a-fc1d-5ac11b6fe5bd" class="w-dyn-empty">
                         <div>No items found.</div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

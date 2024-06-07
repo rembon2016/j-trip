@@ -386,7 +386,7 @@
                                             <div class="location-card-bottom">
                                                 <div id="w-node-_71cb5a78-86bf-9e29-4b8c-fa819c9cdb83-1fc93e1d" class="subtitle-dynamic-text">
                                                     <div bind="71cb5a78-86bf-9e29-4b8c-fa819c9cdb84" class="subtitle"></div>
-                                                    <div bind="71cb5a78-86bf-9e29-4b8c-fa819c9cdb85" class="subtitle">vacations</div>
+                                                    <div bind="71cb5a78-86bf-9e29-4b8c-fa819c9cdb85" class="subtitle putih">vacations</div>
                                                 </div>
                                                 <h2 bind="95ff51c3-76bc-6d43-84ac-ac2021202ab4"></h2>
                                             </div>
@@ -415,7 +415,7 @@
                                             <div class="location-card-bottom">
                                                 <div id="w-node-b1d50b6f-bddf-013e-c1d5-9a060c9ad02f-1fc93e1d" class="subtitle-dynamic-text">
                                                     <div bind="b1d50b6f-bddf-013e-c1d5-9a060c9ad030" class="subtitle"></div>
-                                                    <div bind="b1d50b6f-bddf-013e-c1d5-9a060c9ad031" class="subtitle">vacations</div>
+                                                    <div bind="b1d50b6f-bddf-013e-c1d5-9a060c9ad031" class="subtitle putih">vacations</div>
                                                 </div>
                                                 <h2 bind="b1d50b6f-bddf-013e-c1d5-9a060c9ad033"></h2>
                                             </div>
@@ -444,7 +444,7 @@
                                             <div class="location-card-bottom">
                                                 <div id="w-node-_8eb9e19c-cf84-cb15-4640-2a43498e0600-1fc93e1d" class="subtitle-dynamic-text">
                                                     <div bind="8eb9e19c-cf84-cb15-4640-2a43498e0601" class="subtitle"></div>
-                                                    <div bind="8eb9e19c-cf84-cb15-4640-2a43498e0602" class="subtitle">vacations</div>
+                                                    <div bind="8eb9e19c-cf84-cb15-4640-2a43498e0602" class="subtitle putih">vacations</div>
                                                 </div>
                                                 <h2 bind="8eb9e19c-cf84-cb15-4640-2a43498e0604"></h2>
                                             </div>
@@ -473,7 +473,7 @@
                                             <div class="location-card-bottom">
                                                 <div id="w-node-_27196b6a-53dd-d360-4c77-4e88f689124c-1fc93e1d" class="subtitle-dynamic-text">
                                                     <div bind="27196b6a-53dd-d360-4c77-4e88f689124d" class="subtitle"></div>
-                                                    <div bind="27196b6a-53dd-d360-4c77-4e88f689124e" class="subtitle">vacations</div>
+                                                    <div bind="27196b6a-53dd-d360-4c77-4e88f689124e" class="subtitle putih">vacations</div>
                                                 </div>
                                                 <h2 bind="27196b6a-53dd-d360-4c77-4e88f6891250"></h2>
                                             </div>
@@ -752,30 +752,35 @@
     <div class="grid-wrapper">
         <div id="w-node-_2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bcb-1fc93e1d" class="featured-journal-wrapper">
             <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bcc" class="w-dyn-list">
-                <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bcd" role="list" class="large-journal-list w-dyn-items">
-                    <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bce" role="listitem" class="large-journal-item w-dyn-item">
-                        <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bcf" class="large-journal-post">
-                            <div class="large-journal-image">
-                                <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd1" class="hero-background-image"></div>
-                            </div>
-                            <div class="journal-post-info">
-                                <div class="large-journal-content">
-                                    <div id="w-node-_2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd4-1fc93e1d" class="journal-category-tag">
-                                        <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd5"></div>
-                                    </div>
-                                    <h2 bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd6"></h2>
-                                    <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd7" class="body-display"></div>
+                @if ($blogs->count() > 0)
+                    <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bcd" role="list" class="large-journal-list w-dyn-items">
+                        <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bce" role="listitem" class="large-journal-item w-dyn-item">
+                            <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bcf" class="large-journal-post">
+                                <div class="large-journal-image">
+                                    <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd1" class="hero-background-image" style="background-image: url('{{ $blogs->first()->getImageURL() }}');"></div>
                                 </div>
-                                <a bind="33e6d6c0-7e21-5986-07d7-5931a21eb67a" id="w-node-_33e6d6c0-7e21-5986-07d7-5931a21eb67a-1fc93e1d" href="#" class="outline-button small w-inline-block">
-                                    <div>Baca Selengkapnya</div>
-                                </a>
+                                <div class="journal-post-info">
+                                    <div class="large-journal-content">
+                                        <div id="w-node-_2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd4-1fc93e1d" class="journal-category-tag">
+                                            <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd5">{{ $blogs->first()->created_at?->translatedFormat('F d, Y') }}</div>
+                                        </div>
+                                        <h2 bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd6">{{ $blogs->first()->title }}</h2>
+                                        <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd7" class="body-display">
+                                            {{-- {{ $blogs->first()->description }} --}}
+                                        </div>
+                                    </div>
+                                    <a bind="33e6d6c0-7e21-5986-07d7-5931a21eb67a" id="w-node-_33e6d6c0-7e21-5986-07d7-5931a21eb67a-1fc93e1d" href="{{ route('landing-page.blog.detail', $blogs->first()->slug) }}" class="outline-button small w-inline-block">
+                                        <div>Baca Selengkapnya</div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd8" class="w-dyn-empty">
-                    <div>No items found.</div>
-                </div>
+                @else
+                    <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bd8" class="w-dyn-empty">
+                        <div>No items found.</div>
+                    </div>
+                @endif
             </div>
 
             <div class="journal-right-wrapper">
@@ -784,26 +789,33 @@
                     <div id="w-node-_2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bdf-1fc93e1d" class="horizontal-line"></div>
                 </div>
                 <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be0" class="w-dyn-list">
-                    <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be1" role="list" class="recent-journal-list w-dyn-items">
-                        <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be2" role="listitem" class="w-dyn-item">
-                            <a bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be3" href="#" class="journal-list-item w-inline-block">
-                                <div class="journal-list-image">
-                                    <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be5" class="hero-background-image"></div>
-                                </div>
-                                <div id="w-node-_2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be6-1fc93e1d" class="journal-list-item-content">
-                                    <div id="w-node-_2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be7-1fc93e1d" class="journal-category-tag">
-                                        <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be8"></div>
+                    @if ($blogs->count() > 1)
+                        @foreach ($blogs as $blog)
+                            @if ($loop->iteration != 1)
+                                <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be1" role="list" class="recent-journal-list w-dyn-items">
+                                    <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be2" role="listitem" class="w-dyn-item">
+                                        <a bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be3" href="{{ route('landing-page.blog.detail', $blog->slug) }}" class="journal-list-item w-inline-block">
+                                            <div class="journal-list-image">
+                                                <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be5" class="hero-background-image" style="background-image: url('{{ $blog->getImageURL() }}');"></div>
+                                            </div>
+                                            <div id="w-node-_2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be6-1fc93e1d" class="journal-list-item-content">
+                                                <div id="w-node-_2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be7-1fc93e1d" class="journal-category-tag">
+                                                    <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be8">{{ $blog->created_at?->translatedFormat('F d, Y') }}</div>
+                                                </div>
+                                                <div id="w-node-_2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be9-1fc93e1d" class="journal-list-info">
+                                                    <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bea">{{ $blog->title }}</div>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div id="w-node-_2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9be9-1fc93e1d" class="journal-list-info">
-                                        <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9bea"></div>
-                                    </div>
                                 </div>
-                            </a>
+                            @endif                            
+                        @endforeach
+                    @else
+                        <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9beb" class="w-dyn-empty">
+                            <div>No items found.</div>
                         </div>
-                    </div>
-                    <div bind="2e6b28ca-5bd4-9b6d-02bd-caeb9b0c9beb" class="w-dyn-empty">
-                        <div>No items found.</div>
-                    </div>
+                    @endif
                 </div>
             </div>
         </div>

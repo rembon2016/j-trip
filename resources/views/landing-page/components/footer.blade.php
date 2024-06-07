@@ -18,7 +18,7 @@
             <div id="w-node-_2021dbe6-3066-ab2b-d9b3-82f2659c2ebe-59d49f91" class="footer-logo">
                 <div id="w-node-d8eb6401-e01b-7668-75ac-322d0c5697d4-59d49f91" class="footer-pages">
                     <div class="footer-destination-text">
-                        <div class="footer-theme">Follow Us</div>
+                        <div class="footer-theme putih">Follow Us</div>
                     </div>
                     <div class="social-sidebar-icons horizontal">
                         <a href="https://www.instagram.com/jtrip.id/" target="_blank" class="sidebar-icon footer-social w-inline-block"><img src="{{ asset('assets/landing-page/images/covilla-instagram.svg') }}" loading="lazy" alt=""></a>
@@ -31,7 +31,7 @@
             <div id="w-node-_8d4df87d-6398-2a7c-b022-fd9ce6e378d0-59d49f91" class="footer-logo">
                 <div id="w-node-_8d4df87d-6398-2a7c-b022-fd9ce6e378d1-59d49f91" class="footer-pages">
                     <div class="footer-destination-text">
-                        <div class="footer-theme">Destinations</div>
+                        <div class="footer-theme putih">Destinations</div>
                     </div>
                     <div bind="8d4df87d-6398-2a7c-b022-fd9ce6e378d5" class="w-dyn-list">
                         <div bind="8d4df87d-6398-2a7c-b022-fd9ce6e378d6" role="list" class="footer-destinations w-dyn-items">

@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\LandingPage;
 
-use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PageController extends Controller
 {
     public function home()
     {
-        return view('landing-page.pages.home');
+        $blogs = Blog::limit(5)->latest()->get();
+        return view('landing-page.pages.home', compact('blogs'));
     }
 
     public function about()

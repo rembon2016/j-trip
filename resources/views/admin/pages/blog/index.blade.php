@@ -34,7 +34,7 @@
                         <th>#</th>
                         <th>Thumbnail</th>
                         <th>Judul</th>
-                        <th>Jumlah Visitor</th>
+                        <th>Visitor</th>
                         <th>Dibuat Oleh</th>
                         <th class="text-center">Opsi</th>
                     </tr>
@@ -53,6 +53,9 @@
                         <td>{{ $item->createdBy?->name }}</td>
                         <td>
                             <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">
+                                <a href="{{ route('landing-page.blog.detail', $item->slug) }}" class="btn btn-secondary btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Lihat Blog" target="_blank">
+                                    <i class="bx bx-show"></i>
+                                </a>
                                 <a href="{{ route('admin.blog.edit', $item->id) }}" class="btn btn-info btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Ubah Blog">
                                     <i class="bx bx-edit-alt"></i>
                                 </a>

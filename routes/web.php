@@ -29,7 +29,7 @@ Route::group([
         'as' => 'blog.'
     ], function () {
         Route::get('/', [BlogController::class, 'index'])->name('index');
-        Route::get('/detail/{id}', [BlogController::class, 'detail'])->name('detail');
+        Route::get('/{slug}', [BlogController::class, 'detail'])->name('detail');
     });
 
     Route::group([

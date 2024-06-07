@@ -10,7 +10,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $data['count_users'] = User::select('id')->count();
+        $data['count_admin'] = User::select('id')->where('role', User::ADMIN_ROLE)->count();
+        $data['count_staff'] = User::select('id')->where('role', User::STAFF_ROLE)->count();
         return view('admin.pages.dashboard.index', compact('data'));
     }
 }

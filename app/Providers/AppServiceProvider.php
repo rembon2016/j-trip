@@ -26,9 +26,6 @@ class AppServiceProvider extends ServiceProvider
             // Blade Directive Command
             Blade::directive('idr', fn ($expression) => "Rp <?php echo number_format({$expression}, 0, ',', '.'); ?>");
     
-            // Paginator Config
-            Paginator::useBootstrapFive();
-    
             // Default Datetime Config
             config(['app.locale' => 'id']);
             \Carbon\Carbon::setLocale('id');

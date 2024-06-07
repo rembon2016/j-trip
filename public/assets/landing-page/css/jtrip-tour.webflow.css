@@ -3,7 +3,7 @@
   --indicator-outline: rgba(192, 192, 211, .2);
   --grey-background: #f7f8fc;
   --black: #081c3a;
-  --ghost-white: #fcfcff;
+  --ghost-white: #516381;
   --outline: #efeff7;
   --shaddow: rgba(53, 64, 117, .1);
   --royal-blue: #3572ff;
@@ -1469,7 +1469,7 @@ blockquote {
 }
 
 .subtitle.large {
-  color: var(--ghost-white);
+  color: #fff;
   font-size: 14px;
 }
 
@@ -1478,7 +1478,7 @@ blockquote {
 }
 
 .subtitle.putih {
-  color: var(--ghost-white);
+  color: #fff;
 }
 
 .subtitle.contact, .subtitle.black {
