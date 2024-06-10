@@ -1,14 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\Content\BlogController;
 use App\Http\Controllers\Admin\Users\StaffController;
+use App\Http\Controllers\Admin\Content\BlogController;
 use App\Http\Controllers\Admin\Content\GalleryController;
 use App\Http\Controllers\Admin\Profile\ProfileController;
 use App\Http\Controllers\Admin\Utilities\CkeditorController;
 use App\Http\Controllers\Admin\Content\TestimonialController;
 use App\Http\Controllers\Admin\Dashboard\DashboardController;
 use App\Http\Controllers\Admin\Users\AdministratorController;
+use App\Http\Controllers\Admin\Vacation\DestinationController;
 
 Route::group([
     'prefix' => 'admin',
@@ -64,6 +65,21 @@ Route::group([
         });
     });
 
+    // Vacations Route
+    Route::group([
+        'prefix' => 'destination',
+        'as' => 'destination.'
+    ], function () {
+        Route::get('/', [DestinationController::class, 'index'])->name('index');
+        Route::get('/create', [DestinationController::class, 'create'])->name('create');
+        Route::post('/', [DestinationController::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [DestinationController::class, 'edit'])->name('edit');
+        Route::put('/update/{id}', [DestinationController::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [DestinationController::class, 'delete'])->name('delete');
+    });
+
+
+    // Contents Route
     Route::group([
         'prefix' => 'blog',
         'as' => 'blog.'

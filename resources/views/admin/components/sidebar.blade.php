@@ -60,6 +60,17 @@
         </li>
 
         <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Vacation</span>
+        </li>
+
+        <li class="menu-item @if(Route::is('admin.destination.*')) active @endif">
+            <a href="{{ route('admin.destination.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-map-pin"></i>
+                <div data-i18n="Destinasi">Destinasi</div>
+            </a>
+        </li>
+
+        <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Content</span>
         </li>
 
