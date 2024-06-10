@@ -85,7 +85,7 @@ class BlogController extends Controller
             $data->delete();
             return redirect()->route('admin.blog.index')->with('toastSuccess', __('crud.deleted', ['name' => 'Blog']));
         } catch (\Throwable $th) {
-            return redirect()->route('admin.blog.index')->with('toastSuccess', __('crud.error_delete', ['name' => 'Blog']));
+            return redirect()->route('admin.blog.index')->with('toastError', __('crud.error_delete', ['name' => 'Blog']));
         }
     }
 }

@@ -85,7 +85,7 @@ class DestinationController extends Controller
             $data->delete();
             return redirect()->route('admin.destination.index')->with('toastSuccess', __('crud.deleted', ['name' => 'Destinasi/Lokasi']));
         } catch (\Throwable $th) {
-            return redirect()->route('admin.destination.index')->with('toastSuccess', __('crud.error_delete', ['name' => 'Destinasi/Lokasi']));
+            return redirect()->route('admin.destination.index')->with('toastError', __('crud.error_delete', ['name' => 'Destinasi/Lokasi']));
         }
     }
 }

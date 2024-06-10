@@ -85,7 +85,7 @@ class TourTypeController extends Controller
             $data->delete();
             return redirect()->route('admin.tour-type.index')->with('toastSuccess', __('crud.deleted', ['name' => 'Tipe Tour']));
         } catch (\Throwable $th) {
-            return redirect()->route('admin.tour-type.index')->with('toastSuccess', __('crud.error_delete', ['name' => 'Tipe Tour']));
+            return redirect()->route('admin.tour-type.index')->with('toastError', __('crud.error_delete', ['name' => 'Tipe Tour']));
         }
     }
 }

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Users\StaffController;
 use App\Http\Controllers\Admin\Content\BlogController;
+use App\Http\Controllers\Admin\Other\SettingController;
 use App\Http\Controllers\Admin\Content\GalleryController;
 use App\Http\Controllers\Admin\Profile\ProfileController;
 use App\Http\Controllers\Admin\Vacation\TourTypeController;
@@ -127,5 +128,14 @@ Route::group([
         Route::get('/edit/{id}', [TestimonialController::class, 'edit'])->name('edit');
         Route::put('/update/{id}', [TestimonialController::class, 'update'])->name('update');
         Route::delete('/delete/{id}', [TestimonialController::class, 'delete'])->name('delete');
+    });
+
+    // Other Route
+    Route::group([
+        'prefix' => 'setting',
+        'as' => 'setting.'
+    ], function () {
+        Route::get('/', [SettingController::class, 'index'])->name('index');
+        Route::post('/', [SettingController::class, 'store'])->name('store');
     });
 });

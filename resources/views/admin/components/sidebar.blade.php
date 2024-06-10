@@ -33,10 +33,6 @@
             </a>
         </li>
 
-        <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Master Data</span>
-        </li>
-
         <!-- Users -->
         <li class="menu-item @if(Route::is('admin.users.*')) active open @endif">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -99,6 +95,17 @@
             <a href="{{ route('admin.testimonial.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-message-dots"></i>
                 <div data-i18n="Testimoni">Testimoni</div>
+            </a>
+        </li>
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Other</span>
+        </li>
+
+        <li class="menu-item @if(Route::is('admin.setting.*')) active @endif">
+            <a href="{{ route('admin.setting.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-cog"></i>
+                <div data-i18n="Web Setting">Web Setting</div>
             </a>
         </li>
         

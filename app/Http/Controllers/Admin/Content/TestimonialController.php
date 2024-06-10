@@ -74,7 +74,7 @@ class TestimonialController extends Controller
             $data->delete();
             return redirect()->route('admin.testimonial.index')->with('toastSuccess', __('crud.deleted', ['name' => 'Galeri']));
         } catch (\Throwable $th) {
-            return redirect()->route('admin.testimonial.index')->with('toastSuccess', __('crud.error_delete', ['name' => 'Galeri']));
+            return redirect()->route('admin.testimonial.index')->with('toastError', __('crud.error_delete', ['name' => 'Galeri']));
         }
     }
 }

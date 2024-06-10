@@ -85,7 +85,7 @@ class GalleryController extends Controller
             $data->delete();
             return redirect()->route('admin.gallery.index')->with('toastSuccess', __('crud.deleted', ['name' => 'Galeri']));
         } catch (\Throwable $th) {
-            return redirect()->route('admin.gallery.index')->with('toastSuccess', __('crud.error_delete', ['name' => 'Galeri']));
+            return redirect()->route('admin.gallery.index')->with('toastError', __('crud.error_delete', ['name' => 'Galeri']));
         }
     }
 }
