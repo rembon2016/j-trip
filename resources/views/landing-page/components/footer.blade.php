@@ -28,7 +28,7 @@
                 </div>
             </div>
 
-            <div id="w-node-_8d4df87d-6398-2a7c-b022-fd9ce6e378d0-59d49f91" class="footer-logo">
+            <div id="w-node-_8d4df87d-6398-2a7c-b022-fd9ce6e378d0-59d49f91" class="footer-logo" style="align-self: start;">
                 <div id="w-node-_8d4df87d-6398-2a7c-b022-fd9ce6e378d1-59d49f91" class="footer-pages">
                     <div class="footer-destination-text">
                         <div class="footer-theme putih">Destinations</div>

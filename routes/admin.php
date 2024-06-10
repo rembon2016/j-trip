@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\Users\StaffController;
 use App\Http\Controllers\Admin\Content\BlogController;
 use App\Http\Controllers\Admin\Content\GalleryController;
 use App\Http\Controllers\Admin\Profile\ProfileController;
+use App\Http\Controllers\Admin\Vacation\TourTypeController;
 use App\Http\Controllers\Admin\Utilities\CkeditorController;
 use App\Http\Controllers\Admin\Content\TestimonialController;
 use App\Http\Controllers\Admin\Dashboard\DashboardController;
@@ -67,7 +68,7 @@ Route::group([
 
     // Vacations Route
     Route::group([
-        'prefix' => 'destination',
+        'prefix' => 'destinasi',
         'as' => 'destination.'
     ], function () {
         Route::get('/', [DestinationController::class, 'index'])->name('index');
@@ -76,6 +77,18 @@ Route::group([
         Route::get('/edit/{id}', [DestinationController::class, 'edit'])->name('edit');
         Route::put('/update/{id}', [DestinationController::class, 'update'])->name('update');
         Route::delete('/delete/{id}', [DestinationController::class, 'delete'])->name('delete');
+    });
+
+    Route::group([
+        'prefix' => 'tipe-tour',
+        'as' => 'tour-type.'
+    ], function () {
+        Route::get('/', [TourTypeController::class, 'index'])->name('index');
+        Route::get('/create', [TourTypeController::class, 'create'])->name('create');
+        Route::post('/', [TourTypeController::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [TourTypeController::class, 'edit'])->name('edit');
+        Route::put('/update/{id}', [TourTypeController::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [TourTypeController::class, 'delete'])->name('delete');
     });
 
 
@@ -93,7 +106,7 @@ Route::group([
     });
 
     Route::group([
-        'prefix' => 'gallery',
+        'prefix' => 'galeri',
         'as' => 'gallery.'
     ], function () {
         Route::get('/', [GalleryController::class, 'index'])->name('index');
@@ -105,7 +118,7 @@ Route::group([
     });
 
     Route::group([
-        'prefix' => 'testimonial',
+        'prefix' => 'testimoni',
         'as' => 'testimonial.'
     ], function () {
         Route::get('/', [TestimonialController::class, 'index'])->name('index');

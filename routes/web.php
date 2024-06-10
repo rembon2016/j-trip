@@ -41,6 +41,14 @@ Route::group([
     });
 
     Route::group([
+        'prefix' => 'tour-type',
+        'as' => 'tour-type.'
+    ], function () {
+        Route::get('/', [DestinationController::class, 'index'])->name('index');
+        Route::get('/{slug}', [DestinationController::class, 'detail'])->name('detail');
+    });
+
+    Route::group([
         'prefix' => 'tour',
         'as' => 'tour.'
     ], function () {
