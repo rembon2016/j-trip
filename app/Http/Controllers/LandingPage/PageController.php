@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\LandingPage;
 
 use App\Models\Blog;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -11,7 +12,9 @@ class PageController extends Controller
     public function home()
     {
         $blogs = Blog::limit(5)->latest()->get();
-        return view('landing-page.pages.home', compact('blogs'));
+        $testimonials = Testimonial::latest()->get();
+
+        return view('landing-page.pages.home', compact('blogs', 'testimonials'));
     }
 
     public function about()

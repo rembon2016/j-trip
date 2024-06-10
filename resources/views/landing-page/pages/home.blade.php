@@ -499,64 +499,71 @@
     </div>
 </div>
 
-<div data-w-id="8ac66b88-23bd-7efa-9eac-ef7fb6ad860b" class="testimonial-section">
-    <div class="grid-wrapper">
-        <div id="w-node-_853f48eb-fa46-765d-8d1c-f2bad72f3ec2-1fc93e1d" class="testimonial-wrapper">
-            <div data-delay="4000" data-animation="fade" class="testimonial-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="700" data-infinite="true">
-                <div class="testimonial-tracker">
-                    <div class="tracker-item">
-                        <div>1</div>
-                        <div class="tracker-fill"></div>
-                    </div>
-                    <div class="tracker-item">
-                        <div>2</div>
-                    </div>
-                </div>
-                <div class="testimonial-mask w-slider-mask">
-                    <div data-w-id="4fe04a5f-08cc-2850-4256-b5dadc246c19" class="testimonial-slide w-slide">
-                        <div class="testimonial-slide-wrapper">
-                            <div class="testimonial-tracker in-slider">
-                                <div id="w-node-_198ff5d2-5a08-0656-0130-2ef9dbf11426-1fc93e1d" class="tracker-item in-slider">
-                                    <div>1</div>
+@if ($testimonials->count() > 0)
+    <div data-w-id="8ac66b88-23bd-7efa-9eac-ef7fb6ad860b" class="testimonial-section">
+        <div class="grid-wrapper">
+            <div id="w-node-_853f48eb-fa46-765d-8d1c-f2bad72f3ec2-1fc93e1d" class="testimonial-wrapper">
+                <div data-delay="4000" data-animation="fade" class="testimonial-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="700" data-infinite="true">
+                    {{-- <div class="testimonial-tracker">
+                        @foreach($testimonials as $testimonial)
+                            <div class="tracker-item">
+                                <div>{{ $loop->iteration }}</div>
+
+                                @if ($loop->iteration == 1)
+                                    <div class="tracker-fill"></div>
+                                @endif
+                            </div>
+                        @endforeach
+                    </div> --}}
+                    <div class="testimonial-mask w-slider-mask">
+                        @foreach ($testimonials as $testimonial)
+                            <div data-w-id="{{ $testimonial->id }}" class="testimonial-slide w-slide">
+                                <div class="testimonial-slide-wrapper">
+                                    {{-- <div class="testimonial-tracker in-slider">
+                                        <div id="w-node-_198ff5d2-5a08-0656-0130-2ef9dbf11426-1fc93e1d" class="tracker-item in-slider">
+                                            <div>{{ $loop->iteration }}</div>
+                                        </div>
+                                    </div> --}}
+                                    <div class="testimonial-content">
+                                        <div class="body-display large white">{{ $testimonial->message }}</div>
+                                        <h3 class="testimonial-client">{{ $testimonial->person_name }}</h3>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="testimonial-content">
-                                <div class="body-display large white">Thank you for Jtrip team yang sudah bisa mengakomodasi semua permintaan kami baik sebelum dan selama di Jepang. Sukses selalu!</div>
-                                <h3 class="testimonial-client">Mr. Ilham Firmansyah &amp; Family</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div data-w-id="bccfc712-9bc4-fa66-fa83-a12f1ccee408" class="testimonial-slide w-slide">
-                        <div class="testimonial-slide-wrapper">
-                            <div class="testimonial-tracker in-slider">
-                                <div id="w-node-bccfc712-9bc4-fa66-fa83-a12f1ccee40b-1fc93e1d" class="tracker-item in-slider">
-                                    <div>2</div>
+                            
+                        @endforeach
+                        {{-- <div data-w-id="bccfc712-9bc4-fa66-fa83-a12f1ccee408" class="testimonial-slide w-slide">
+                            <div class="testimonial-slide-wrapper">
+                                <div class="testimonial-tracker in-slider">
+                                    <div id="w-node-bccfc712-9bc4-fa66-fa83-a12f1ccee40b-1fc93e1d" class="tracker-item in-slider">
+                                        <div>2</div>
+                                    </div>
+                                </div>
+                                <div class="testimonial-content">
+                                    <div class="body-display large white">Terima kasih untuk Jtrip atas turnya, kami jadi tahu destinasi-destinasi tour Jepang yang selama ini kita belum tahu</div>
+                                    <h3 class="testimonial-client">Mr. Rianto &amp; Friends</h3>
                                 </div>
                             </div>
-                            <div class="testimonial-content">
-                                <div class="body-display large white">Terima kasih untuk Jtrip atas turnya, kami jadi tahu destinasi-destinasi tour Jepang yang selama ini kita belum tahu</div>
-                                <h3 class="testimonial-client">Mr. Rianto &amp; Friends</h3>
-                            </div>
-                        </div>
+                        </div> --}}
                     </div>
+                    <div class="testimonial-arrow w-slider-arrow-left">
+                        <img src="{{ asset('assets/landing-page/images/arrow-left24x242x-1.svg') }}" loading="lazy" alt="" class="slider-arrow-icon">
+                    </div>
+                    <div class="testimonial-arrow right w-slider-arrow-right">
+                        <img src="{{ asset('assets/landing-page/images/arrow-right24x242x-1.svg') }}" loading="lazy" alt="" class="slider-arrow-icon">
+                    </div>
+                    <div class="slide-nav w-slider-nav w-round"></div>
                 </div>
-                <div class="testimonial-arrow w-slider-arrow-left">
-                    <img src="{{ asset('assets/landing-page/images/arrow-left24x242x-1.svg') }}" loading="lazy" alt="" class="slider-arrow-icon">
-                </div>
-                <div class="testimonial-arrow right w-slider-arrow-right">
-                    <img src="{{ asset('assets/landing-page/images/arrow-right24x242x-1.svg') }}" loading="lazy" alt="" class="slider-arrow-icon">
-                </div>
-                <div class="slide-nav w-slider-nav w-round"></div>
+            </div>
+        </div>
+
+        <div class="background-cover">
+            <div class="paralax-background">
+                <div class="overlay dark"></div>
             </div>
         </div>
     </div>
-
-    <div class="background-cover">
-        <div class="paralax-background">
-            <div class="overlay dark"></div>
-        </div>
-    </div>
-</div>
+@endif
 
 <div class="section">
     <div class="grid-wrapper">
