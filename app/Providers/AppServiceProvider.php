@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\TourType;
 use App\Models\Destination;
 use Illuminate\Support\Facades\App;
 use Illuminate\Pagination\Paginator;
@@ -28,7 +29,10 @@ class AppServiceProvider extends ServiceProvider
             Blade::directive('idr', fn ($expression) => "Rp <?php echo number_format({$expression}, 0, ',', '.'); ?>");
 
             $pinDestinations = Destination::select(['id', 'title', 'image', 'slug'])->withCount('tours')->orderBy('title', 'ASC')->limit(5)->get();
+            $pinTourTypes = TourType::select(['id', 'title', 'image', 'slug'])->withCount('tours')->orderBy('title', 'ASC')->limit(5)->get();
+
             view()->share('pinDestinations', $pinDestinations);
+            view()->share('pinTourTypes', $pinTourTypes);
     
             // Default Datetime Config
             config(['app.locale' => 'id']);
