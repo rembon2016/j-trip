@@ -8,11 +8,15 @@
                 <a href="#" class="rl_footer3_logo-link w-nav-brand"><img src="{{ asset('assets/landing-page/images/J-Tripロゴ.svg') }}" loading="lazy" width="100" alt=""></a>
                 <div class="rl_footer3_spacing-block-1"></div>
                 <div class="rl_footer3_text">Address</div>
-                <div class="rl-text-style-small">Citylofts Sudirman Lt. 11, #111, Jl. K.H. Mas Mansyur No.121, RT.10/RW.11, <br>Karet Tengsin, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 11520</div>
+                <div class="rl-text-style-small">
+                    {{ $setting?->address ?? '-' }}
+                </div>
                 <div class="rl_footer3_spacing-block-2"></div>
                 <div class="rl_footer3_text">Contact</div>
-                <a href="#" class="rl-text-style-small">021 - 2995 - 9845<br></a>
-                <a href="mailto:info@japanect.com" class="rl-text-style-small">info@japanect.com<br></a>
+                <a href="tel:+{{ $setting?->phone }}" class="rl-text-style-small">
+                    +{{ $setting?->phone }}<br>
+                </a>
+                <a href="mailto:{{ $setting?->email }}" class="rl-text-style-small">{{ $setting?->email }}<br></a>
             </div>
 
             <div id="w-node-_2021dbe6-3066-ab2b-d9b3-82f2659c2ebe-59d49f91" class="footer-logo">
@@ -21,9 +25,9 @@
                         <div class="footer-theme putih">Follow Us</div>
                     </div>
                     <div class="social-sidebar-icons horizontal">
-                        <a href="https://www.instagram.com/jtrip.id/" target="_blank" class="sidebar-icon footer-social w-inline-block"><img src="{{ asset('assets/landing-page/images/covilla-instagram.svg') }}" loading="lazy" alt=""></a>
-                        <a href="https://webflow.com" target="_blank" class="sidebar-icon footer-social w-inline-block"><img src="{{ asset('assets/landing-page/images/covilla-facebook-f.svg') }}" loading="lazy" alt=""></a>
-                        <a href="https://webflow.com" target="_blank" class="sidebar-icon footer-social w-inline-block"><img src="{{ asset('assets/landing-page/images/icons8-tiktok-50.png') }}" loading="lazy" alt=""></a>
+                        <a href="{{ $setting?->instagram_url }}" target="_blank" class="sidebar-icon footer-social w-inline-block"><img src="{{ asset('assets/landing-page/images/covilla-instagram.svg') }}" loading="lazy" alt=""></a>
+                        <a href="{{ $setting?->facebook_url }}" target="_blank" class="sidebar-icon footer-social w-inline-block"><img src="{{ asset('assets/landing-page/images/covilla-facebook-f.svg') }}" loading="lazy" alt=""></a>
+                        <a href="{{ $setting?->tiktok_url }}" target="_blank" class="sidebar-icon footer-social w-inline-block"><img src="{{ asset('assets/landing-page/images/icons8-tiktok-50.png') }}" loading="lazy" alt=""></a>
                     </div>
                 </div>
             </div>

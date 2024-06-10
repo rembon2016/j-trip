@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Setting;
 use App\Models\TourType;
 use App\Models\Destination;
 use Illuminate\Support\Facades\App;
@@ -30,9 +31,12 @@ class AppServiceProvider extends ServiceProvider
 
             $pinDestinations = Destination::select(['id', 'title', 'image', 'slug'])->withCount('tours')->orderBy('title', 'ASC')->limit(5)->get();
             $pinTourTypes = TourType::select(['id', 'title', 'image', 'slug'])->withCount('tours')->orderBy('title', 'ASC')->limit(5)->get();
+            $setting = Setting::first();
+            if (is_null($setting)) $setting = Setting::create([]);
 
             view()->share('pinDestinations', $pinDestinations);
             view()->share('pinTourTypes', $pinTourTypes);
+            view()->share('setting', $setting);
     
             // Default Datetime Config
             config(['app.locale' => 'id']);

@@ -85,18 +85,18 @@
                                 <div id="w-node-a4181ea1-b90f-dce7-1ff2-23e3139ba53c-d3468612" class="horizontal-line"></div>
                             </div>
                             <div class="quick-link-list">
-                                <a href="https://wa.me/6285929920505" target="_blank" class="quick-link-item w-inline-block">
+                                <a href="https://wa.me/{{ $setting?->whatsapp_number }}" target="_blank" class="quick-link-item w-inline-block">
                                     <div id="w-node-_484c8179-47db-9db2-db2c-06e79ce7439a-d3468612">Whatsapp Us</div>
                                     <img src="{{ asset('assets/landing-page/images/icons8-whatsapp.svg') }}" loading="lazy" width="25" id="w-node-_484c8179-47db-9db2-db2c-06e79ce7439c-d3468612" alt="">
                                 </a>
-                                <a href="mailto:info@japanect.com" class="quick-link-item w-inline-block">
-                                    <div id="w-node-_484c8179-47db-9db2-db2c-06e79ce7439e-d3468612">info@japanect.com</div>
+                                <a href="mailto:{{ $setting?->email }}" class="quick-link-item w-inline-block">
+                                    <div id="w-node-_484c8179-47db-9db2-db2c-06e79ce7439e-d3468612">{{ $setting?->email }}</div>
                                     <div id="w-node-_484c8179-47db-9db2-db2c-06e79ce743a0-d3468612" class="card-arrow-icon dark">
                                         <img src="{{ asset('assets/landing-page/images/arrowhead-right-icon-dark001.svg') }}" loading="lazy" alt="" class="vacation-card-arrow">
                                     </div>
                                 </a>
-                                <a href="tel:+622129959845" class="quick-link-item w-inline-block">
-                                    <div id="w-node-_484c8179-47db-9db2-db2c-06e79ce743a3-d3468612">021-2995-9845</div>
+                                <a href="tel:+{{ $setting?->phone }}" class="quick-link-item w-inline-block">
+                                    <div id="w-node-_484c8179-47db-9db2-db2c-06e79ce743a3-d3468612">+{{ $setting?->phone }}</div>
                                     <div class="card-arrow-icon dark">
                                         <img src="{{ asset('assets/landing-page/images/arrowhead-right-icon-dark001.svg') }}" loading="lazy" alt="" class="vacation-card-arrow">
                                     </div>
@@ -107,13 +107,13 @@
                         <div class="flyout-social-media">
                             <div id="w-node-a949e8d2-8210-23c1-7007-d01371627841-d3468612" class="subtitle black">Follow us:</div>
                             <div id="w-node-b81da175-c775-67a3-e76c-5239914deb8b-d3468612" class="agent-social-media">
-                                <a href="https://webflow.com" target="_blank" class="agent-social-icon w-inline-block">
+                                <a href="{{ $setting?->instagram_url }}" target="_blank" class="agent-social-icon w-inline-block">
                                     <img src="{{ asset('assets/landing-page/images/Dark-instagram.svg') }}" loading="lazy" alt="">
                                 </a>
-                                <a href="https://webflow.com" target="_blank" class="agent-social-icon w-inline-block">
+                                <a href="{{ $setting?->facebook_url }}" target="_blank" class="agent-social-icon w-inline-block">
                                     <img src="{{ asset('assets/landing-page/images/dark-facebook-f.svg') }}" loading="lazy" alt="">
                                 </a>
-                                <a href="https://webflow.com" target="_blank" class="agent-social-icon w-inline-block">
+                                <a href="{{ $setting?->linkedin_url }}" target="_blank" class="agent-social-icon w-inline-block">
                                     <img src="{{ asset('assets/landing-page/images/Dark-linkedin-2.svg') }}" loading="lazy" alt="">
                                 </a>
                             </div>

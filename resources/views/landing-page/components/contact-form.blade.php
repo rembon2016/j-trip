@@ -78,18 +78,18 @@
                             <div id="w-node-ccba9afc-7ce3-ac68-817c-f6071c414041-1fc93e1d" class="horizontal-line"></div>
                         </div>
                         <div class="quick-link-list">
-                            <a href="https://wa.me/6285929920505" target="_blank" class="quick-link-item w-inline-block">
+                            <a href="https://wa.me/{{ $setting?->whatsapp_number }}" target="_blank" class="quick-link-item w-inline-block">
                                 <div id="w-node-ccba9afc-7ce3-ac68-817c-f6071c414044-1fc93e1d">Whatsapp Us</div>
                                 <img src="{{ asset('assets/landing-page/images/icons8-whatsapp.svg') }}" loading="lazy" width="25" id="w-node-ccba9afc-7ce3-ac68-817c-f6071c414046-1fc93e1d" alt="">
                             </a>
-                            <a href="mailto:info@japanect.com" class="quick-link-item w-inline-block">
-                                <div id="w-node-ccba9afc-7ce3-ac68-817c-f6071c414048-1fc93e1d">info@japanect.com</div>
+                            <a href="mailto:{{ $setting?->email }}" class="quick-link-item w-inline-block">
+                                <div id="w-node-ccba9afc-7ce3-ac68-817c-f6071c414048-1fc93e1d">{{ $setting?->email }}</div>
                                 <div id="w-node-ccba9afc-7ce3-ac68-817c-f6071c41404a-1fc93e1d" class="card-arrow-icon dark">
                                     <img src="{{ asset('assets/landing-page/images/arrowhead-right-icon-dark001.svg') }}" loading="lazy" alt="" class="vacation-card-arrow">
                                 </div>
                             </a>
-                            <a href="tel:+622129959845" class="quick-link-item w-inline-block">
-                                <div id="w-node-ccba9afc-7ce3-ac68-817c-f6071c41404d-1fc93e1d">021-2995-9845</div>
+                            <a href="tel:+{{ $setting?->phone }}" class="quick-link-item w-inline-block">
+                                <div id="w-node-ccba9afc-7ce3-ac68-817c-f6071c41404d-1fc93e1d">+{{ $setting?->phone }}</div>
                                 <div class="card-arrow-icon dark">
                                     <img src="{{ asset('assets/landing-page/images/arrowhead-right-icon-dark001.svg') }}" loading="lazy" alt="" class="vacation-card-arrow">
                                 </div>
