@@ -44,28 +44,33 @@
                                 <div id="w-node-_92abb93c-eb64-1a87-ea32-98e9c6f1d67b-d3468612" class="horizontal-line"></div>
                             </div>
                             <div bind="92abb93c-eb64-1a87-ea32-98e9c6f1d67c" class="w-dyn-list">
-                                <div bind="92abb93c-eb64-1a87-ea32-98e9c6f1d67d" role="list" class="continent-list w-dyn-items">
-                                    <div bind="92abb93c-eb64-1a87-ea32-98e9c6f1d67e" role="listitem" class="w-dyn-item">
-                                        <a bind="92abb93c-eb64-1a87-ea32-98e9c6f1d67f" href="#" class="location-card w-inline-block">
-                                            <div class="location-name">
-                                                <h4 bind="92abb93c-eb64-1a87-ea32-98e9c6f1d681"></h4>
-                                                <div class="subtitle-dynamic-text">
-                                                    <div bind="92abb93c-eb64-1a87-ea32-98e9c6f1d683" class="subtitle"></div>
-                                                    <div bind="92abb93c-eb64-1a87-ea32-98e9c6f1d684" class="subtitle">vacations</div>
-                                                </div>
+                                @if ($pinDestinations->count() > 0)
+                                    <div bind="92abb93c-eb64-1a87-ea32-98e9c6f1d67d" role="list" class="continent-list w-dyn-items">
+                                        @foreach ($pinDestinations as $destination)
+                                            <div bind="92abb93c-eb64-1a87-ea32-98e9c6f1d67e" role="listitem" class="w-dyn-item">
+                                                <a bind="92abb93c-eb64-1a87-ea32-98e9c6f1d67f" href="{{ route('landing-page.destination.detail', $destination->slug) }}" class="location-card w-inline-block">
+                                                    <div class="location-name">
+                                                        <h4 bind="92abb93c-eb64-1a87-ea32-98e9c6f1d681">{{ $destination->title }}</h4>
+                                                        <div class="subtitle-dynamic-text">
+                                                            <div bind="92abb93c-eb64-1a87-ea32-98e9c6f1d683" class="subtitle"></div>
+                                                            <div bind="92abb93c-eb64-1a87-ea32-98e9c6f1d684" class="subtitle putih">{{ $destination->tours_count }} vacations</div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="w-node-_92abb93c-eb64-1a87-ea32-98e9c6f1d686-d3468612" class="card-arrow-icon">
+                                                        <img src="{{ asset('assets/landing-page/images/arrowhead-right-icon-dark-light.svg') }}" loading="lazy" alt="" class="vacation-card-arrow">
+                                                    </div>
+                                                    <div bind="92abb93c-eb64-1a87-ea32-98e9c6f1d688" class="location-card-background" style="background-image: url('{{ $destination->getImageURL() }}');">
+                                                        <div class="overlay"></div>
+                                                    </div>
+                                                </a>
                                             </div>
-                                            <div id="w-node-_92abb93c-eb64-1a87-ea32-98e9c6f1d686-d3468612" class="card-arrow-icon">
-                                                <img src="{{ asset('assets/landing-page/images/arrowhead-right-icon-dark-light.svg') }}" loading="lazy" alt="" class="vacation-card-arrow">
-                                            </div>
-                                            <div bind="92abb93c-eb64-1a87-ea32-98e9c6f1d688" class="location-card-background">
-                                                <div class="overlay"></div>
-                                            </div>
-                                        </a>
+                                        @endforeach
                                     </div>
-                                </div>
-                                <div bind="92abb93c-eb64-1a87-ea32-98e9c6f1d68a" class="w-dyn-empty">
-                                    <div>No items found.</div>
-                                </div>
+                                @else
+                                    <div bind="92abb93c-eb64-1a87-ea32-98e9c6f1d68a" class="w-dyn-empty">
+                                        <div>No items found.</div>
+                                    </div>
+                                @endif
                             </div>
                         </div>
 

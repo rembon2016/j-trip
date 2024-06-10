@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\LandingPage;
 
-use App\Http\Controllers\Controller;
+use App\Models\Destination;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DestinationController extends Controller
 {
     public function index()
     {
-        return view('landing-page.pages.destination.index');
+        $destinations = Destination::withCount('tours')->orderBy('total_visitor', 'DESC')->get();
+        return view('landing-page.pages.destination.index', compact('destinations'));
     }
     
     public function detail($id)

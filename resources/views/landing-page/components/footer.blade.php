@@ -33,18 +33,24 @@
                     <div class="footer-destination-text">
                         <div class="footer-theme putih">Destinations</div>
                     </div>
+
                     <div bind="8d4df87d-6398-2a7c-b022-fd9ce6e378d5" class="w-dyn-list">
-                        <div bind="8d4df87d-6398-2a7c-b022-fd9ce6e378d6" role="list" class="footer-destinations w-dyn-items">
-                            <div bind="8d4df87d-6398-2a7c-b022-fd9ce6e378d7" role="listitem" class="w-dyn-item">
-                                <a bind="8d4df87d-6398-2a7c-b022-fd9ce6e378d8" data-w-id="8d4df87d-6398-2a7c-b022-fd9ce6e378d8" href="#" class="footer-link w-inline-block">
-                                    <div bind="8d4df87d-6398-2a7c-b022-fd9ce6e378d9" class="link-text"></div>
-                                    <div class="link-cover"></div>
-                                </a>
+                        @if ($pinDestinations->count() > 0)
+                            <div bind="8d4df87d-6398-2a7c-b022-fd9ce6e378d6" role="list" class="footer-destinations w-dyn-items">
+                                @foreach ($pinDestinations as $destination)
+                                    <div bind="8d4df87d-6398-2a7c-b022-fd9ce6e378d7" role="listitem" class="w-dyn-item">
+                                        <a bind="8d4df87d-6398-2a7c-b022-fd9ce6e378d8" data-w-id="8d4df87d-6398-2a7c-b022-fd9ce6e378d8" href="{{ route('landing-page.destination.detail', $destination->slug) }}" class="footer-link w-inline-block">
+                                            <div bind="8d4df87d-6398-2a7c-b022-fd9ce6e378d9" class="link-text">{{ $destination->title }}</div>
+                                            <div class="link-cover"></div>
+                                        </a>
+                                    </div>
+                                @endforeach
                             </div>
-                        </div>
-                        <div bind="8d4df87d-6398-2a7c-b022-fd9ce6e378db" class="w-dyn-empty">
-                            <div>No items found.</div>
-                        </div>
+                        @else
+                            <div bind="8d4df87d-6398-2a7c-b022-fd9ce6e378db" class="w-dyn-empty">
+                                <div>No items found.</div>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
