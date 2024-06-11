@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Users\StaffController;
 use App\Http\Controllers\Admin\Content\BlogController;
 use App\Http\Controllers\Admin\Other\SettingController;
+use App\Http\Controllers\Admin\Vacation\TourController;
 use App\Http\Controllers\Admin\Content\GalleryController;
 use App\Http\Controllers\Admin\Profile\ProfileController;
 use App\Http\Controllers\Admin\Vacation\TourTypeController;
@@ -90,6 +91,18 @@ Route::group([
         Route::get('/edit/{id}', [TourTypeController::class, 'edit'])->name('edit');
         Route::put('/update/{id}', [TourTypeController::class, 'update'])->name('update');
         Route::delete('/delete/{id}', [TourTypeController::class, 'delete'])->name('delete');
+    });
+
+    Route::group([
+        'prefix' => 'tour',
+        'as' => 'tour.'
+    ], function () {
+        Route::get('/', [TourController::class, 'index'])->name('index');
+        Route::get('/create', [TourController::class, 'create'])->name('create');
+        Route::post('/', [TourController::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [TourController::class, 'edit'])->name('edit');
+        Route::put('/update/{id}', [TourController::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [TourController::class, 'delete'])->name('delete');
     });
 
 

@@ -73,6 +73,13 @@
             </a>
         </li>
 
+        <li class="menu-item @if(Route::is('admin.tour.*')) active @endif">
+            <a href="{{ route('admin.tour.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-trip"></i>
+                <div data-i18n="Tour">Tour</div>
+            </a>
+        </li>
+
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Content</span>
         </li>

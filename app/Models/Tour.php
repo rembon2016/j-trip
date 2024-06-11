@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\TourType;
+use App\Models\Destination;
 use App\Traits\Models\Sluggable;
 use App\Traits\Models\WithPrimaryUuid;
 use Illuminate\Database\Eloquent\Model;
@@ -18,6 +20,21 @@ class Tour extends Model
 
     public function getImageURL()
     {
-        return asset('storage/' . self::FOLDER_NAME . '/' . $this->image);
+        return asset('storage/' . self::FOLDER_NAME . '/' . $this->thumbnail);
+    }
+
+    public function createdBy()
+    {
+        return $this->hasOne(User::class, 'id', 'created_by');
+    }
+
+    public function destination()
+    {
+        return $this->hasOne(Destination::class, 'id', 'destination_id');
+    }
+
+    public function type()
+    {
+        return $this->hasOne(TourType::class, 'id', 'tour_type_id');
     }
 }

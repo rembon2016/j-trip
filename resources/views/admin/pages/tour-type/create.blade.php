@@ -71,7 +71,7 @@
 <script>
     $(document).ready(function() {
 
-    // ClassicEditor.create(document.querySelector('#description'), {
+    //      ClassicEditor.create(document.querySelector('#description'), {
     //         ckfinder: {
     //             uploadUrl: "{{ $url }}",
     //         },
