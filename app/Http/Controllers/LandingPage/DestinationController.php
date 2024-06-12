@@ -14,9 +14,14 @@ class DestinationController extends Controller
         return view('landing-page.pages.destination.index', compact('destinations'));
     }
     
-    public function detail($id)
+    public function detail($slug)
     {
-        // $recommendedTours =
-        return view('landing-page.pages.destination.detail');
+        $data = Destination::where('slug', $slug)->first();
+        abort_if(is_null($data), 404);
+
+        $featuredTours = $data->featuredTours();
+        $tours = $data->tours;
+
+        return view('landing-page.pages.destination.detail', compact('data', 'featuredTours', 'tours'));
     }
 }

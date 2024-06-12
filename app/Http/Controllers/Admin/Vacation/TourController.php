@@ -17,7 +17,7 @@ class TourController extends Controller
 
     public function index()
     {
-        $data = Tour::with('createdBy')->latest()->get();
+        $data = Tour::with('createdBy')->orderBy('is_featured', 'DESC')->orderBy('featured_at', 'DESC')->latest()->get();
         return view('admin.pages.tour.index', compact('data'));
     }
 

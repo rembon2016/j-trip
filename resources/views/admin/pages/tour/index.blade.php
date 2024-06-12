@@ -34,8 +34,9 @@
                         <th>#</th>
                         <th>Thumbnail</th>
                         <th>Judul</th>
-                        <th>Visitor</th>
                         <th>Harga</th>
+                        <th class="text-center">Visitor</th>
+                        <th class="text-center">Fiturkan</th>
                         <th class="text-center">Opsi</th>
                     </tr>
                 </thead>
@@ -49,8 +50,15 @@
                             </a>
                         </td>
                         <td>{{ $item->title }}</td>
-                        <td>{{ $item->total_visitor }}</td>
                         <td>@idr($item->price)</td>
+                        <td class="text-center">{{ $item->total_visitor }}</td>
+                        <td class="text-center">
+                            @if ($item->is_featured)
+                                <i class="bx bxs-pin text-primary"></i>
+                            @else
+                                -
+                            @endif
+                        </td>
                         <td>
                             <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">
                                 <a href="{{ route('landing-page.tour.detail', $item->slug) }}" class="btn btn-secondary btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Lihat Tour" target="_blank">

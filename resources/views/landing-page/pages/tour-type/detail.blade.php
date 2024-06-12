@@ -72,7 +72,7 @@
                 <div class="vacation-results">
                     <div id="w-node-_119ce2d8-cc65-774c-5a8b-478ccd5761e0-1fc93e2a" class="locations-results-top">
                         <div class="heading-title-grid">
-                            <h1 bind="51b9c1a9-2782-2500-d9fb-1b111c96a17e">Vacations in {{ $data->title }}</h1>
+                            <h1 bind="51b9c1a9-2782-2500-d9fb-1b111c96a17e">{{ $data->title }} Type</h1>
                             <h1 bind="dac2f2f9-f306-6359-7038-fe41eff26160"></h1>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                                             <div class="vacation-item-info">
                                                 <div id="w-node-fe51a2d6-e097-ff27-8b12-0270e26fb298-1fc93e2a"
                                                     class="vacation-item-top">
-                                                    <div class="subtitle">{{ $tour->type->title }}</div>
+                                                    <div class="subtitle">{{ $tour->destination->title }}</div>
                                                     <h3 bind="fe51a2d6-e097-ff27-8b12-0270e26fb29b">{{ $tour->title  }}</h3>
                                                     <div bind="fe51a2d6-e097-ff27-8b12-0270e26fb29d"
                                                         class="body-display small">
@@ -146,7 +146,7 @@
                                             class="location-card w-inline-block">
                                             <div class="location-name">
                                                 <h4 bind="316c2703-518a-5fa6-a7d6-86e4d7f24e60">{{ $tour->title }}</h4>
-                                                <div class="subtitle putih">{{ $tour->type->title }}</div>
+                                                <div class="subtitle putih">{{ $tour->destination->title }}</div>
                                             </div>
                                             <div id="w-node-_316c2703-518a-5fa6-a7d6-86e4d7f24e64-1fc93e2a"
                                                 class="card-arrow-icon"><img
