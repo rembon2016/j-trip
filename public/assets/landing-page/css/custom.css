@@ -1,20 +1,35 @@
-.blog-content :is(h1, h2, h3, h4, h5, h6) {
+.blog-content :is(h1, h2, h3, h4, h5, h6), .tour-content :is(h1, h2, h3, h4, h5, h6) {
     margin: 15px 0;
 }
 
-.blog-content img {
+.blog-content img, .tour-content img {
     max-width: 100%;
 }
 
-.blog-content :is(ul, ol) {
+.blog-content :is(ul, ol), .tour-content :is(ul, ol) {
     padding-left: 25px;
 }
 
-.blog-content :is(li) {
+.blog-content :is(li), .tour-content :is(li) {
     padding-left: 7px;
     margin: 5px 0;
 }
 
 .putih {
     color: #fff;
+}
+
+.tour-link-gallery {
+    display: block;
+    height: 100%;
+}
+
+.tour-link-gallery .tour-gallery {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.tour-gallery-box {
+    padding: 0;
 }

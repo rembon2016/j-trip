@@ -25,6 +25,8 @@
 
         <link href="{{ asset('assets/landing-page/images/favicon.jpg') }}" rel="shortcut icon" type="image/x-icon">
         <link href="{{ asset('assets/landing-page/images/webclip.jpg') }}" rel="apple-touch-icon">
+
+        @stack('head')
     </head>
 
     <body class="body">
@@ -51,5 +53,7 @@
         
         <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=60a267dcf8769e251a2be896" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <script src="{{ asset('assets/landing-page/js/webflow.js') }}" type="text/javascript"></script>
+
+        @stack('script')
     </body>
 </html>
