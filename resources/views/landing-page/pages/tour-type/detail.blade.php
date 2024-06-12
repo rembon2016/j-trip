@@ -29,35 +29,33 @@
                         data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false"
                         data-autoplay-limit="0" data-nav-spacing="3" data-duration="0" data-infinite="true">
                         <div class="locations-slider-mask w-slider-mask">
-                            <div class="location-page-slide w-slide">
-                                <div class="slider-background-wrapper hero-wrapper">
-                                    <div class="slider-background locations-background">
-                                        <div bind="2d7d5fc8-c1fd-4796-34fc-0898ae2cdaad" class="background one">
-                                            <div class="slide-three-overlay"></div>
+                            @if (($featuredTours->first()?->galleries->count() ?? 0) > 0)
+                                @foreach ($featuredTours->first()->galleries as $gallery)
+                                    <div class="location-page-slide w-slide">
+                                        <div class="slider-background-wrapper hero-wrapper">
+                                            <div bind="b225a07e-3ff8-c890-6cec-fd2c136c7b53"
+                                                class="slider-background locations-background">
+                                                <div bind="b225a07e-3ff8-c890-6cec-fd2c136c7b54" class="background two" style="background-image: url('{{ $gallery->getImageURL() }}')">
+                                                    <div class="slide-three-overlay"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @else
+                                <div class="location-page-slide w-slide">
+                                    <div class="slider-background-wrapper hero-wrapper">
+                                        <div class="slider-background locations-background">
+                                            <div bind="2d7d5fc8-c1fd-4796-34fc-0898ae2cdaad" class="background one" style="background-image: url('{{ $featuredTours->first()?->getImageURL() }}')">
+                                                <div class="slide-three-overlay"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="location-page-slide w-slide">
-                                <div class="slider-background-wrapper hero-wrapper">
-                                    <div bind="b225a07e-3ff8-c890-6cec-fd2c136c7b53"
-                                        class="slider-background locations-background">
-                                        <div bind="b225a07e-3ff8-c890-6cec-fd2c136c7b54" class="background two">
-                                            <div class="slide-three-overlay"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="location-page-slide w-slide">
-                                <div class="slider-background-wrapper hero-wrapper">
-                                    <div class="slider-background locations-background">
-                                        <div bind="9e12e9f5-df1f-7c3f-de67-195e9503fbd9" class="background three">
-                                            <div class="slide-three-overlay"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endif
                         </div>
+
+                        @if (($featuredTours->first()?->galleries->count() ?? 0) > 0)
                         <div class="vacation-slide-arrow w-slider-arrow-left"><img
                                 src="{{ asset('assets/landing-page/images/arrow-left24x242x-1.svg') }}" loading="lazy" alt=""
                                 class="slider-arrow-icon"></div>
@@ -65,6 +63,7 @@
                                 src="{{ asset('assets/landing-page/images/arrow-right24x242x-1.svg') }}" loading="lazy" alt=""
                                 class="slider-arrow-icon"></div>
                         <div class="slide-nav w-slider-nav w-round"></div>
+                        @endif
                     </div>
                 </div>
             </div>

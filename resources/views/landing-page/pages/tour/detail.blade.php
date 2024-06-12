@@ -102,52 +102,64 @@
         <div id="w-node-_9ec3fe01-adae-faff-0772-7c2387d3d521-1fc93e2e" class="horizontal-line left"></div>
     </div>
 </div>
-<div class="product-images-row">
-    <div class="grid-wrapper">
-        <div id="w-node-d2061ad0-5899-1e1a-4f90-c5f927733ede-1fc93e2e" class="vacation-images">
-            <div class="large-vacation-image">
-                <a href="{{ $data->getImageURL() }}" data-lightbox="image-1" data-title="{{ $data->title }}" class="tour-link-gallery">
-                    <img src="{{ $data->getImageURL() }}" onerror="this.src='{{ asset('assets/admin/img/skeleton/not-found-image.png') }}'" class="tour-gallery" alt="">
-                </a>
-            </div>
-            <div bind="379dacf7-e3a1-5edd-7214-b67167607926" class="w-dyn-list">
-                <div bind="379dacf7-e3a1-5edd-7214-b67167607927" role="list" class="small-image-grid w-dyn-items">
-                    <div bind="379dacf7-e3a1-5edd-7214-b67167607928" role="listitem" class="w-dyn-item">
-                        <div class="small-vacation-image tour-gallery-box">
-                            <a href="{{ $data->getImageURL() }}" data-lightbox="image-1" data-title="{{ $data->title }}" class="tour-link-gallery">
-                                <img src="{{ $data->getImageURL() }}" onerror="this.src='{{ asset('assets/admin/img/skeleton/not-found-image.png') }}'" class="tour-gallery" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div bind="379dacf7-e3a1-5edd-7214-b67167607928" role="listitem" class="w-dyn-item">
-                        <div class="small-vacation-image tour-gallery-box">
-                            <a href="{{ $data->getImageURL() }}" data-lightbox="image-1" data-title="{{ $data->title }}" class="tour-link-gallery">
-                                <img src="{{ $data->getImageURL() }}" onerror="this.src='{{ asset('assets/admin/img/skeleton/not-found-image.png') }}'" class="tour-gallery" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div bind="379dacf7-e3a1-5edd-7214-b67167607928" role="listitem" class="w-dyn-item">
-                        <div class="small-vacation-image tour-gallery-box">
-                            <a href="{{ $data->getImageURL() }}" data-lightbox="image-1" data-title="{{ $data->title }}" class="tour-link-gallery">
-                                <img src="{{ $data->getImageURL() }}" onerror="this.src='{{ asset('assets/admin/img/skeleton/not-found-image.png') }}'" class="tour-gallery" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div bind="379dacf7-e3a1-5edd-7214-b67167607928" role="listitem" class="w-dyn-item">
-                        <div class="small-vacation-image tour-gallery-box">
-                            <a href="{{ $data->getImageURL() }}" data-lightbox="image-1" data-title="{{ $data->title }}" class="tour-link-gallery">
-                                <img src="{{ $data->getImageURL() }}" onerror="this.src='{{ asset('assets/admin/img/skeleton/not-found-image.png') }}'" class="tour-gallery" alt="">
-                            </a>
-                        </div>
-                    </div>
+
+@if ($data->galleries->count() > 0)
+    <div class="product-images-row">
+        <div class="grid-wrapper">
+            <div id="w-node-d2061ad0-5899-1e1a-4f90-c5f927733ede-1fc93e2e" class="vacation-images">
+                <div class="large-vacation-image">
+                    <a href="{{ $data->galleries->first()->getImageURL() }}" data-lightbox="image-1" data-title="{{ $data->title }} - Gambar 1" class="tour-link-gallery">
+                        <img src="{{ $data->galleries->first()->getImageURL() }}" onerror="this.src='{{ asset('assets/admin/img/skeleton/not-found-image.png') }}'" class="tour-gallery" alt="">
+                    </a>
                 </div>
-                <div bind="379dacf7-e3a1-5edd-7214-b67167607929" class="w-dyn-empty">
-                    <div>No items found.</div>
+                
+                <div bind="379dacf7-e3a1-5edd-7214-b67167607926" class="w-dyn-list">
+                    @if ($data->galleries->count() > 1)
+                        <div bind="379dacf7-e3a1-5edd-7214-b67167607927" role="list" class="small-image-grid w-dyn-items">
+                            @foreach ($data->galleries as $gallery)
+                                @if ($loop->iteration != 1)
+                                    <div bind="379dacf7-e3a1-5edd-7214-b67167607928" role="listitem" class="w-dyn-item">
+                                        <div class="small-vacation-image tour-gallery-box">
+                                            <a href="{{ $gallery->getImageURL() }}" data-lightbox="image-1" data-title="{{ $data->title }} - Gambar {{ $loop->iteration }}" class="tour-link-gallery">
+                                                <img src="{{ $gallery->getImageURL() }}" onerror="this.src='{{ asset('assets/admin/img/skeleton/not-found-image.png') }}'" class="tour-gallery" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                            {{-- <div bind="379dacf7-e3a1-5edd-7214-b67167607928" role="listitem" class="w-dyn-item">
+                                <div class="small-vacation-image tour-gallery-box">
+                                    <a href="{{ $data->getImageURL() }}" data-lightbox="image-1" data-title="{{ $data->title }}" class="tour-link-gallery">
+                                        <img src="{{ $data->getImageURL() }}" onerror="this.src='{{ asset('assets/admin/img/skeleton/not-found-image.png') }}'" class="tour-gallery" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div bind="379dacf7-e3a1-5edd-7214-b67167607928" role="listitem" class="w-dyn-item">
+                                <div class="small-vacation-image tour-gallery-box">
+                                    <a href="{{ $data->getImageURL() }}" data-lightbox="image-1" data-title="{{ $data->title }}" class="tour-link-gallery">
+                                        <img src="{{ $data->getImageURL() }}" onerror="this.src='{{ asset('assets/admin/img/skeleton/not-found-image.png') }}'" class="tour-gallery" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div bind="379dacf7-e3a1-5edd-7214-b67167607928" role="listitem" class="w-dyn-item">
+                                <div class="small-vacation-image tour-gallery-box">
+                                    <a href="{{ $data->getImageURL() }}" data-lightbox="image-1" data-title="{{ $data->title }}" class="tour-link-gallery">
+                                        <img src="{{ $data->getImageURL() }}" onerror="this.src='{{ asset('assets/admin/img/skeleton/not-found-image.png') }}'" class="tour-gallery" alt="">
+                                    </a>
+                                </div>
+                            </div> --}}
+                        </div>
+                    @else
+                        <div bind="379dacf7-e3a1-5edd-7214-b67167607929" class="w-dyn-empty">
+                            <div>No items found.</div>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
     </div>
-</div>
+@endif
+
 <div class="vacation-info">
     <div class="grid-wrapper">
         <div id="w-node-_8fbdfe59-b1e5-732b-4591-ecaad86e5865-1fc93e2e" class="vacation-content">
