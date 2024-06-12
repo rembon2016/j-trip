@@ -6,6 +6,7 @@ use App\Http\Controllers\LandingPage\PageController;
 use App\Http\Controllers\LandingPage\TourController;
 use App\Http\Controllers\LandingPage\TourTypeController;
 use App\Http\Controllers\LandingPage\DestinationController;
+use App\Http\Controllers\LandingPage\CustomerFeedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +56,13 @@ Route::group([
     ], function () {
         Route::get('/', [TourController::class, 'index'])->name('index');
         Route::get('/{slug}', [TourController::class, 'detail'])->name('detail');
+    });
+
+    Route::group([
+        'prefix' => 'customer-feedback',
+        'as' => 'customer-feedback.',
+    ], function () {
+        Route::post('/', [CustomerFeedbackController::class, 'store'])->name('store');
     });
 });
 

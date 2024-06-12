@@ -16,7 +16,7 @@ function getRandomColor() {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
-  }
+}
 
 function formatNumber(angka) {
     return angka.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
