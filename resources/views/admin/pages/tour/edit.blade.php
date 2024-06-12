@@ -132,11 +132,27 @@
             </div>
 
             <div class="col-md-8 mb-3">
-                <label for="" class="form-label">Upload Thumbnail</label>
-                <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror" onchange="previewFile(this, 'preview-image')" accept="image/*">
-                @error('image')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+                <div class="mb-3">
+                    <label for="" class="form-label">Upload Thumbnail</label>
+                    <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror" onchange="previewFile(this, 'preview-image')" accept="image/*">
+                    @error('image')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    @php
+                        $isFeatured = $data->is_featured ? 'true' : 'false';
+                    @endphp
+                    <label for="is_featured" class="form-label required">Fiturkan Tour Ini?</label>
+                    <label class="switch">
+                        <input type="checkbox" name="is_featured" id="is_featured" value="true" class="switch-input" @checked(old('is_featured', $isFeatured) == 'true') />
+                        <span class="switch-toggle-slider">
+                            <span class="switch-on"></span>
+                            <span class="switch-off"></span>
+                        </span>
+                        <span class="switch-label">Fiturkan</span>
+                    </label>
+                </div>
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary w-100">

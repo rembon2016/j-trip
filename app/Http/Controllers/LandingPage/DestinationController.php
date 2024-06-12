@@ -16,6 +16,7 @@ class DestinationController extends Controller
     
     public function detail($id)
     {
+        // $recommendedTours =
         return view('landing-page.pages.destination.detail');
     }
 }

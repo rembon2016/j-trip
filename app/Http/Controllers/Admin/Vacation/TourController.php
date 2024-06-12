@@ -39,6 +39,13 @@ class TourController extends Controller
                 Tour::FOLDER_NAME
             );
 
+            if (!empty($requestDTO['is_featured']) && $requestDTO['is_featured'] == 'true') {
+                $requestDTO['is_featured'] = true;
+                $requestDTO['featured_at'] = now();
+            } else {
+                $requestDTO['is_featured'] = false;
+            }
+
             $createdTour = Tour::create($requestDTO);
             return redirect()->route('admin.tour.index')->with('toastSuccess', __('crud.created', ['name' => 'Tour']));
         } catch (\Throwable $th) {
@@ -71,6 +78,15 @@ class TourController extends Controller
                 $data->thumbnail,
                 Tour::FOLDER_NAME,
             );
+
+            if (!empty($requestDTO['is_featured']) && $requestDTO['is_featured'] == 'true') {
+                $requestDTO['is_featured'] = true;
+
+                if (!$data->is_featured) $requestDTO['featured_at'] = now();
+            } else {
+                $requestDTO['is_featured'] = false;
+                $requestDTO['featured_at'] = NULL;
+            }
 
             unset($requestDTO['image']);
 

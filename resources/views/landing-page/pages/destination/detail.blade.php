@@ -77,7 +77,7 @@
                     <div id="w-node-_935bed8d-3a45-30de-8dee-c42be8d1d9c4-1fc93e2a" class="subtitle-intro-wrapper">
                         <div class="subtitle-dynamic-text">
                             <div bind="935bed8d-3a45-30de-8dee-c42be8d1d9c5" class="subtitle"></div>
-                            <div bind="d0315f52-4530-c684-dbb3-e00d80d8a02e" class="subtitle">Covilla vacations
+                            <div bind="d0315f52-4530-c684-dbb3-e00d80d8a02e" class="subtitle">Recommended vacations
                             </div>
                         </div>
                         <div id="w-node-_935bed8d-3a45-30de-8dee-c42be8d1d9c7-1fc93e2a" class="horizontal-line">

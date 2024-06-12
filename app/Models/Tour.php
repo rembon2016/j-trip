@@ -37,4 +37,15 @@ class Tour extends Model
     {
         return $this->hasOne(TourType::class, 'id', 'tour_type_id');
     }
+
+    // Scope Function
+    public function scopeRecommended($query, $limit = 5)
+    {
+        return $query->limit($limit)->orderBy('total_visitor', 'DESC');
+    }
+
+    public function scopeFeatured($query, $limit = 3)
+    {
+        return $query->where('is_featured', true)->limit($limit)->orderBy('featured_at', 'DESC');
+    }
 }
