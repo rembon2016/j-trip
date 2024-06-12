@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Content;
 
 use App\Models\Blog;
+use App\Models\Tour;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Blog\StoreBlogRequest;
@@ -21,7 +22,8 @@ class BlogController extends Controller
 
     public function create()
     {
-        return view('admin.pages.blog.create');
+        $tours = Tour::orderBy('title', 'ASC')->get();
+        return view('admin.pages.blog.create', compact('tours'));
     }
     
     public function store(StoreBlogRequest $request)
@@ -45,8 +47,9 @@ class BlogController extends Controller
     {
         $data = Blog::where('id', $id)->first();
         if (is_null($data)) return redirect()->route('admin.blog.index')->with('toastError', __('crud.not_found', ['name' => 'Blog']));
+        $tours = Tour::orderBy('title', 'ASC')->get();
         
-        return view('admin.pages.blog.edit', compact('data'));
+        return view('admin.pages.blog.edit', compact('data', 'tours'));
     }
     
     public function update(UpdateBlogRequest $request, string $id)

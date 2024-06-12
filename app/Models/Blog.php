@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Tour;
 use App\Models\User;
 use App\Traits\Models\Sluggable;
 use App\Traits\Models\WithPrimaryUuid;
@@ -29,5 +30,10 @@ class Blog extends Model
     public function createdBy()
     {
         return $this->hasOne(User::class, 'id', 'created_by');
+    }
+
+    public function tour()
+    {
+        return $this->hasOne(Tour::class, 'id', 'tour_id');
     }
 }
