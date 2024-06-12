@@ -35,3 +35,12 @@
 .tour-gallery-box {
     padding: 0;
 }
+
+.tour-section-wrapper {
+    margin-top: 50px;
+}
+
+.tour-card-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+}

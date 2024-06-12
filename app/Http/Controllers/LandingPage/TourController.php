@@ -8,6 +8,12 @@ use App\Http\Controllers\Controller;
 
 class TourController extends Controller
 {
+    public function index()
+    {
+        $data = Tour::orderBy('is_featured', 'DESC')->orderBy('featured_at', 'DESC')->paginate(6);
+        return view('landing-page.pages.tour.index', compact('data'));
+    }
+
     public function detail($slug)
     {
         $data = Tour::where('slug', $slug)->first();

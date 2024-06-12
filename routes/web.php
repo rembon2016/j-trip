@@ -53,6 +53,7 @@ Route::group([
         'prefix' => 'tour',
         'as' => 'tour.'
     ], function () {
+        Route::get('/', [TourController::class, 'index'])->name('index');
         Route::get('/{slug}', [TourController::class, 'detail'])->name('detail');
     });
 });
