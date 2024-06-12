@@ -704,3 +704,46 @@ label.required::after{
     border-color: var(--clr-primary) !important;
     color: #fff
 }
+
+.preview-gallery {
+    width: 100%;
+    height: 175px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 5px;
+}
+
+.gallery-box-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    gap: 15px;
+}
+
+.gallery-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-box label.upload-gallery-button {
+    cursor: pointer;
+}
+
+.gallery-box label.upload-gallery-button * {
+    pointer-events: none;
+}
+
+.gallery-box input[type="file"] {
+    display: none;
+}
+
+.gallery-button-group {
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.nav-align-top .nav-tabs li.nav-item .nav-link.active {
+    background-color: var(--clr-primary);
+    color: #fff;
+}

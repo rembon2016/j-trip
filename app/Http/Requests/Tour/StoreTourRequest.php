@@ -32,7 +32,9 @@ class StoreTourRequest extends FormRequest
             'room_type' => 'required|string|max:255',
             'tour_guide' => 'required|string|max:255',
             'image' => 'required|image',
-            'is_featured' => 'nullable'
+            'is_featured' => 'nullable',
+            'galleries' => 'nullable|array',
+            'galleries.*' => 'required|image'
         ];
     }
     public function attributes(): array
@@ -48,7 +50,8 @@ class StoreTourRequest extends FormRequest
             'room_type' => 'Jenis Kamar',
             'tour_guide' => 'Tour Guide',
             'image' => 'Thumbnail',
-            'is_featured' => 'Fiturkan'
+            'is_featured' => 'Fiturkan',
+            'galleries.*' => 'Galeri Tour'
         ];
     }
 }

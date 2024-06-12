@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\TourType;
 use App\Models\Destination;
+use App\Models\TourGallery;
 use App\Traits\Models\Sluggable;
 use App\Traits\Models\WithPrimaryUuid;
 use Illuminate\Database\Eloquent\Model;
@@ -15,6 +16,8 @@ class Tour extends Model
 
     protected $guarded = ['id', 'slug', 'created_at', 'updated_at'];
     protected $slugReferenceColumn = 'title';
+
+    public $incrementing = false;
 
     const FOLDER_NAME = 'tour';
 
@@ -36,6 +39,11 @@ class Tour extends Model
     public function type()
     {
         return $this->hasOne(TourType::class, 'id', 'tour_type_id');
+    }
+
+    public function galleries()
+    {
+        return $this->hasMany(TourGallery::class, 'tour_id', 'id');
     }
 
     // Scope Function
