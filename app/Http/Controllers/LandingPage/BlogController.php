@@ -18,7 +18,7 @@ class BlogController extends Controller
     
     public function detail(string $slug)
     {
-        $data = Blog::where('slug', $slug)->first();
+        $data = Blog::with('tour')->where('slug', $slug)->first();
         abort_if(is_null($data), 404);
 
         $blogs = Blog::where('slug', '!=', $slug)->limit(5)->orderBy('total_visitor', 'DESC')->get();
