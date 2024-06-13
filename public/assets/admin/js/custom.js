@@ -275,6 +275,10 @@ $(document).ready(function () {
                 },
                 error: function (error) {
                     console.error("Error: ", error);
+                    iziToast.error({
+                        title: 'Failed',
+                        message : error?.responseJSON?.message ?? 'Something Went Wrong!',
+                    });
                 },
             }).then(() => {
                 $("#defaultModal").modal("show");
