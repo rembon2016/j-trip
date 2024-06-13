@@ -56,6 +56,7 @@ Route::group([
     ], function () {
         Route::get('/', [TourController::class, 'index'])->name('index');
         Route::get('/{slug}', [TourController::class, 'detail'])->name('detail');
+        Route::post('/inquire/{id}', [TourController::class, 'store'])->name('store');
     });
 
     Route::group([

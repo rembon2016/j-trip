@@ -186,31 +186,39 @@
                 <div class="inquire-form-wrapper">
                     <div bind="9aa7f5e8-b7ee-2e8d-8149-60cb3399a7b8" class="inquire-form w-form">
                         <div class="text-block-3"><strong>Booking Form</strong></div>
-                        <form id="wf-form-Inquire-Form" name="wf-form-Inquire-Form" data-name="Inquire Form"
-                            method="get" class="form" data-wf-page-id="65af9bd818d9ae9f1fc93e2e"
+                        <form id="wf-form-Inquire-Form" action="{{ route('landing-page.tour.store', $data->id) }}" name="wf-form-Inquire-Form" data-name="Inquire Form"
+                            method="post" class="form" data-wf-page-id="65af9bd818d9ae9f1fc93e2e"
                             data-wf-element-id="9aa7f5e8-b7ee-2e8d-8149-60cb3399a7bc">
+                            @csrf
+
                             <div class="contact-fields">
-                                <div class="contact-field-wrapper"><label for="First-name-3"
+                                <div class="contact-field-wrapper">
+                                    <label for="First-name-3"
                                         id="w-node-_9aa7f5e8-b7ee-2e8d-8149-60cb3399a7bf-1fc93e2e"
-                                        class="field-label">Name</label><input
+                                        class="field-label">
+                                        Name
+                                    </label>
+                                    <input
                                         class="text-field w-node-_9aa7f5e8-b7ee-2e8d-8149-60cb3399a7c1-1fc93e2e w-input"
-                                        maxlength="256" name="First-name-2" data-name="First Name 2"
-                                        placeholder="First name" type="text" id="First-name-2"><input
+                                        maxlength="255" name="first_name" data-name="First Name 2"
+                                        placeholder="First name" type="text" id="First-name-2" required>
+                                    <input
                                         class="text-field w-node-_9aa7f5e8-b7ee-2e8d-8149-60cb3399a7c2-1fc93e2e w-input"
-                                        maxlength="256" name="Last-name-2" data-name="Last Name 2"
-                                        placeholder="Last name" type="text" id="Last-name-2"></div>
+                                        maxlength="255" name="last_name" data-name="Last Name 2"
+                                        placeholder="Last name" type="text" id="Last-name-2" required>
+                                </div>
                                 <div class="contact-field-wrapper"><label for="Email-3"
                                         id="w-node-_9aa7f5e8-b7ee-2e8d-8149-60cb3399a7c4-1fc93e2e"
                                         class="field-label">Email</label><input
                                         class="text-field w-node-_9aa7f5e8-b7ee-2e8d-8149-60cb3399a7c6-1fc93e2e w-input"
-                                        maxlength="256" name="Email-3" data-name="Email 3" placeholder="Your email"
-                                        type="email" id="Email-3"></div>
+                                        maxlength="255" name="email" data-name="Email 3" placeholder="Your email"
+                                        type="email" id="Email-3" required></div>
                                 <div class="contact-field-wrapper"><label for="Phone-3"
                                         id="w-node-_9aa7f5e8-b7ee-2e8d-8149-60cb3399a7c8-1fc93e2e"
                                         class="field-label">Phone</label><input
                                         class="text-field w-node-_9aa7f5e8-b7ee-2e8d-8149-60cb3399a7ca-1fc93e2e w-input"
-                                        maxlength="256" name="Phone-2" data-name="Phone 2"
-                                        placeholder="(555) 555-5555" type="tel" id="Phone-2"></div>
+                                        maxlength="25" name="phone" data-name="Phone 2"
+                                        placeholder="(555) 555-5555" type="tel" id="Phone-2" required></div>
                             </div><input type="submit" data-wait="Please wait..."
                                 id="w-node-_9aa7f5e8-b7ee-2e8d-8149-60cb3399a7cb-1fc93e2e"
                                 class="submit-button w-button" value="Inquire">

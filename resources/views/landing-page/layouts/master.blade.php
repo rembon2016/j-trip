@@ -66,6 +66,7 @@
                 transitionOutMobile: "fadeOutRight",
             });
         </script>
+        
         @include('admin.components.notification')
         
 
