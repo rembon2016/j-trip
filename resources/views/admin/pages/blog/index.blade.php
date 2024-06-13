@@ -34,7 +34,7 @@
                         <th>#</th>
                         <th>Thumbnail</th>
                         <th>Judul</th>
-                        <th>Visitor</th>
+                        <th class="text-center">Visitor</th>
                         <th>Dibuat Oleh</th>
                         <th class="text-center">Opsi</th>
                     </tr>
@@ -49,7 +49,7 @@
                             </a>
                         </td>
                         <td>{{ $item->title }}</td>
-                        <td>{{ $item->total_visitor }}</td>
+                        <td class="text-center">{{ $item->total_visitor }}</td>
                         <td>{{ $item->createdBy?->name }}</td>
                         <td>
                             <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">
