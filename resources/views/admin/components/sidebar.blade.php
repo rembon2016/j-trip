@@ -33,232 +33,154 @@
             </a>
         </li>
 
-        <!-- Users -->
-        <li class="menu-item @if(Route::is('admin.users.*')) active open @endif">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-group"></i>
-                <div data-i18n="Users">Users</div>
-            </a>
+        @has([
+            'see-administrator',
+            'see-staff'
+        ])
+            <!-- Users -->
+            <li class="menu-item @if(Route::is('admin.users.*')) active open @endif">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-group"></i>
+                    <div data-i18n="Users">Users</div>
+                </a>
 
-            <ul class="menu-sub">
-                <li class="menu-item @if(Route::is(('admin.users.administrator.*'))) active @endif">
-                    <a href="{{ route('admin.users.administrator.index') }}" class="menu-link">
-                        <div data-i18n="Administrator">Administrator</div>
-                    </a>
-                </li>
+                <ul class="menu-sub">
+                    @has('see-administrator')
+                    <li class="menu-item @if(Route::is(('admin.users.administrator.*'))) active @endif">
+                        <a href="{{ route('admin.users.administrator.index') }}" class="menu-link">
+                            <div data-i18n="Administrator">Administrator</div>
+                        </a>
+                    </li>
+                    @endhas
 
-                <li class="menu-item @if(Route::is(('admin.users.staff.*'))) active @endif">
-                    <a href="{{ route('admin.users.staff.index') }}" class="menu-link">
-                        <div data-i18n="Staff">Staff</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
+                    @has('see-staff')
+                    <li class="menu-item @if(Route::is(('admin.users.staff.*'))) active @endif">
+                        <a href="{{ route('admin.users.staff.index') }}" class="menu-link">
+                            <div data-i18n="Staff">Staff</div>
+                        </a>
+                    </li>
+                    @endhas
+                </ul>
+            </li>
+        @endhas
 
-        <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Vacation</span>
-        </li>
-
-        <li class="menu-item @if(Route::is('admin.destination.*')) active @endif">
-            <a href="{{ route('admin.destination.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-map-pin"></i>
-                <div data-i18n="Destinasi">Destinasi</div>
-            </a>
-        </li>
-
-        <li class="menu-item @if(Route::is('admin.tour-type.*')) active @endif">
-            <a href="{{ route('admin.tour-type.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-directions"></i>
-                <div data-i18n="Tipe Tour">Tipe Tour</div>
-            </a>
-        </li>
-
-        <li class="menu-item @if(Route::is('admin.tour.*')) active @endif">
-            <a href="{{ route('admin.tour.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-trip"></i>
-                <div data-i18n="Tour">Tour</div>
-            </a>
-        </li>
-
-        <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Message</span>
-        </li>
-
-        <li class="menu-item @if(Route::is('admin.booking-tour.*')) active @endif">
-            <a href="{{ route('admin.booking-tour.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-book-bookmark"></i>
-                <div data-i18n="Booking Tour">Booking Tour</div>
-            </a>
-        </li>
-
-        <li class="menu-item @if(Route::is('admin.customer-feedback.*')) active @endif">
-            <a href="{{ route('admin.customer-feedback.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-question-mark"></i>
-                <div data-i18n="Customer Feedback">Customer Feedback</div>
-            </a>
-        </li>
-
-        <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Content</span>
-        </li>
-
-        <li class="menu-item @if(Route::is('admin.blog.*')) active @endif">
-            <a href="{{ route('admin.blog.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bxs-news"></i>
-                <div data-i18n="Blog">Blog</div>
-            </a>
-        </li>
-
-        <li class="menu-item @if(Route::is('admin.gallery.*')) active @endif">
-            <a href="{{ route('admin.gallery.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-images"></i>
-                <div data-i18n="Galeri">Galeri</div>
-            </a>
-        </li>
-
-        <li class="menu-item @if(Route::is('admin.testimonial.*')) active @endif">
-            <a href="{{ route('admin.testimonial.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-message-dots"></i>
-                <div data-i18n="Testimoni">Testimoni</div>
-            </a>
-        </li>
-
-        <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Other</span>
-        </li>
-
-        <li class="menu-item @if(Route::is('admin.setting.*')) active @endif">
-            <a href="{{ route('admin.setting.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-cog"></i>
-                <div data-i18n="Web Setting">Web Setting</div>
-            </a>
-        </li>
-        
-        {{-- 
-        @role('admin')
-        <!-- Users -->
-        <li class="menu-item @if(Route::is('dashboard.users.*')) active open @endif">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-group"></i>
-                <div data-i18n="Users">Users</div>
-            </a>
-
-            <ul class="menu-sub">
-                <li class="menu-item @if(Route::is(('dashboard.users.administrator.*'))) active @endif">
-                    <a href="{{ route('dashboard.users.administrator.index') }}" class="menu-link">
-                        <div data-i18n="Administrator">Administrator</div>
-                    </a>
-                </li>
-
-                <li class="menu-item @if(Route::is(('dashboard.users.user.*'))) active @endif">
-                    <a href="{{ route('dashboard.users.user.index') }}" class="menu-link">
-                        <div data-i18n="Pengguna">Pengguna</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        @endrole
-        
-        <!-- Barang -->
-        <li class="menu-item @if(Route::is('dashboard.items.*')) active open @endif">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-package"></i>
-                <div data-i18n="Barang">Barang</div>
-            </a>
-
-            <ul class="menu-sub">
-                <li class="menu-item @if(Route::is('dashboard.items.category.*')) active @endif">
-                    <a href="{{ route('dashboard.items.category.index') }}" class="menu-link">
-                        <div data-i18n="Kategori barang">Kategori Barang</div>
-                    </a>
-                </li>
-
-                <li class="menu-item @if(Route::is('dashboard.items.item.*')) active @endif">
-                    <a href="{{ route('dashboard.items.item.index') }}" class="menu-link">
-                        <div data-i18n="Data Barang">Data Barang</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        
-        <!-- Supplier -->
-        <li class="menu-item @if(Route::is('dashboard.supplier.*')) active @endif">
-            <a href="{{ route('dashboard.supplier.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bxs-user-account"></i>
-                <div data-i18n="Supplier">Supplier</div>
-            </a>
-        </li>
-        
-        <!-- Pelanggan -->
-        <li class="menu-item @if(Route::is('dashboard.customer.*')) active @endif">
-            <a href="{{ route('dashboard.customer.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-user-pin"></i>
-                <div data-i18n="Pelanggan">Pelanggan</div>
-            </a>
-        </li>
-
-        <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Transaksi</span>
-        </li>
-        
-        <!-- Barang Masuk -->
-        <li class="menu-item @if(Route::is('dashboard.transaction.incoming.*')) active @endif">
-            <a href="{{ route('dashboard.transaction.incoming.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-down-arrow-circle"></i>
-                <div data-i18n="Barang Masuk">Barang Masuk</div>
-            </a>
-        </li>
-
-        <!-- Transaksi Penjualan -->
-        <li class="menu-item @if(Route::is('dashboard.transaction.sale.*')) active @endif">
-            <a href="{{ route('dashboard.transaction.sale.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-up-arrow-circle"></i>
-                <div data-i18n="Transaksi Penjualan">Transaksi Penjualan</div>
-            </a>
-        </li>
-
-        <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Laporan</span>
-        </li>
-        
-        <!-- Stok Barang -->
-        <li class="menu-item @if(Route::is('dashboard.report.stock.*')) active @endif">
-            <a href="{{ route('dashboard.report.stock.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-notepad"></i>
-                <div data-i18n="Stok Barang">Stok Barang</div>
-            </a>
-        </li>
-
-        <!-- Laporan Barang Masuk -->
-        <li class="menu-item @if(Route::is('dashboard.report.incoming.*')) active @endif">
-            <a href="{{ route('dashboard.report.incoming.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bxs-report"></i>
-                <div data-i18n="Laporan Barang Masuk">Laporan Barang Masuk</div>
-            </a>
-        </li>
-
-        <!-- Laporan Penjualan -->
-        <li class="menu-item @if(Route::is('dashboard.report.sale.*')) active @endif">
-            <a href="{{ route('dashboard.report.sale.index') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bxs-report"></i>
-                <div data-i18n="Laporan Penjualan">Laporan Penjualan</div>
-            </a>
-        </li>
-
-        @role('admin')
+        @has([
+            'see-destination',
+            'see-tour-type',
+            'see-tour'
+        ])
             <li class="menu-header small text-uppercase">
-                <span class="menu-header-text">Pesan</span>
+                <span class="menu-header-text">Vacation</span>
             </li>
 
-
-            <!-- Layanan Pelanggan -->
-            <li class="menu-item @if(Route::is('dashboard.customer-message.*')) active @endif">
-                <a href="{{ route('dashboard.customer-message.index') }}" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-message-dots"></i>
-                    <div data-i18n="Layanan Pelanggan">Layanan Pelanggan</div>
+            @has('see-destination')
+            <li class="menu-item @if(Route::is('admin.destination.*')) active @endif">
+                <a href="{{ route('admin.destination.index') }}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-map-pin"></i>
+                    <div data-i18n="Destinasi">Destinasi</div>
                 </a>
             </li>
-        @endrole --}}
+            @endhas
+
+            @has('see-tour-type')
+            <li class="menu-item @if(Route::is('admin.tour-type.*')) active @endif">
+                <a href="{{ route('admin.tour-type.index') }}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-directions"></i>
+                    <div data-i18n="Tipe Tour">Tipe Tour</div>
+                </a>
+            </li>
+            @endhas
+
+            @has('see-tour')
+            <li class="menu-item @if(Route::is('admin.tour.*')) active @endif">
+                <a href="{{ route('admin.tour.index') }}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-trip"></i>
+                    <div data-i18n="Tour">Tour</div>
+                </a>
+            </li>
+            @endhas
+        @endhas
+
+        @has([
+            'see-booking-tour',
+            'see-customer-feedback'
+        ])
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text">Message</span>
+            </li>
+
+            @has('see-booking-tour')
+            <li class="menu-item @if(Route::is('admin.booking-tour.*')) active @endif">
+                <a href="{{ route('admin.booking-tour.index') }}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-book-bookmark"></i>
+                    <div data-i18n="Booking Tour">Booking Tour</div>
+                </a>
+            </li>
+            @endhas
+
+            @has('see-customer-feedback')
+            <li class="menu-item @if(Route::is('admin.customer-feedback.*')) active @endif">
+                <a href="{{ route('admin.customer-feedback.index') }}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-question-mark"></i>
+                    <div data-i18n="Customer Feedback">Customer Feedback</div>
+                </a>
+            </li>
+            @endhas
+        @endhas
+
+        @has([
+            'see-blog',
+            'see-gallery',
+            'see-testimonial'
+        ])
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text">Content</span>
+            </li>
+
+            @has('see-blog')
+            <li class="menu-item @if(Route::is('admin.blog.*')) active @endif">
+                <a href="{{ route('admin.blog.index') }}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bxs-news"></i>
+                    <div data-i18n="Blog">Blog</div>
+                </a>
+            </li>
+            @endhas
+
+            @has('see-gallery')
+            <li class="menu-item @if(Route::is('admin.gallery.*')) active @endif">
+                <a href="{{ route('admin.gallery.index') }}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-images"></i>
+                    <div data-i18n="Galeri">Galeri</div>
+                </a>
+            </li>
+            @endhas
+
+            @has('see-testimonial')
+            <li class="menu-item @if(Route::is('admin.testimonial.*')) active @endif">
+                <a href="{{ route('admin.testimonial.index') }}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-message-dots"></i>
+                    <div data-i18n="Testimoni">Testimoni</div>
+                </a>
+            </li>
+            @endhas
+        @endhas
+
+        @has([
+            'manage-web-setting'
+        ])
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text">Other</span>
+            </li>
+
+            @has('manage-web-setting')
+            <li class="menu-item @if(Route::is('admin.setting.*')) active @endif">
+                <a href="{{ route('admin.setting.index') }}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-cog"></i>
+                    <div data-i18n="Web Setting">Web Setting</div>
+                </a>
+            </li>
+            @endhas
+        @endhas
     </ul>
 </aside>
 <!-- / Menu -->

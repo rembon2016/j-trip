@@ -29,6 +29,19 @@ class AppServiceProvider extends ServiceProvider
         if (!App::runningInConsole()) {
             // Blade Directive Command
             Blade::directive('idr', fn ($expression) => "Rp <?php echo number_format({$expression}, 0, ',', '.'); ?>");
+            Blade::if('has', function ($expression) {
+                if (!auth()->check()) return false;
+                $nameOfRole = auth()->user()->role;
+                $permissions = config("role.{$nameOfRole}");
+
+                if (is_array($expression)) {
+                    return !empty(array_intersect($permissions, $expression));
+                } elseif(is_string($expression)) {
+                    return in_array($expression, $permissions);
+                } else {
+                    return false;
+                }
+            });
 
             $pinDestinations = Destination::select(['id', 'title', 'image', 'slug'])->withCount('tours')->orderBy('title', 'ASC')->limit(5)->get();
             $pinTourTypes = TourType::select(['id', 'title', 'image', 'slug'])->withCount('tours')->orderBy('title', 'ASC')->limit(5)->get();
