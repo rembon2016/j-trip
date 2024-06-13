@@ -81,6 +81,24 @@
         </li>
 
         <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Message</span>
+        </li>
+
+        <li class="menu-item @if(Route::is('admin.booking-tour.*')) active @endif">
+            <a href="{{ route('admin.booking-tour.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-book-bookmark"></i>
+                <div data-i18n="Booking Tour">Booking Tour</div>
+            </a>
+        </li>
+
+        <li class="menu-item @if(Route::is('admin.customer-feedback.*')) active @endif">
+            <a href="{{ route('admin.customer-feedback.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-question-mark"></i>
+                <div data-i18n="Customer Feedback">Customer Feedback</div>
+            </a>
+        </li>
+
+        <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Content</span>
         </li>
 

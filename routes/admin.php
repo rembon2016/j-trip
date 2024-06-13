@@ -11,8 +11,10 @@ use App\Http\Controllers\Admin\Vacation\TourTypeController;
 use App\Http\Controllers\Admin\Utilities\CkeditorController;
 use App\Http\Controllers\Admin\Content\TestimonialController;
 use App\Http\Controllers\Admin\Dashboard\DashboardController;
+use App\Http\Controllers\Admin\Message\TourInquiryController;
 use App\Http\Controllers\Admin\Users\AdministratorController;
 use App\Http\Controllers\Admin\Vacation\DestinationController;
+use App\Http\Controllers\Admin\Message\CustomerFeedbackController;
 
 Route::group([
     'prefix' => 'admin',
@@ -103,6 +105,23 @@ Route::group([
         Route::get('/edit/{id}', [TourController::class, 'edit'])->name('edit');
         Route::put('/update/{id}', [TourController::class, 'update'])->name('update');
         Route::delete('/delete/{id}', [TourController::class, 'delete'])->name('delete');
+    });
+
+    // Messages Route
+    Route::group([
+        'prefix' => 'booking-tour',
+        'as' => 'booking-tour.'
+    ], function () {
+        Route::get('/', [TourInquiryController::class, 'index'])->name('index');
+        Route::get('/{id}', [TourInquiryController::class, 'detail'])->name('detail');
+    });
+
+    Route::group([
+        'prefix' => 'customer-feedback',
+        'as' => 'customer-feedback.'
+    ], function () {
+        Route::get('/', [CustomerFeedbackController::class, 'index'])->name('index');
+        Route::get('/{id}', [CustomerFeedbackController::class, 'detail'])->name('detail');
     });
 
 
