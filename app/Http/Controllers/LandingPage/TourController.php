@@ -5,6 +5,7 @@ namespace App\Http\Controllers\LandingPage;
 use App\Models\Tour;
 use App\Models\TourInquiry;
 use Illuminate\Http\Request;
+use App\Helpers\Utilities\Visitor;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Tour\StoreTourInquiryRequest;
 
@@ -20,6 +21,9 @@ class TourController extends Controller
     {
         $data = Tour::where('slug', $slug)->first();
         abort_if(is_null($data), 404);
+
+        // Record Visitor
+        Visitor::recordVisitor($data);
 
         return view('landing-page.pages.tour.detail', compact('data'));
     }
