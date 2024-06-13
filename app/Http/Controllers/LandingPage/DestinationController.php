@@ -4,6 +4,7 @@ namespace App\Http\Controllers\LandingPage;
 
 use App\Models\Destination;
 use Illuminate\Http\Request;
+use App\Helpers\Utilities\Visitor;
 use App\Http\Controllers\Controller;
 
 class DestinationController extends Controller
@@ -21,6 +22,9 @@ class DestinationController extends Controller
 
         $featuredTours = $data->featuredTours();
         $tours = $data->tours;
+
+        // Record Visitor
+        Visitor::recordVisitor($data);
 
         return view('landing-page.pages.destination.detail', compact('data', 'featuredTours', 'tours'));
     }
