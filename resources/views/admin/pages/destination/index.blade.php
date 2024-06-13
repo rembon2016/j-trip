@@ -39,7 +39,10 @@
                         <th class="text-center">Visitor</th>
                         <th>Dibuat Oleh</th>
 
-                        @has('manage-destination')
+                        @has([
+                            'see-destination',
+                            'manage-destination'
+                        ])
                             <th class="text-center">Opsi</th>
                         @endhas
                     </tr>
@@ -57,18 +60,26 @@
                         <td class="text-center">{{ $item->total_visitor }}</td>
                         <td>{{ $item->createdBy?->name }}</td>
 
-                        @has('manage-destination')
+                        @has([
+                            'see-destination',
+                            'manage-destination'
+                        ])
                             <td>
                                 <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">
+                                    @has('see-destination')
                                     <a href="{{ route('landing-page.destination.detail', $item->slug) }}" class="btn btn-secondary btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Lihat Destinasi" target="_blank">
                                         <i class="bx bx-show"></i>
                                     </a>
+                                    @endhas
+
+                                    @has('manage-destination')
                                     <a href="{{ route('admin.destination.edit', $item->id) }}" class="btn btn-info btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Ubah Destinasi">
                                         <i class="bx bx-edit-alt"></i>
                                     </a>
                                     <a href="{{ route('admin.destination.delete', $item->id) }}" class="btn btn-danger btn-icon btn-sm delete-confirm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Hapus Destinasi">
                                         <i class="bx bx-trash-alt"></i>
                                     </a>
+                                    @endhas
                                 </div>
                             </td>
                         @endhas
