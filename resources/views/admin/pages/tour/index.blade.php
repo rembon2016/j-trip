@@ -21,9 +21,11 @@
     <div class="d-flex align-items-center justify-content-between pe-4  ">
         <h5 class="card-header mb-0">Tour</h5>
         <div class="d-flex align-items-center gap-2">
+            @has('manage-tour')
             <a href="{{ route('admin.tour.create') }}" class="btn btn-icon btn-primary" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Tambah Tour">
                 <i class="bx bx-plus-circle"></i>
             </a>
+            @endhas
         </div>
     </div>
     <div class="card-body pt-1">
@@ -37,7 +39,10 @@
                         <th>Harga</th>
                         <th class="text-center">Visitor</th>
                         <th class="text-center">Fiturkan</th>
-                        <th class="text-center">Opsi</th>
+
+                        @has('manage-tour')
+                            <th class="text-center">Opsi</th>
+                        @endhas
                     </tr>
                 </thead>
                 <tbody>
@@ -59,19 +64,22 @@
                                 -
                             @endif
                         </td>
-                        <td>
-                            <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">
-                                <a href="{{ route('landing-page.tour.detail', $item->slug) }}" class="btn btn-secondary btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Lihat Tour" target="_blank">
-                                    <i class="bx bx-show"></i>
-                                </a>
-                                <a href="{{ route('admin.tour.edit', $item->id) }}" class="btn btn-info btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Ubah Tour">
-                                    <i class="bx bx-edit-alt"></i>
-                                </a>
-                                <a href="{{ route('admin.tour.delete', $item->id) }}" class="btn btn-danger btn-icon btn-sm delete-confirm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Hapus Tour">
-                                    <i class="bx bx-trash-alt"></i>
-                                </a>
-                            </div>
-                        </td>
+                        
+                        @has('manage-tour')
+                            <td>
+                                <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">
+                                    <a href="{{ route('landing-page.tour.detail', $item->slug) }}" class="btn btn-secondary btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Lihat Tour" target="_blank">
+                                        <i class="bx bx-show"></i>
+                                    </a>
+                                    <a href="{{ route('admin.tour.edit', $item->id) }}" class="btn btn-info btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Ubah Tour">
+                                        <i class="bx bx-edit-alt"></i>
+                                    </a>
+                                    <a href="{{ route('admin.tour.delete', $item->id) }}" class="btn btn-danger btn-icon btn-sm delete-confirm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Hapus Tour">
+                                        <i class="bx bx-trash-alt"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        @endhas
                     </tr>
                     @endforeach
                 </tbody>

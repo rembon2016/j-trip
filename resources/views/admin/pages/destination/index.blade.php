@@ -21,9 +21,11 @@
     <div class="d-flex align-items-center justify-content-between pe-4  ">
         <h5 class="card-header mb-0">Destinasi / Lokasi</h5>
         <div class="d-flex align-items-center gap-2">
+            @has('manage-destination')
             <a href="{{ route('admin.destination.create') }}" class="btn btn-icon btn-primary" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Tambah Destinasi">
                 <i class="bx bx-plus-circle"></i>
             </a>
+            @endhas
         </div>
     </div>
     <div class="card-body pt-1">
@@ -36,7 +38,10 @@
                         <th>Judul</th>
                         <th class="text-center">Visitor</th>
                         <th>Dibuat Oleh</th>
-                        <th class="text-center">Opsi</th>
+
+                        @has('manage-destination')
+                            <th class="text-center">Opsi</th>
+                        @endhas
                     </tr>
                 </thead>
                 <tbody>
@@ -51,19 +56,22 @@
                         <td>{{ $item->title }}</td>
                         <td class="text-center">{{ $item->total_visitor }}</td>
                         <td>{{ $item->createdBy?->name }}</td>
-                        <td>
-                            <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">
-                                <a href="{{ route('landing-page.destination.detail', $item->slug) }}" class="btn btn-secondary btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Lihat Destinasi" target="_blank">
-                                    <i class="bx bx-show"></i>
-                                </a>
-                                <a href="{{ route('admin.destination.edit', $item->id) }}" class="btn btn-info btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Ubah Destinasi">
-                                    <i class="bx bx-edit-alt"></i>
-                                </a>
-                                <a href="{{ route('admin.destination.delete', $item->id) }}" class="btn btn-danger btn-icon btn-sm delete-confirm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Hapus Destinasi">
-                                    <i class="bx bx-trash-alt"></i>
-                                </a>
-                            </div>
-                        </td>
+
+                        @has('manage-destination')
+                            <td>
+                                <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">
+                                    <a href="{{ route('landing-page.destination.detail', $item->slug) }}" class="btn btn-secondary btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Lihat Destinasi" target="_blank">
+                                        <i class="bx bx-show"></i>
+                                    </a>
+                                    <a href="{{ route('admin.destination.edit', $item->id) }}" class="btn btn-info btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Ubah Destinasi">
+                                        <i class="bx bx-edit-alt"></i>
+                                    </a>
+                                    <a href="{{ route('admin.destination.delete', $item->id) }}" class="btn btn-danger btn-icon btn-sm delete-confirm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Hapus Destinasi">
+                                        <i class="bx bx-trash-alt"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        @endhas
                     </tr>
                     @endforeach
                 </tbody>
