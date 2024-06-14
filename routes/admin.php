@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Users\StaffController;
 use App\Http\Controllers\Admin\Content\BlogController;
+use App\Http\Controllers\Admin\Content\HomeController;
+use App\Http\Controllers\Admin\Content\AboutController;
 use App\Http\Controllers\Admin\Other\SettingController;
 use App\Http\Controllers\Admin\Vacation\TourController;
 use App\Http\Controllers\Admin\Content\GalleryController;
@@ -150,5 +152,20 @@ Route::group([
     ], function () {
         Route::get('/', [SettingController::class, 'index'])->name('index');
         Route::post('/', [SettingController::class, 'store'])->name('store');
+    });
+    Route::group([
+        'prefix' => 'home',
+        'as' => 'home.'
+    ], function () {
+        Route::get('/', [HomeController::class, 'index'])->name('index');
+        Route::post('/{id}', [HomeController::class, 'edit'])->name('edit');
+    });
+
+    Route::group([
+        'prefix' => 'about',
+        'as' => 'about.'
+    ], function () {
+        Route::get('/', [AboutController::class, 'index'])->name('index');
+        Route::post('/{id}', [AboutController::class, 'edit'])->name('edit');
     });
 });

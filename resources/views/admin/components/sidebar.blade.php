@@ -104,6 +104,19 @@
                 <div data-i18n="Testimoni">Testimoni</div>
             </a>
         </li>
+        <li class="menu-item @if(Route::is('admin.home.*')) active @endif">
+            <a href="{{ route('admin.home.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-news"></i>
+                <div data-i18n="Blog">Home</div>
+            </a>
+        </li>
+
+         <li class="menu-item @if(Route::is('admin.about.*')) active @endif">
+            <a href="{{ route('admin.about.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-news"></i>
+                <div data-i18n="Blog">About</div>
+            </a>
+        </li>
 
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Other</span>

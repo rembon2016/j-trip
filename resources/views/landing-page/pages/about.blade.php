@@ -21,11 +21,11 @@
         <div id="w-node-_783bbe3f-cd97-203e-588a-2e9b724c47ab-1fc93e20" class="inner-page-intro">
             <div id="w-node-_783bbe3f-cd97-203e-588a-2e9b724c47ac-1fc93e20" class="hero-intro">
                 <div class="subtitle large">About J-trip</div>
-                <h1 class="xxl-heading">Travel Agent Khusus Jepang</h1>
+                <h1 class="xxl-heading">{{ $about->title_about }}</h1>
             </div>
         </div>
     </div>
-    <div class="hero-background-image about-hero-background">
+    <div class="hero-background-image about-hero-background" style="background-image:url({{ asset($about->banner_about) }}) !important">
         <div class="overlay dark"></div>
     </div>
 </div>
@@ -38,9 +38,8 @@
                 <div id="w-node-ac3990dc-2eec-4ade-30bc-298d8b8dae42-1fc93e20" class="intro-content">
                     <div id="w-node-ac3990dc-2eec-4ade-30bc-298d8b8dae43-1fc93e20">
                         <div class="stacked-intro">
-                            <h1>Mimpi kami ingin menjembatani Jepang dan Indonesia</h1>
-                            <div class="body-display large">Kami percaya kekentalan budaya dan keindahan alam Jepang
-                                bisa menjadi inspirasi bagi kita semua.<br>‍</div>
+                            <h1>{{ $about->title }}</h1>
+                            <div class="body-display large">{{ $about->description }}<br>‍</div>
                         </div>
                     </div>
                     <a id="w-node-ac3990dc-2eec-4ade-30bc-298d8b8dae4c-1fc93e20" href="{{ route('landing-page.contact') }}"
@@ -49,7 +48,7 @@
                     </a>
                 </div>
                 <div class="intro-right-image">
-                    <div class="hero-background-image about-intro-background"></div>
+                    <div class="hero-background-image about-intro-background" style="background-image:url({{ asset($about->photo) }}) !important"></div>
                 </div>
             </div>
         </div>
@@ -64,11 +63,9 @@
                     <div class="subtitle-wrapper">
                         <div class="subtitle">Our mission</div>
                     </div>
-                    <h1>Rasakan Tour Jepang yang hanya milik Kamu</h1>
+                    <h1>{{ $about->mission_title }}</h1>
                 </div>
-                <div class="body-display large">Staff kami yang dapat menggunakan tiga bahasa (Jepang, Inggris,
-                    Indonesia) akan mendampingi anda, dari konsultasi pembuatan rencana perjalanan hingga memandu
-                    anda selama perjalanan jika dibutuhkan.</div>
+                <div class="body-display large">{{ $about->mission_description }}</div>
             </div>
             <div data-w-id="9d1c4b15-d541-b452-d535-fdcf19169a3b" class="team-images">
                 <div id="w-node-_9c9aa846-e9b8-a932-3930-2ee1f13a0614-1fc93e20" class="small-image">

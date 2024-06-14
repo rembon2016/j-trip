@@ -20,8 +20,8 @@
         <div id="w-node-bdc50d02-a8e6-7b91-2785-9db5368500c9-1fc93e1d" class="home-hero-content">
             <div id="w-node-d9699e8d-5b86-d263-ba3a-4083a13e67b1-1fc93e1d" style="opacity:1" class="home-hero-intro">
                 <div class="home-hero-title">
-                    <div class="subtitle white">Kami adalah</div>
-                    <h1 class="xxl-heading">Travel Agent khusus tur Jepang</h1>
+                    <div class="subtitle white">{{ $home->text_top_banner }}</div>
+                    <h1 class="xxl-heading">{{ $home->title_banner }}</h1>
                 </div>
                 <a id="w-node-_25de05f7-08d0-50ef-c5bb-1fe7c0bf0591-1fc93e1d" href="{{ route('landing-page.contact') }}" class="button white w-inline-block">
                     <div id="w-node-df0925e9-a1d7-37c2-e250-10ca7c519c36-1fc93e1d">Contact us</div>
@@ -66,7 +66,7 @@
                             <div bind="046de11e-34eb-e247-1191-52218888fd82" role="listitem" class="w-dyn-item">
                                 <div class="slider-background-wrapper hero-wrapper">
                                     <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="slider-background">
-                                        <div bind="c48b0112-662b-903b-413b-ccc63315bf70" class="background one">
+                                        <div bind="c48b0112-662b-903b-413b-ccc63315bf70" class="background one" style="background-image:url({{ asset($home->slider_banner) }}) !important">
                                             <div class="overlay"></div>
                                         </div>
                                     </div>
@@ -196,8 +196,8 @@
                             <div class="subtitle">Jtrip</div>
                         </div>
                         <div class="stacked-intro">
-                            <h1>Fall in love with Japan</h1>
-                            <div class="body-display large">Bukan hanya sekedar travel agent, kami bercita-cita untuk menjadi jembatan yang menghubungkan Kamu dengan Jepang</div>
+                            <h1>{{ $home->title_section_one }}</h1>
+                            <div class="body-display large">{{ $home->desc_section_one }}</div>
                         </div>
                     </div>
                     <div id="w-node-f71590a7-bfd7-02c9-56d1-c040e0a4ad80-1fc93e1d" class="nav-button">
@@ -207,7 +207,7 @@
                     </div>
                 </div>
                 <div class="intro-right-image">
-                    <div class="hero-background-image benefit-intro-background">
+                    <div class="hero-background-image benefit-intro-background" style="background-image:url({{ asset($home->image_section_one) }}) !important">
                         <div style="display:block;-webkit-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="background-load-top"></div>
                         <div style="display:block;-webkit-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="background-load-bottom"></div>
                     </div>
@@ -220,30 +220,30 @@
                 </div>
                 <div class="benefits-box">
                     <div class="benefit-card">
-                        <div id="w-node-e4ae49cb-ae7c-509e-0507-b89bbec7dd33-1fc93e1d" class="benefit-icon"><img src="{{ asset('assets/landing-page/images/Passport.svg') }}" loading="lazy" alt=""></div>
+                        <div id="w-node-e4ae49cb-ae7c-509e-0507-b89bbec7dd33-1fc93e1d" class="benefit-icon"><img src="{{ asset($home->icon_one) }}" loading="lazy" alt=""></div>
                         <div class="benefit-description">
-                            <h3>Japanese Speakers</h3>
-                            <div class="body-display small">Kami merekrut orang-orang yang memiliki pengalaman tinggal dan bisa berbahasa Jepang agar bisa memberikan anda support yang maksimal dalam merancang trip impian anda</div>
+                            <h3>{{ $home->title_one }}</h3>
+                            <div class="body-display small">{{ $home->desc_one }}</div>
                         </div>
                     </div>
 
                     <div class="verticle-line"></div>
 
                     <div class="benefit-card">
-                        <div id="w-node-_4f395442-08b8-de95-696a-6c7cef4c3d56-1fc93e1d" class="benefit-icon"><img src="{{ asset('assets/landing-page/images/Deals.svg') }}" loading="lazy" alt=""></div>
+                        <div id="w-node-_4f395442-08b8-de95-696a-6c7cef4c3d56-1fc93e1d" class="benefit-icon"><img src="{{ asset($home->icon_two) }}" loading="lazy" alt=""></div>
                         <div class="benefit-description">
-                            <h3>Specialized</h3>
-                            <div class="body-display small">Kami berkomitmen mencurahkan seluruh waktu dan tenaga kami untuk mengembangkan produk pariwisata Jepang dan bisa memberikan penawaran terbaik untuk anda</div>
+                            <h3>{{ $home->title_two }}</h3>
+                            <div class="body-display small">{{ $home->desc_two }}</div>
                         </div>
                     </div>
 
                     <div id="w-node-_18ca4256-5f73-dd86-9407-a28c2397089a-1fc93e1d" class="verticle-line"></div>
                     
                     <div class="benefit-card">
-                        <div id="w-node-_749848ad-5740-e571-8d39-3d396d1bd41b-1fc93e1d" class="benefit-icon"><img src="{{ asset('assets/landing-page/images/Location-marker.svg') }}" loading="lazy" alt=""></div>
+                        <div id="w-node-_749848ad-5740-e571-8d39-3d396d1bd41b-1fc93e1d" class="benefit-icon"><img src="{{ asset($home->icon_three) }}" loading="lazy" alt=""></div>
                         <div class="benefit-description">
-                            <h3>Personalized</h3>
-                            <div class="body-display small">Kami mengerti bahwa masing-masing anda adalah unik. Kami akan menawarkan trip yang sesuai dengan kebutuhan dan preferensi anda.</div>
+                            <h3>{{ $home->title_three }}</h3>
+                            <div class="body-display small">{{ $home->desc_three }}</div>
                         </div>
                     </div>
                 </div>
@@ -257,7 +257,7 @@
         <div id="w-node-_53cce03b-08df-9ab5-9bba-a960c77721d4-1fc93e1d" class="steps-grid">
             <div id="w-node-_53cce03b-08df-9ab5-9bba-a960c77721d5-1fc93e1d" data-w-id="53cce03b-08df-9ab5-9bba-a960c77721d5" class="steps-sticky-card-2">
                 <div class="how-to-image">
-                    <div class="hero-background-image steps-background">
+                    <div class="hero-background-image steps-background" style="background-image:url({{ asset($home->image_section_three) }}) !important">
                         <div style="display:block;-webkit-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="background-load-top"></div>
                         <div style="display:block;-webkit-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="background-load-bottom"></div>
                     </div>
@@ -268,9 +268,9 @@
                             <div class="subtitle-wrapper">
                                 <div class="subtitle">Private tour</div>
                             </div>
-                            <h2>Trip ke Jepang untuk anda dan hanya milik anda</h2>
+                            <h2>{{ $home->title_section_three }}</h2>
                         </div>
-                        <div class="body-display-2 large">Layanan penyusunan tur kami akan membuat anda merasakan “Tur Jepang yang hanya milik anda.”</div>
+                        <div class="body-display-2 large">{{ $home->desc_section_three }}</div>
                     </div>
                 </div>
             </div>
@@ -297,8 +297,8 @@
                                 <div>1</div>
                             </div>
                             <div id="w-node-_53cce03b-08df-9ab5-9bba-a960c77721f8-1fc93e1d" class="steps-description">
-                                <h3>Ceritakan Liburan Anda</h3>
-                                <div class="body-display-2">beritahu rencana perjalanan impian Jepang Anda kepada kami, mau menginap di Japanese Ryokan, atau minum teh bersama Geisha, semua kemauan Anda</div>
+                                <h3>{{ $home->title_step_one }}</h3>
+                                <div class="body-display-2">{{ $home->desc_step_one }}</div>
                             </div>
                         </div>
                     </div>
@@ -314,8 +314,8 @@
                                 <div>2</div>
                             </div>
                             <div id="w-node-_53cce03b-08df-9ab5-9bba-a960c7772206-1fc93e1d" class="steps-description">
-                                <h3>Staff kami akan bantu Anda merancakan</h3>
-                                <div class="body-display-2">Staff kami yang berpengalaman di bidangnya akan membantu Anda merancang rencana perjalanan Anda yang sesuai dengan keingingan</div>
+                                <h3>{{ $home->title_step_two }}</h3>
+                                <div class="body-display-2">{{ $home->desc_step_two }}</div>
                             </div>
                         </div>
                     </div>
@@ -331,8 +331,8 @@
                                 <div>3</div>
                             </div>
                             <div id="w-node-_53cce03b-08df-9ab5-9bba-a960c7772214-1fc93e1d" class="steps-description">
-                                <h3>Solution</h3>
-                                <div class="body-display-2">Kami akan tawarkan paket tailor-made spesifik yang cocok dengan keperluan Anda</div>
+                                <h3>{{ $home->title_step_three }}</h3>
+                                <div class="body-display-2">{{ $home->desc_step_three }}</div>
                             </div>
                         </div>
                     </div>
@@ -348,8 +348,8 @@
                                 <div>4</div>
                             </div>
                             <div id="w-node-_53cce03b-08df-9ab5-9bba-a960c7772222-1fc93e1d" class="steps-description">
-                                <h3>Nikmati Tur Jepangmu</h3>
-                                <div class="body-display-2">Selamat menikmasi Jepangmu </div>
+                                <h3>{{ $home->title_step_four }}</h3>
+                                <div class="body-display-2">{{ $home->desc_step_four }}</div>
                             </div>
                         </div>
                     </div>
@@ -871,7 +871,7 @@
 <div data-w-id="181de59c-8994-d31d-8757-822aa0749971" class="section no-padding">
     <div class="grid-wrapper">
         <div id="w-node-_0ec51e82-e255-1b52-e2d8-8f022c520994-1fc93e1d" class="grey-cover">
-            <div class="paralax-background two">
+            <div class="paralax-background two" style="background-image:url({{ asset($home->promise_banner) }}) !important">
                 <div class="overlay dark"></div>
             </div>
         </div>
@@ -881,7 +881,7 @@
                     <div class="subtitle-wrapper">
                         <div class="subtitle putih">jtrip Promise</div>
                     </div>
-                    <h1>Kami berkomitmen untuk menjepangkan Anda</h1>
+                    <h1>{{ $home->promise }}</h1>
                 </div>
             </div>
         </div>
