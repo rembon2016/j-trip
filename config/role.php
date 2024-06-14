@@ -30,6 +30,8 @@ return [
         'manage-testimonial',
 
         'manage-web-setting',
+        'manage-home',
+        'manage-about'
     ],
     'staff' =>[
         'see-tour',

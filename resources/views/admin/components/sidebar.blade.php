@@ -102,40 +102,42 @@
         @endhas
 
         @has([
-            'see-booking-tour',
-            'see-customer-feedback'
-        ])
-            <li class="menu-header small text-uppercase">
-                <span class="menu-header-text">Message</span>
-            </li>
-
-            @has('see-booking-tour')
-            <li class="menu-item @if(Route::is('admin.booking-tour.*')) active @endif">
-                <a href="{{ route('admin.booking-tour.index') }}" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-book-bookmark"></i>
-                    <div data-i18n="Booking Tour">Booking Tour</div>
-                </a>
-            </li>
-            @endhas
-
-            @has('see-customer-feedback')
-            <li class="menu-item @if(Route::is('admin.customer-feedback.*')) active @endif">
-                <a href="{{ route('admin.customer-feedback.index') }}" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-question-mark"></i>
-                    <div data-i18n="Customer Feedback">Customer Feedback</div>
-                </a>
-            </li>
-            @endhas
-        @endhas
-
-        @has([
             'see-blog',
             'see-gallery',
-            'see-testimonial'
+            'see-testimonial',
+            'manage-home',
+            'manage-about'
         ])
             <li class="menu-header small text-uppercase">
                 <span class="menu-header-text">Content</span>
             </li>
+
+            @has([
+                'manage-home',
+                'manage-about'
+            ])
+            <li class="menu-item @if(Route::is('admin.home.*') || Route::is('admin.about.*')) active open @endif">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-palette"></i>
+                    <div data-i18n="CMS">CMS</div>
+                </a>
+
+                <ul class="menu-sub">
+                    <li class="menu-item @if(Route::is('admin.home.*')) active @endif">
+                        <a href="{{ route('admin.home.index') }}" class="menu-link">
+                            <div data-i18n="Testimoni">Home</div>
+                        </a>
+                    </li>
+             
+        
+                    <li class="menu-item @if(Route::is('admin.about.*')) active @endif">
+                        <a href="{{ route('admin.about.index') }}" class="menu-link">
+                            <div data-i18n="Testimoni">About</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            @endhas
 
             @has('see-blog')
             <li class="menu-item @if(Route::is('admin.blog.*')) active @endif">
@@ -163,23 +165,33 @@
                 </a>
             </li>
             @endhas
+        @endhas
 
-
-            <li class="menu-item @if(Route::is('admin.home.*')) active @endif">
-                <a href="{{ route('admin.home.index') }}" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-message-dots"></i>
-                    <div data-i18n="Testimoni">Home</div>
-                </a>
-            </li>
-     
-
-            <li class="menu-item @if(Route::is('admin.about.*')) active @endif">
-                <a href="{{ route('admin.about.index') }}" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-message-dots"></i>
-                    <div data-i18n="Testimoni">About</div>
-                </a>
+        @has([
+            'see-booking-tour',
+            'see-customer-feedback'
+        ])
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text">Message</span>
             </li>
 
+            @has('see-booking-tour')
+            <li class="menu-item @if(Route::is('admin.booking-tour.*')) active @endif">
+                <a href="{{ route('admin.booking-tour.index') }}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-book-bookmark"></i>
+                    <div data-i18n="Booking Tour">Booking Tour</div>
+                </a>
+            </li>
+            @endhas
+
+            @has('see-customer-feedback')
+            <li class="menu-item @if(Route::is('admin.customer-feedback.*')) active @endif">
+                <a href="{{ route('admin.customer-feedback.index') }}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-question-mark"></i>
+                    <div data-i18n="Customer Feedback">Customer Feedback</div>
+                </a>
+            </li>
+            @endhas
         @endhas
 
         @has([

@@ -172,6 +172,7 @@ Route::group([
         Route::get('/', [SettingController::class, 'index'])->name('index')->middleware('has:manage-web-setting');
         Route::post('/', [SettingController::class, 'store'])->name('store')->middleware('has:manage-web-setting');
     });
+    
     Route::group([
         'prefix' => 'home',
         'as' => 'home.'
