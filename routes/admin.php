@@ -172,20 +172,20 @@ Route::group([
         Route::get('/', [SettingController::class, 'index'])->name('index')->middleware('has:manage-web-setting');
         Route::post('/', [SettingController::class, 'store'])->name('store')->middleware('has:manage-web-setting');
     });
-    
+
     Route::group([
         'prefix' => 'home',
         'as' => 'home.'
     ], function () {
-        Route::get('/', [HomeController::class, 'index'])->name('index');
-        Route::post('/{id}', [HomeController::class, 'edit'])->name('edit');
+        Route::get('/', [HomeController::class, 'index'])->name('index'->middleware('has:manage-home'));
+        Route::post('/{id}', [HomeController::class, 'edit'])->name('edit')->middleware('has:manage-home');
     });
 
     Route::group([
         'prefix' => 'about',
         'as' => 'about.'
     ], function () {
-        Route::get('/', [AboutController::class, 'index'])->name('index');
-        Route::post('/{id}', [AboutController::class, 'edit'])->name('edit');
+        Route::get('/', [AboutController::class, 'index'])->name('index')->middleware('has:manage-about');
+        Route::post('/{id}', [AboutController::class, 'edit'])->name('edit')->middleware('has:manage-about');
     });
 });
