@@ -95,9 +95,4 @@
 
 @push('script')
 <script src="{{ asset('assets/admin/vendor/libs/lightbox/js/lightbox.min.js') }}"></script>
-<script>
-    $(document).ready(function (event) {
-
-    });
-</script>
 @endpush

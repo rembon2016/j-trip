@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\LandingPage;
 
 use App\Models\Blog;
-use App\Models\About;
 use App\Models\Home;
+use App\Models\About;
+use App\Models\Gallery;
 use App\Models\Destination;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
@@ -25,7 +26,9 @@ class PageController extends Controller
     public function about()
     {
         $about = About::first();
-        return view('landing-page.pages.about',compact('about'));
+        $galleries = Gallery::latest()->get();;
+
+        return view('landing-page.pages.about', compact('about', 'galleries'));
     }
 
     public function contact()

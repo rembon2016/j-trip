@@ -1,6 +1,38 @@
 @extends('landing-page.layouts.master')
 @section('title', 'About')
 
+@push('head')
+    <link rel="stylesheet" href="{{ asset('assets/admin/vendor/libs/lightbox/css/lightbox.min.css') }}">
+    <style>
+        .team-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .team-images .gallery-box {
+            height: 300px;
+            flex: 1 1 auto;
+            transition: all .15s linear;
+        }
+
+        .team-images .gallery-box img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+            border-radius: 5px;
+            filter: grayscale(0);
+        }
+
+        .team-images .gallery-box:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+            transform: translateY(-5px);
+        }
+    </style>
+@endpush
+
 @section('content')
 <div class="hero-video-popup">
     <div class="flyout-overlay"></div>
@@ -68,27 +100,11 @@
                 <div class="body-display large">{{ $about->mission_description }}</div>
             </div>
             <div data-w-id="9d1c4b15-d541-b452-d535-fdcf19169a3b" class="team-images">
-                <div id="w-node-_9c9aa846-e9b8-a932-3930-2ee1f13a0614-1fc93e20" class="small-image">
-                    <div class="paralax-background about-one"></div>
-                </div>
-                <div id="w-node-_316334f5-9430-e9eb-8684-f37f03b4f1db-1fc93e20" class="large-image">
-                    <div class="paralax-background about-two"></div>
-                </div>
-                <div id="w-node-d0462fc1-3345-fad6-2501-afd19d4f8d4d-1fc93e20" class="small-image">
-                    <div class="paralax-background about-three"></div>
-                </div>
-                <div id="w-node-e380cb4a-828d-5bb6-be81-112cfe64beb0-1fc93e20" class="medium-image">
-                    <div class="paralax-background about-four"></div>
-                </div>
-                <div id="w-node-_24b2b908-9913-afd9-b468-8dd4da6d2277-1fc93e20" class="large-image">
-                    <div class="paralax-background about-five"></div>
-                </div>
-                <div class="large-image">
-                    <div class="paralax-background about-six"></div>
-                </div>
-                <div id="w-node-aed65773-c733-bb86-6f6d-9e29b44ded00-1fc93e20" class="medium-image">
-                    <div class="paralax-background about-seven"></div>
-                </div>
+                @foreach ($galleries as $gallery)
+                    <a href="{{ $gallery->getImageURL() }}" data-lightbox="image-1" data-title="{{ $gallery->caption }}" class="gallery-box">
+                        <img src="{{ $gallery->getImageURL() }}" onerror="this.src='{{ asset('assets/admin/img/skeleton/not-found-image.png') }}'" loading="lazy" alt="">
+                    </a>
+                @endforeach
             </div>
         </div>
     </div>
@@ -97,3 +113,7 @@
 @include('landing-page.components.contact-form')
 
 @endsection
+
+@push('script')
+<script src="{{ asset('assets/admin/vendor/libs/lightbox/js/lightbox.min.js') }}"></script>
+@endpush
