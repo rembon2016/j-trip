@@ -12,7 +12,7 @@ class BlogController extends Controller
     public function index()
     {
         $popularBlogs = Blog::limit(3)->orderBy('total_visitor', 'DESC')->get();
-        $recentBlogs = Blog::latest()->paginate(1);
+        $recentBlogs = Blog::latest()->paginate(6);
 
         return view('landing-page.pages.blog.index', compact('popularBlogs', 'recentBlogs'));
     }

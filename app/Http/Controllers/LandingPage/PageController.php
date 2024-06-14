@@ -16,8 +16,9 @@ class PageController extends Controller
     {
         $blogs = Blog::limit(5)->latest()->get();
         $testimonials = Testimonial::latest()->get();
-        $destinations = Destination::withCount('tours')->orderBy('total_visitor', 'DESC')->get();
+        $destinations = Destination::with('tours')->withCount('tours')->orderBy('total_visitor', 'DESC')->get();
         $home = Home::first();
+
         return view('landing-page.pages.home', compact('blogs', 'testimonials', 'destinations','home'));
     }
 

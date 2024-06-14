@@ -615,14 +615,16 @@
                 <div class="vacations-tabs-wrapper">
                     <div data-duration-out="500" data-duration-in="500" data-current="Tab 1" data-easing="ease" class="vacations-tabs w-tabs">
                         <div class="vacations-tab-menu w-tab-menu">
-                            <a data-w-tab="Tab 1" id="w-node-_1cc7a0b4-f0a7-f8be-56e7-66fd8ffb1c9f-1fc93e1d" data-w-id="1cc7a0b4-f0a7-f8be-56e7-66fd8ffb1c9f" class="vacations-tab-link w-inline-block w-tab-link w--current">
-                                <div class="membership-circle">
-                                    <div class="membership-dot one"></div>
-                                    <div class="membership-outline-circle"></div>
-                                </div>
-                                <div>Tokyo</div>
-                            </a>
-                            <a data-w-tab="Tab 2" id="w-node-_1cc7a0b4-f0a7-f8be-56e7-66fd8ffb1ca5-1fc93e1d" data-w-id="1cc7a0b4-f0a7-f8be-56e7-66fd8ffb1ca5" class="vacations-tab-link w-inline-block w-tab-link">
+                            @foreach ($destinations as $destination)
+                                <a data-w-tab="Tab {{ $loop->iteration }}" id="w-node-_1cc7a0b4-f0a7-f8be-56e7-66fd8ffb1c9f-1fc93e1d" data-w-id="{{ $destination->id }}" class="vacations-tab-link w-inline-block w-tab-link @if($loop->iteration == 1) w--current @endif">
+                                    <div class="membership-circle">
+                                        <div class="membership-dot one"></div>
+                                        <div class="membership-outline-circle"></div>
+                                    </div>
+                                    <div>{{ $destination->title }}</div>
+                                </a>
+                            @endforeach
+                            {{-- <a data-w-tab="Tab 2" id="w-node-_1cc7a0b4-f0a7-f8be-56e7-66fd8ffb1ca5-1fc93e1d" data-w-id="1cc7a0b4-f0a7-f8be-56e7-66fd8ffb1ca5" class="vacations-tab-link w-inline-block w-tab-link">
                                 <div class="membership-circle">
                                     <div class="membership-dot two"></div>
                                     <div class="membership-outline-circle"></div>
@@ -642,43 +644,50 @@
                                     <div class="membership-outline-circle"></div>
                                 </div>
                                 <div>Kyoto</div>
-                            </a>
+                            </a> --}}
                         </div>
                         <div class="vacations-tabs-content w-tab-content">
-                            <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
-                                <div bind="1a8ae3fa-816d-0096-5f84-a6afc94ceb46" class="collection-list-wrapper w-dyn-list">
-                                    <div bind="1a8ae3fa-816d-0096-5f84-a6afc94ceb47" role="list" class="popular-vacations-wrapper w-dyn-items">
-                                        <div bind="1a8ae3fa-816d-0096-5f84-a6afc94ceb48" role="listitem" class="popular-location-item w-dyn-item">
-                                            <div data-w-id="d5cb7e54-02ce-4aa9-84b2-096ae6645eeb" class="vacations-verticle-card">
-                                                <div class="verticle-card-image">
-                                                    <div bind="d5cb7e54-02ce-4aa9-84b2-096ae6645eed" data-w-id="d5cb7e54-02ce-4aa9-84b2-096ae6645eed" class="hero-background-image"></div>
-                                                </div>
-                                                <div class="vacation-card-bottom">
-                                                    <div class="vacation-card-info">
-                                                        <h3 bind="d5cb7e54-02ce-4aa9-84b2-096ae6645ef0"></h3>
-                                                        <div bind="d5cb7e54-02ce-4aa9-84b2-096ae6645ef2" class="body-display small"></div>
-                                                    </div>
-                                                    <div class="vacation-details">
-                                                        <div id="w-node-d5cb7e54-02ce-4aa9-84b2-096ae6645ef5-1fc93e1d" class="vacation-price">
-                                                            <div class="subtitle small">Rates from</div>
-                                                            <div class="dynamic-price-text">
-                                                                <div>Rp.</div>
-                                                                <div bind="757eccdd-9287-375d-39c4-0329fff528d9"></div>
+                            @foreach ($destinations as $destination)
+                                <div data-w-tab="Tab {{ $loop->iteration }}" class="w-tab-pane @if($loop->iteration == 1) w--tab-active @endif">
+                                    <div bind="1a8ae3fa-816d-0096-5f84-a6afc94ceb46" class="collection-list-wrapper w-dyn-list">
+                                        @if ($destination->tours->count() > 0)
+                                            <div bind="1a8ae3fa-816d-0096-5f84-a6afc94ceb47" role="list" class="popular-vacations-wrapper w-dyn-items">
+                                                @foreach ($destination->tours as $tour)
+                                                    <div bind="1a8ae3fa-816d-0096-5f84-a6afc94ceb48" role="listitem" class="popular-location-item w-dyn-item">
+                                                        <div data-w-id="d5cb7e54-02ce-4aa9-84b2-096ae6645eeb" class="vacations-verticle-card">
+                                                            <div class="verticle-card-image">
+                                                                <div bind="d5cb7e54-02ce-4aa9-84b2-096ae6645eed" data-w-id="d5cb7e54-02ce-4aa9-84b2-096ae6645eed" class="hero-background-image" style="background-image: url('{{ $tour->getImageURL() }}')"></div>
+                                                            </div>
+                                                            <div class="vacation-card-bottom">
+                                                                <div class="vacation-card-info">
+                                                                    <h3 bind="d5cb7e54-02ce-4aa9-84b2-096ae6645ef0">{{ $tour->title }}</h3>
+                                                                    <div bind="d5cb7e54-02ce-4aa9-84b2-096ae6645ef2" class="body-display small">{{ $tour->type->title }}</div>
+                                                                </div>
+                                                                <div class="vacation-details">
+                                                                    <div id="w-node-d5cb7e54-02ce-4aa9-84b2-096ae6645ef5-1fc93e1d" class="vacation-price">
+                                                                        <div class="subtitle small">Rates from</div>
+                                                                        <div class="dynamic-price-text">
+                                                                            <div>@idr($tour->price)</div>
+                                                                            <div bind="757eccdd-9287-375d-39c4-0329fff528d9"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <a bind="d5cb7e54-02ce-4aa9-84b2-096ae6645efa" href="{{ route('landing-page.tour.detail', $tour->slug) }}" class="outline-button small w-inline-block">
+                                                                        <div>Details</div>
+                                                                    </a>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <a bind="d5cb7e54-02ce-4aa9-84b2-096ae6645efa" href="#" class="outline-button small w-inline-block">
-                                                            <div>Details</div>
-                                                        </a>
                                                     </div>
-                                                </div>
+                                                @endforeach
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div bind="1a8ae3fa-816d-0096-5f84-a6afc94ceb49" class="w-dyn-empty">
-                                        <div>No items found.</div>
+                                        @else
+                                            <div bind="1a8ae3fa-816d-0096-5f84-a6afc94ceb49" class="w-dyn-empty">
+                                                <div>No items found.</div>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
                             
                             <div data-w-tab="Tab 2" class="w-tab-pane">
                                 <div bind="d86ed033-6748-7d0c-1688-f5aaa5a62640" class="collection-list-wrapper w-dyn-list">
@@ -891,3 +900,22 @@
 @include('landing-page.components.contact-form')
 
 @endsection
+
+@push('script')
+    <script>
+        $(document).ready(function () {
+            $(".vacations-tab-link").on('click', function () {
+                const currentIndex = $(this).index();
+                const position = currentIndex + 1;
+                const tabMenu = $(this).parents(".vacations-tab-menu");
+                const tabs = $(this).parents('.vacations-tabs');
+
+                const totalExistingTab = $(tabMenu).children('.vacations-tab-link').length;
+                const progressPercentage = (position / totalExistingTab) * 100;
+                const locationIndicator = $(tabs).parents('.vacations-tabs-wrapper').find('.location-indicator');
+
+                $(locationIndicator).find(".location-indicator-fill").css("width", `${progressPercentage}%`);
+            })
+        });
+    </script>
+@endpush

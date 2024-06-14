@@ -2052,11 +2052,12 @@ blockquote {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   border-top: 1px none var(--dark-outline);
-  grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-auto-columns: 1fr;
+  /* grid-template-rows: auto; */
+  /* grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr; */
   margin-bottom: 72px;
   display: grid;
+  grid-auto-columns: 1fr;
 }
 
 .vacations-tabs {
@@ -2084,11 +2085,13 @@ blockquote {
   font-size: 12px;
   transition: color .4s cubic-bezier(.25, .46, .45, .94);
   display: flex;
-  position: absolute;
+  position: relative;
+  grid-row: 1;
+  /* position: absolute;
   top: auto;
   bottom: 0%;
   left: 0%;
-  right: 0%;
+  right: 0%; */
 }
 
 .vacations-tab-link.w--current {
@@ -2117,6 +2120,10 @@ blockquote {
   background-color: var(--dark-outline);
   border-radius: 100px;
   position: relative;
+}
+
+.vacations-tab-link.w--current .membership-dot{
+  background-color: rgb(8, 28, 58);
 }
 
 .membership-outline-circle {
@@ -8711,7 +8718,7 @@ blockquote {
   align-self: center;
   justify-self: stretch;
 }
-
+/* 
 #w-node-_1cc7a0b4-f0a7-f8be-56e7-66fd8ffb1c9f-1fc93e1d {
   grid-area: 1 / 1 / 2 / 2;
 }
@@ -8726,7 +8733,7 @@ blockquote {
 
 #w-node-_997e4316-3809-459f-0550-db78bd9b6f0c-1fc93e1d {
   grid-area: 1 / 4 / 2 / 5;
-}
+} */
 
 #w-node-d5cb7e54-02ce-4aa9-84b2-096ae6645ef5-1fc93e1d, #w-node-d86ed033-6748-7d0c-1688-f5aaa5a6264b-1fc93e1d, #w-node-e44119d0-4aa0-47d3-c3c7-943b58ecd7f5-1fc93e1d, #w-node-_07f7822a-effe-0e5a-b64e-5c72915fe726-1fc93e1d {
   align-self: center;
