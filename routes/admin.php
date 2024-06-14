@@ -177,7 +177,7 @@ Route::group([
         'prefix' => 'home',
         'as' => 'home.'
     ], function () {
-        Route::get('/', [HomeController::class, 'index'])->name('index'->middleware('has:manage-home'));
+        Route::get('/', [HomeController::class, 'index'])->name('index')->middleware('has:manage-home');
         Route::post('/{id}', [HomeController::class, 'edit'])->name('edit')->middleware('has:manage-home');
     });
 

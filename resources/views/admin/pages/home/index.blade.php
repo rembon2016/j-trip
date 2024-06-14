@@ -25,7 +25,7 @@
             <div class="">
                 @if (!is_null($data->updated_at))
                     <small class="inline-flex align-items-center text-muted">
-                        <i class="bx bx-time me-1"></i> Terakhir Diperbarui {{ $data->updated_at->diffForHumans() }} 
+                        <i class="bx bx-time me-1"></i> Terakhir diperbarui {{ $data->updated_at->diffForHumans() }} 
                         @if (!is_null($data->updated_by)) oleh {{ $data->updatedBy?->name }} @endif
                     </small>
                 @endif
