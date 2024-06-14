@@ -21,9 +21,11 @@
     <div class="d-flex align-items-center justify-content-between pe-4  ">
         <h5 class="card-header mb-0">Tipe Tour</h5>
         <div class="d-flex align-items-center gap-2">
+            @has('manage-tour-type')
             <a href="{{ route('admin.tour-type.create') }}" class="btn btn-icon btn-primary" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Tambah Tipe Tour">
                 <i class="bx bx-plus-circle"></i>
             </a>
+            @endhas
         </div>
     </div>
     <div class="card-body pt-1">
@@ -34,9 +36,15 @@
                         <th>#</th>
                         <th>Thumbnail</th>
                         <th>Judul</th>
-                        <th>Visitor</th>
+                        <th class="text-center">Visitor</th>
                         <th>Dibuat Oleh</th>
-                        <th class="text-center">Opsi</th>
+
+                        @has([
+                            'see-tour-type',
+                            'manage-tour-type'
+                        ])
+                            <th class="text-center">Opsi</th>
+                        @endhas
                     </tr>
                 </thead>
                 <tbody>
@@ -49,21 +57,32 @@
                             </a>
                         </td>
                         <td>{{ $item->title }}</td>
-                        <td>{{ $item->total_visitor }}</td>
+                        <td class="text-center">{{ $item->total_visitor }}</td>
                         <td>{{ $item->createdBy?->name }}</td>
-                        <td>
-                            <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">
-                                <a href="{{ route('landing-page.tour-type.detail', $item->slug) }}" class="btn btn-secondary btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Lihat Tipe Tour" target="_blank">
-                                    <i class="bx bx-show"></i>
-                                </a>
-                                <a href="{{ route('admin.tour-type.edit', $item->id) }}" class="btn btn-info btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Ubah Tipe Tour">
-                                    <i class="bx bx-edit-alt"></i>
-                                </a>
-                                <a href="{{ route('admin.tour-type.delete', $item->id) }}" class="btn btn-danger btn-icon btn-sm delete-confirm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Hapus Tipe Tour">
-                                    <i class="bx bx-trash-alt"></i>
-                                </a>
-                            </div>
-                        </td>
+
+                        @has([
+                            'see-tour-type',
+                            'manage-tour-type'
+                        ])
+                            <td>
+                                <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">
+                                    @has('see-tour-type')
+                                    <a href="{{ route('landing-page.tour-type.detail', $item->slug) }}" class="btn btn-secondary btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Lihat Tipe Tour" target="_blank">
+                                        <i class="bx bx-show"></i>
+                                    </a>
+                                    @endhas
+
+                                    @has('manage-tour-type')
+                                    <a href="{{ route('admin.tour-type.edit', $item->id) }}" class="btn btn-info btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Ubah Tipe Tour">
+                                        <i class="bx bx-edit-alt"></i>
+                                    </a>
+                                    <a href="{{ route('admin.tour-type.delete', $item->id) }}" class="btn btn-danger btn-icon btn-sm delete-confirm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Hapus Tipe Tour">
+                                        <i class="bx bx-trash-alt"></i>
+                                    </a>
+                                    @endhas
+                                </div>
+                            </td>
+                        @endhas
                     </tr>
                     @endforeach
                 </tbody>

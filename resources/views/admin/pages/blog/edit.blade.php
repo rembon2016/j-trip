@@ -41,6 +41,18 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
+            <div class="col-12 mb-3">
+                <label for="tour_id" class="form-label required">Fiturkan Tour Dalam Blog</label>
+                <select name="tour_id" id="tour_id" class="form-select select2 @error('tour_id') is-invalid @enderror" required>
+                    <option value="">Pilih Tour</option>
+                    @foreach ($tours as $item)
+                        <option value="{{ $item->id }}" @selected(old('tour_id', $data->tour_id) == $item->id)>{{ $item->title }}</option>
+                    @endforeach
+                </select>
+                @error('tour_id')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
             <div class="col-md-4 mb-3">
                 <label for="image" class="form-label">Thumbnail</label>
                 <img src="{{ $data->getImageURL() }}" onerror="this.src='{{ asset('assets/admin/img/skeleton/not-found-image.png') }}'" alt="Thumbnail Blog" class="preview-image" id="preview-image">

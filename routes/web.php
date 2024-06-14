@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingPage\BlogController;
 use App\Http\Controllers\LandingPage\PageController;
 use App\Http\Controllers\LandingPage\TourController;
+use App\Http\Controllers\LandingPage\TourTypeController;
 use App\Http\Controllers\LandingPage\DestinationController;
+use App\Http\Controllers\LandingPage\CustomerFeedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,15 +46,24 @@ Route::group([
         'prefix' => 'tour-type',
         'as' => 'tour-type.'
     ], function () {
-        Route::get('/', [DestinationController::class, 'index'])->name('index');
-        Route::get('/{slug}', [DestinationController::class, 'detail'])->name('detail');
+        Route::get('/', [TourTypeController::class, 'index'])->name('index');
+        Route::get('/{slug}', [TourTypeController::class, 'detail'])->name('detail');
     });
 
     Route::group([
         'prefix' => 'tour',
         'as' => 'tour.'
     ], function () {
+        Route::get('/', [TourController::class, 'index'])->name('index');
         Route::get('/{slug}', [TourController::class, 'detail'])->name('detail');
+        Route::post('/inquire/{id}', [TourController::class, 'store'])->name('store');
+    });
+
+    Route::group([
+        'prefix' => 'customer-feedback',
+        'as' => 'customer-feedback.',
+    ], function () {
+        Route::post('/', [CustomerFeedbackController::class, 'store'])->name('store');
     });
 });
 

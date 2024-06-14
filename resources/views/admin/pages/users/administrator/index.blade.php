@@ -21,9 +21,11 @@
     <div class="d-flex align-items-center justify-content-between pe-4  ">
         <h5 class="card-header mb-0">Administrator</h5>
         <div class="d-flex align-items-center gap-2">
+            @has('manage-administrator')
             <a href="{{ route('admin.users.administrator.create') }}" class="btn btn-icon btn-primary" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Tambah Administrator">
                 <i class="bx bx-plus-circle"></i>
             </a>
+            @endhas
         </div>
     </div>
     <div class="card-body pt-1">
@@ -36,7 +38,10 @@
                         <th>Telp</th>
                         <th>Alamat</th>
                         <th>Tanggal Dibuat</th>
-                        <th class="text-center">Opsi</th>
+
+                        @has('manage-administrator')
+                            <th class="text-center">Opsi</th>
+                        @endhas
                     </tr>
                 </thead>
                 <tbody>
@@ -51,16 +56,19 @@
                             </span>
                         </td>
                         <td>{{ $item->created_at?->translatedFormat('d F Y H:i:s') }}</td>
-                        <td>
-                            <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">
-                                <a href="{{ route('admin.users.administrator.edit', $item->id) }}" class="btn btn-info btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Ubah Administrator">
-                                    <i class="bx bx-edit-alt"></i>
-                                </a>
-                                <a href="{{ route('admin.users.administrator.delete', $item->id) }}" class="btn btn-danger btn-icon btn-sm delete-confirm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Hapus Administrator">
-                                    <i class="bx bx-trash-alt"></i>
-                                </a>
-                            </div>
-                        </td>
+
+                        @has('manage-administrator')
+                            <td>
+                                <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">
+                                    <a href="{{ route('admin.users.administrator.edit', $item->id) }}" class="btn btn-info btn-icon btn-sm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Ubah Administrator">
+                                        <i class="bx bx-edit-alt"></i>
+                                    </a>
+                                    <a href="{{ route('admin.users.administrator.delete', $item->id) }}" class="btn btn-danger btn-icon btn-sm delete-confirm" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="top" data-bs-html="true" data-bs-original-title="Hapus Administrator">
+                                        <i class="bx bx-trash-alt"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        @endhas
                     </tr>
                     @endforeach
                 </tbody>

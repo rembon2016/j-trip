@@ -36,4 +36,17 @@ class Destination extends Model
     {
         return $this->hasMany(Tour::class, 'destination_id', 'id');
     }
+
+    public function recommendedTours($limit = 5)
+    {
+        return $this->tours()->recommended($limit)->get();
+    }
+
+    public function featuredTours($limit = 3)
+    {
+        $data = $this->tours()->featured($limit)->get();
+        if ($data->count() < 1) $data = $this->recommendedTours(3);
+
+        return $data;
+    }
 }

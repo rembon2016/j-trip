@@ -37,21 +37,21 @@
         <div id="w-node-f3432b60-fc60-ea80-296a-c45ed124cbec-1fc93e29" class="journal-post">
             <a bind="79b34619-971d-15eb-e78b-1a7227fe4619"
                 id="w-node-_79b34619-971d-15eb-e78b-1a7227fe4619-1fc93e29"
-                data-w-id="79b34619-971d-15eb-e78b-1a7227fe4619" href="#" class="related-vacation w-inline-block">
+                data-w-id="79b34619-971d-15eb-e78b-1a7227fe4619" href="{{ route("landing-page.tour.detail", $data->tour->slug) }}" class="related-vacation w-inline-block">
                 <div bind="f0e350cf-f140-1b6a-ff04-d504d248d9a0" data-w-id="f0e350cf-f140-1b6a-ff04-d504d248d9a0"
-                    class="location-image">
+                    class="location-image" style="background-image: url('{{ $data->tour->getImageURL() }}')" >
                     <div class="overlay dark"></div>
                 </div>
                 <div id="w-node-_3588e91f-ddc6-fbf9-7eb0-712fa1914fa8-1fc93e29" class="featured-vacation-tag">
                     <div>Featured vacation</div>
                 </div>
                 <div id="w-node-_819d4798-af5e-fef6-c3eb-c49fc5727489-1fc93e29" class="related-vacation-info">
-                    <h3 bind="3772b6ce-9893-02f1-e75c-a067f2574def"></h3>
+                    <h3 bind="3772b6ce-9893-02f1-e75c-a067f2574def">{{ $data->tour->title }}</h3>
                     <div id="w-node-_30831fb5-55a7-cdc6-ef84-0dd55290f1b3-1fc93e29" class="featured-location-price">
-                        <div bind="ff23b3a2-0c47-4ecd-a034-c1ac803f3a37" class="subtitle putih">Starts From</div>
+                        <div bind="ff23b3a2-0c47-4ecd-a034-c1ac803f3a37" class="subtitle putih">@idr($data->tour->price)</div>
                         <div class="price-grid">
-                            <div bind="e7912a84-d31a-323a-6a10-c92422afdcdd" class="dolar-sign">Rp</div>
-                            <div bind="2855cd57-cf28-36e7-b960-3c51d39943ab" class="subtitle"></div>
+                            <div bind="e7912a84-d31a-323a-6a10-c92422afdcdd" class="dolar-sign"></div>
+                            <div bind="2855cd57-cf28-36e7-b960-3c51d39943ab" class="subtitle putih"></div>
                         </div>
                     </div>
                     <div id="w-node-_782c3184-703d-8f2f-dccf-839b606e92ae-1fc93e29" class="related-vacation-arrow">

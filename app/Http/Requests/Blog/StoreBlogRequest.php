@@ -25,6 +25,7 @@ class StoreBlogRequest extends FormRequest
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'image' => 'required|image',
+            'tour_id' => 'required|exists:tours,id'
         ];
     }
 
@@ -33,7 +34,8 @@ class StoreBlogRequest extends FormRequest
         return [
             'title' => 'Judul',
             'description' => 'Deskripsi',
-            'image' => 'Thumbnail'
+            'image' => 'Thumbnail',
+            'tour_id' => 'Fiturkan Tour'
         ];
     }
 }
