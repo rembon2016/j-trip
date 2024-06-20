@@ -86,7 +86,7 @@
     </div>
     
     <div class="col-sm-6 col-md-4">
-        <a href="{{ route('admin.tour.index') }}" class="card card-hover h-100">
+        <a href="{{ route('admin.booking-tour.index') }}" class="card card-hover h-100">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
                     <div class="card-info">
@@ -106,7 +106,7 @@
     </div>
     
     <div class="col-sm-6 col-md-4">
-        <a href="{{ route('admin.tour.index') }}" class="card card-hover h-100">
+        <a href="{{ route('admin.customer-feedback.index') }}" class="card card-hover h-100">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
                     <div class="card-info">
@@ -126,7 +126,7 @@
     </div>
     
     <div class="col-sm-6 col-md-4">
-        <a href="{{ route('admin.tour.index') }}" class="card card-hover h-100">
+        <div class="card h-100">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
                     <div class="card-info">
@@ -142,7 +142,7 @@
                     </div>
                 </div>
             </div>
-        </a>
+        </div>
     </div>
 @else
     <div class="col-sm-6 col-md-4">
