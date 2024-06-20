@@ -7,7 +7,7 @@ RUN set -ex \
 		libpng libjpeg-turbo freetype-dev \
 		libpng-dev libjpeg-turbo-dev libwebp-dev 
 	
-RUN docker-php-ext-install pdo_pgsql gd zip
+RUN docker-php-ext-install pdo_pgsql pdo_mysql gd zip
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
