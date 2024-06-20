@@ -390,6 +390,7 @@
             }
         ]
     };
+    
     if (typeof donutChartEl !== undefined && donutChartEl !== null) {
         const donutChart = new ApexCharts(donutChartEl, donutChartConfig);
         donutChart.render();
