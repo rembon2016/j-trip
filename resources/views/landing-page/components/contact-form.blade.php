@@ -75,7 +75,7 @@
                             <div id="w-node-ccba9afc-7ce3-ac68-817c-f6071c414041-1fc93e1d" class="horizontal-line"></div>
                         </div>
                         <div class="quick-link-list">
-                            <a href="https://wa.me/{{ $setting?->whatsapp_number }}" target="_blank" class="quick-link-item w-inline-block">
+                            <a href="{{ route('landing-page.redirect-wa') }}" target="_blank" class="quick-link-item w-inline-block">
                                 <div id="w-node-ccba9afc-7ce3-ac68-817c-f6071c414044-1fc93e1d">Whatsapp Us</div>
                                 <img src="{{ asset('assets/landing-page/images/icons8-whatsapp.svg') }}" loading="lazy" width="25" id="w-node-ccba9afc-7ce3-ac68-817c-f6071c414046-1fc93e1d" alt="">
                             </a>

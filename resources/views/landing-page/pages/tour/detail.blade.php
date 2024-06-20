@@ -177,7 +177,7 @@
                     <div><strong class="field-label">Price</strong></div>
                     <div bind="6ab3c684-ac9a-4cf1-b559-d92f238a0cea" class="text-price">@idr($data->price)</div>
                 </div>
-                <a href="https://wa.me/{{ $setting->whatsapp_number }}" target="_blank"
+                <a href="{{ route('landing-page.redirect-wa') }}" target="_blank"
                     class="quick-link-item whatsapp w-inline-block">
                     <div id="w-node-_8eadd785-7b52-993c-1499-9e188ef2d282-1fc93e2e" class="text-block-4 putih">Whatsapp Us
                     </div><img src="{{ asset('assets/landing-page/images/icons8-whatsapp-1.svg') }}" loading="lazy" width="25"

@@ -6,6 +6,7 @@ use App\Http\Controllers\LandingPage\PageController;
 use App\Http\Controllers\LandingPage\TourController;
 use App\Http\Controllers\LandingPage\TourTypeController;
 use App\Http\Controllers\LandingPage\DestinationController;
+use App\Http\Controllers\LandingPage\WhatsappActionController;
 use App\Http\Controllers\LandingPage\CustomerFeedbackController;
 
 /*
@@ -25,6 +26,7 @@ Route::group([
     Route::get('/', [PageController::class, 'home'])->name('home');
     Route::get('/about', [PageController::class, 'about'])->name('about');
     Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+    Route::get('/contact-whatsapp', [WhatsappActionController::class, 'redirectWhatsapp'])->name('redirect-wa');
 
     Route::group([
         'prefix' => 'blog',
