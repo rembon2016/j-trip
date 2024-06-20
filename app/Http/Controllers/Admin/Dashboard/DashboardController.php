@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin\Dashboard;
 use App\Models\Tour;
 use App\Models\User;
 use App\Models\Destination;
+use App\Models\TourInquiry;
 use Illuminate\Http\Request;
+use App\Models\CustomerFeedback;
 use App\Http\Controllers\Controller;
 use App\Helpers\Utilities\RandomGenerator;
 
@@ -18,6 +20,9 @@ class DashboardController extends Controller
         $data['count_staff'] = User::where('role', User::STAFF_ROLE)->count('id');
         $data['count_destination'] = Destination::count('id');
         $data['count_tour'] = Tour::count('id');
+        $data['count_booking'] = TourInquiry::count('id');
+        $data['count_feedback'] = CustomerFeedback::count('id');
+        $data['count_whatsapp'] = 0;
 
         // Tour Graphic Data
         $tourVisitors = Tour::select('title', 'total_visitor')->where('total_visitor', '>=', 1)->get();

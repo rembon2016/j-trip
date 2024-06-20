@@ -84,6 +84,66 @@
             </div>
         </a>
     </div>
+    
+    <div class="col-sm-6 col-md-4">
+        <a href="{{ route('admin.tour.index') }}" class="card card-hover h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div class="card-info">
+                        <p class="card-text mb-2">Total Booking Tour</p>
+                        <div class="d-flex align-items-end mb-2">
+                            <h4 class="card-title mb-0 me-2">{{ $data['count_booking'] }}</h4>
+                        </div>
+                    </div>
+                    <div class="card-icon align-self-center">
+                        <span class="badge bg-label-primary rounded p-2">
+                        <i class="bx bx-book-bookmark bx-sm"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    <div class="col-sm-6 col-md-4">
+        <a href="{{ route('admin.tour.index') }}" class="card card-hover h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div class="card-info">
+                        <p class="card-text mb-2">Total Customer Feedback</p>
+                        <div class="d-flex align-items-end mb-2">
+                            <h4 class="card-title mb-0 me-2">{{ $data['count_feedback'] }}</h4>
+                        </div>
+                    </div>
+                    <div class="card-icon align-self-center">
+                        <span class="badge bg-label-primary rounded p-2">
+                        <i class="bx bx-question-mark bx-sm"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    <div class="col-sm-6 col-md-4">
+        <a href="{{ route('admin.tour.index') }}" class="card card-hover h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div class="card-info">
+                        <p class="card-text mb-2">Total Klik Whatsapp</p>
+                        <div class="d-flex align-items-end mb-2">
+                            <h4 class="card-title mb-0 me-2">{{ $data['count_whatsapp'] }}</h4>
+                        </div>
+                    </div>
+                    <div class="card-icon align-self-center">
+                        <span class="badge bg-label-primary rounded p-2">
+                        <i class="bx bxl-whatsapp bx-sm"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
 @else
     <div class="col-sm-6 col-md-4">
         <a href="{{ route('admin.users.staff.index') }}" class="card card-hover h-100">
