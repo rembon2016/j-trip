@@ -254,6 +254,11 @@
     }
 </script>
 
+@php
+    $titleTopDestination = count($data['destination_donut_graph']) > 0 ? $data['destination_donut_graph'][$data['index_max_donut_graph']]['title'] : "-";
+    $percentageTopDestination = count($data['destination_donut_graph']) > 0 ? $data['destination_donut_graph'][$data['index_max_donut_graph']]['percentage'] : "0";
+@endphp
+
 <script>
     const donutChartEl = document.querySelector('#donutChart'),
     donutChartConfig = {
@@ -308,9 +313,9 @@
                             show: true,
                             fontSize: '1.2rem',
                             color: config.colors.black,
-                            label: "{{ $data['destination_donut_graph'][$data['index_max_donut_graph']]['title'] }}",
+                            label: "{{ $titleTopDestination }}",
                             formatter: function (w) {
-                                return "{{ $data['destination_donut_graph'][$data['index_max_donut_graph']]['percentage'] }}%";
+                                return "{{ $percentageTopDestination }}%";
                             }
                         }
                     }
